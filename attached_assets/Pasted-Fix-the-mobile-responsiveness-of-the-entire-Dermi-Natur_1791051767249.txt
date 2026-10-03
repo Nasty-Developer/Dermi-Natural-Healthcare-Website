@@ -1,0 +1,86 @@
+Fix the mobile responsiveness of the entire Dermi Natural website.
+
+The current mobile layout is NOT properly responsive. On mobile, the page feels like a desktop layout being squeezed into a smaller screen, and some content is causing unwanted left-to-right horizontal movement/overflow.
+
+Please properly redesign the RESPONSIVE BEHAVIOR without changing the desktop design.
+
+IMPORTANT:
+- Do NOT redesign the website.
+- Do NOT change the brand colors, logo, typography, content, images, or desktop layout.
+- Keep the existing visual identity exactly as it is.
+- Fix the underlying responsive CSS/layout instead of simply hiding elements.
+- The website must fit perfectly inside the mobile viewport.
+- There must be NO horizontal scrolling whatsoever.
+
+MOBILE REQUIREMENTS:
+
+1. GLOBAL LAYOUT
+- Ensure the entire page uses width: 100% / max-width correctly.
+- Find and fix every element causing horizontal overflow.
+- Check for excessive fixed widths, min-width values, absolute positioning, transforms, negative margins, oversized decorative elements, and elements extending outside the viewport.
+- Make sure no section is wider than the viewport.
+
+2. HERO
+- Properly stack the hero content on mobile.
+- Make headline, description, CTA buttons, and hero imagery fit naturally.
+- Do NOT simply shrink the desktop layout.
+- Adjust spacing, font sizes, image dimensions, and positioning for mobile.
+- Decorative elements must stay within the viewport or be appropriately repositioned.
+
+3. NAVBAR
+- Make the mobile navigation properly responsive.
+- Ensure menu buttons and logo never overflow.
+- If there is a mobile menu, make it clean and usable.
+- No horizontal movement when opening/closing the menu.
+
+4. PRODUCT SECTIONS
+- Product cards must fit naturally on mobile.
+- Use a proper single-column or appropriate responsive grid.
+- Images must scale proportionally.
+- Buttons must remain inside their cards.
+- No card should extend beyond the viewport.
+
+5. TEXT
+- Prevent long text, headings, buttons, URLs, or labels from forcing the page wider.
+- Use proper wrapping.
+- Adjust heading sizes and line heights for mobile where necessary.
+
+6. IMAGES
+- Ensure all images use responsive sizing such as max-width: 100%.
+- Preserve image aspect ratios.
+- Do not crop important product/brand imagery unnecessarily.
+
+7. SECTIONS & CARDS
+- Every section should adapt naturally to mobile width.
+- Fix overflowing cards, grids, flex containers, tables, badges, and decorative elements.
+- Use responsive padding rather than fixed desktop spacing.
+
+8. ANIMATIONS
+- Keep the premium animations, but make sure animations NEVER cause horizontal overflow.
+- Check transforms and translateX animations carefully.
+- Disable/reduce problematic horizontal motion on mobile if necessary.
+- Keep animations smooth and professional.
+
+9. TESTING
+Test the complete website at realistic mobile widths:
+- 320px
+- 360px
+- 375px
+- 390px
+- 414px
+
+Also test tablet and desktop to make sure the existing desktop design is not broken.
+
+IMPORTANT:
+Do NOT solve this by adding:
+overflow-x: hidden;
+to the body as the only solution.
+
+You may use overflow-x: clip/hidden where appropriate as a safety measure, but first identify and FIX the actual elements causing the overflow.
+
+Finally:
+- Scroll from the very top to the very bottom on mobile.
+- Make sure the page moves ONLY vertically.
+- There must be ZERO accidental left/right page movement.
+- Make sure every section looks intentionally designed for mobile rather than compressed from desktop.
+- Run the production build after making the changes.
