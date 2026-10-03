@@ -122,24 +122,37 @@ function About() {
 
 function LeadershipSection() {
   const { ref, isVisible } = useScrollReveal<HTMLElement>();
-  const maxPortraitHeight = 540;
-  return <section ref={ref} className={`leadership-section page-wrap${isVisible ? ' is-visible' : ''}`} aria-labelledby="leadership-title">
-    {leadershipProfiles.map((director, index) => {
-      const portraitWidth = Math.min(450, director.imageWidth / director.imageHeight * maxPortraitHeight);
-      return <article className="leadership-profile" key={director.id}>
-        <figure className="leadership-portrait">
-          <div className="leadership-photo-frame" style={{ width: `min(100%, ${portraitWidth}px)`, aspectRatio: `${director.imageWidth} / ${director.imageHeight}` }}><img src={director.image} alt={`Portrait of ${director.name}`} loading="lazy" decoding="async" /></div>
-          <figcaption className="leadership-photo-caption" style={{ width: `min(100%, ${portraitWidth}px)` }}><span>OFFICIAL PORTRAIT</span><span>{String(index + 1).padStart(2, '0')} / LEADERSHIP</span></figcaption>
-        </figure>
-        <div className="leadership-copy">
-          {index === 0 && <><Eyebrow>LEADERSHIP</Eyebrow><h2 id="leadership-title" className="serif">Meet Our<br /><em>Directors</em></h2></>}
-          <div className="leadership-meta"><span className="leadership-meta-number">{String(index + 1).padStart(2, '0')}</span><i aria-hidden="true" /><span>{director.role}</span></div>
-          <h3>{director.name}</h3>
-          <p className="leadership-company">{director.company}</p>
-          {director.biography && <p className="leadership-biography">{director.biography}</p>}
-        </div>
-      </article>;
-    })}
+  const maxPortraitHeight = 620;
+  return <section id="leadership" ref={ref} className={`leadership-section page-wrap${isVisible ? ' is-visible' : ''}`} aria-labelledby="leadership-title" data-testid="section-leadership">
+    <header className="leadership-heading">
+      <Eyebrow>LEADERSHIP</Eyebrow>
+      <h2 id="leadership-title" className="serif">Meet Our <em>Directors</em></h2>
+    </header>
+    <div className="leadership-grid">
+      {leadershipProfiles.map((director, index) => {
+        const portraitWidth = Math.min(460, director.imageWidth / director.imageHeight * maxPortraitHeight);
+        return <article className="leadership-card" key={director.id} data-testid={`card-director-${director.id}`}>
+          <figure className="leadership-portrait">
+            <div className="leadership-photo-frame" style={{ width: `min(100%, ${portraitWidth}px)`, aspectRatio: `${director.imageWidth} / ${director.imageHeight}` }}>
+              <img src={director.image} alt={`Portrait of ${director.name}`} loading="lazy" decoding="async" data-testid={`img-director-${director.id}`} />
+            </div>
+            <figcaption className="leadership-photo-caption" style={{ width: `min(100%, ${portraitWidth}px)` }}>
+              <span>OFFICIAL PORTRAIT</span>
+              <span>{String(index + 1).padStart(2, '0')} / LEADERSHIP</span>
+            </figcaption>
+          </figure>
+          <div className="leadership-copy">
+            <div className="leadership-meta">
+              <span className="leadership-meta-number">{String(index + 1).padStart(2, '0')}</span>
+              <i aria-hidden="true" />
+              <span>{director.role}</span>
+            </div>
+            <h3>{director.name}</h3>
+            <p className="leadership-company">{director.company}</p>
+          </div>
+        </article>;
+      })}
+    </div>
   </section>;
 }
 
