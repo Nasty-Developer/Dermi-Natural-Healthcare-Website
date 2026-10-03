@@ -296,6 +296,27 @@ function Metadata() {
   return null;
 }
 function App() {
+  useEffect(() => {
+    const initialMark = document.getElementById('initial-mark');
+    if (!initialMark) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let removalTimer: number | undefined;
+    const readyTimer = window.setTimeout(() => {
+      initialMark.classList.add('is-leaving');
+      if (prefersReducedMotion) {
+        initialMark.remove();
+        return;
+      }
+      removalTimer = window.setTimeout(() => initialMark.remove(), 350);
+    }, prefersReducedMotion ? 120 : 320);
+
+    return () => {
+      window.clearTimeout(readyTimer);
+      if (removalTimer !== undefined) window.clearTimeout(removalTimer);
+    };
+  }, []);
+
   return <QueryClientProvider client={queryClient}><TooltipProvider><WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}><Metadata /><Router /></WouterRouter><Toaster /></TooltipProvider></QueryClientProvider>;
 }
 

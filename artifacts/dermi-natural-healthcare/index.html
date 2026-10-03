@@ -15,8 +15,46 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      #initial-mark {
+        position: fixed;
+        z-index: 1000;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: #f7f5ee;
+        pointer-events: none;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 350ms ease, visibility 0s linear 350ms;
+      }
+      #initial-mark img {
+        display: block;
+        width: min(124px, 38vw);
+        height: auto;
+        max-height: 18vh;
+        object-fit: contain;
+        animation: initial-mark-in 350ms ease-out both;
+      }
+      #initial-mark.is-leaving {
+        opacity: 0;
+        visibility: hidden;
+      }
+      @keyframes initial-mark-in {
+        from { opacity: 0; transform: translateY(5px) scale(.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #initial-mark img { animation: none; }
+        #initial-mark, #initial-mark.is-leaving { transition: none; }
+      }
+    </style>
   </head>
   <body>
+    <div id="initial-mark" role="status" aria-label="Loading Dermi Natural Healthcare">
+      <img src="./src/assets/brand/official-logo-transparent.png" alt="" />
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
