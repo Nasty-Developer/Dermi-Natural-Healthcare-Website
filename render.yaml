@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dermi-natural-healthcare
+    runtime: static
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm --filter @workspace/dermi-natural-healthcare run build
+    staticPublishPath: ./artifacts/dermi-natural-healthcare/dist/public
+    envVars:
+      - key: NODE_VERSION
+        value: 24.13.0
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
