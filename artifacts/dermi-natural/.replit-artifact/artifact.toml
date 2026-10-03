@@ -1,7 +1,7 @@
 kind = "web"
 previewPath = "/"
 title = "Dermi Natural Healthcare"
-description = "The official website for Dermi Natural Healthcare Pvt Ltd, featuring the company profile, an accurate searchable catalog for GLETSY, NEUTOGLOW, and NEUTOZINC, and a direct contact experience."
+description = "The official Dermi Natural Healthcare website with company information, a searchable catalog for GLETSY, NEUTOGLOW and NEUTOZINC, and direct contact details."
 version = "1.0.0"
 id = "artifacts/dermi-natural"
 router = "path"
