@@ -1,0 +1,122 @@
+I’m attaching a screenshot of the current website. Please carefully inspect the screenshot and fix the visual/animation issues you can see.
+
+The current page does NOT feel smooth or professionally animated. I want you to make the entire website feel like a premium, high-end healthcare/skincare brand website.
+
+IMPORTANT:
+- Use the attached screenshot as the visual reference.
+- Do NOT redesign the website.
+- Keep the existing logo, colors, typography, content, images, spacing system, and overall visual identity.
+- Do NOT change the brand colors.
+- Do NOT replace the existing images.
+- Do NOT add random flashy effects.
+- Do NOT make the website look like a template.
+- Do NOT add excessive animations everywhere.
+
+ANIMATION QUALITY:
+Make the animations extremely smooth, subtle, elegant, and professional.
+
+1. HERO SECTION
+- Add a polished initial entrance animation.
+- Animate the small eyebrow text, headline, description, CTA buttons, and hero visual with a carefully timed stagger.
+- The hero image/visual should reveal smoothly instead of suddenly appearing.
+- Add a very subtle floating/parallax movement to the decorative hero elements.
+- Keep the animation short and fast enough that the user can immediately interact with the page.
+
+2. HERO DECORATIVE ELEMENTS
+- Make the circular lines, leaves, dots, and decorative elements move extremely subtly.
+- Use slow, elegant motion.
+- No bouncing.
+- No spinning aggressively.
+- No distracting infinite animations.
+- The movement should feel almost cinematic and premium.
+
+3. SCROLL ANIMATIONS
+- Every major section should smoothly reveal as the user scrolls.
+- Use fade + translate + subtle scale combinations.
+- Use staggered timing for cards and lists.
+- Avoid elements suddenly popping into existence.
+- Avoid excessive movement.
+
+4. PRODUCT SECTIONS
+- Product cards should smoothly appear when entering the viewport.
+- Add refined hover animations.
+- Product images should have subtle scale/position transitions.
+- Buttons should have elegant hover and press interactions.
+- Keep all product images and their colors exactly intact.
+
+5. NAVIGATION
+- Make navbar transitions smooth.
+- Navigation links should have subtle hover animations.
+- The Enquire button should have a premium micro-interaction.
+- If the navbar changes while scrolling, make that transition smooth and polished.
+
+6. PAGE FLOW / BOTTOM OF VIEWPORT
+- Carefully inspect the screenshot.
+- Fix any awkward clipping, overlapping, excessive empty space, horizontal overflow, elements appearing cut off, or decorative elements extending outside the intended section.
+- Make sure the bottom of each section transitions naturally into the next section.
+- The page should feel continuous rather than like separate blocks stacked together.
+- Make sure nothing is accidentally positioned outside the viewport or creates unnecessary horizontal scrolling.
+- Check the hero section especially carefully at different viewport heights and widths.
+
+7. RESPONSIVENESS
+Test the animation and layout at:
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+Make sure animations never cause:
+- Horizontal scrolling
+- Content clipping
+- Overlapping text
+- Broken layouts
+- Elements disappearing
+- Large empty gaps
+
+8. PERFORMANCE
+This is extremely important:
+- Use transform and opacity wherever possible.
+- Avoid expensive continuous JavaScript animations.
+- Do not use animation libraries unnecessarily if CSS can handle the effect.
+- Lazy-load below-the-fold images where appropriate.
+- Keep the website fast.
+- Animations must not delay page interaction.
+- Respect prefers-reduced-motion.
+
+9. PREMIUM MOTION STYLE
+The final result should feel:
+- Luxury
+- Clean
+- Sophisticated
+- Calm
+- Healthcare appropriate
+- Modern
+- Editorial
+- High-end
+- Very smooth
+
+Think of the motion quality of a premium Apple-style product website, combined with a luxury skincare/healthcare brand.
+
+DO NOT:
+- Add neon effects
+- Add purple gradients
+- Add excessive glow
+- Add particle backgrounds
+- Add spinning cards
+- Add bouncing text
+- Add excessive parallax
+- Add cartoon-like motion
+- Add long loading animations
+- Add unnecessary animations just for the sake of having animations
+
+Most importantly, don't just add more animations. Improve the QUALITY, TIMING, EASING, SPACING, and FLOW of the existing website so everything feels intentionally designed.
+
+After making the changes:
+1. Inspect the entire website.
+2. Test scrolling from top to bottom.
+3. Test desktop and mobile.
+4. Check for horizontal overflow.
+5. Check for clipped elements.
+6. Check that every animation completes correctly.
+7. Run the production build.
+8. Fix any build/runtime errors caused by the changes.

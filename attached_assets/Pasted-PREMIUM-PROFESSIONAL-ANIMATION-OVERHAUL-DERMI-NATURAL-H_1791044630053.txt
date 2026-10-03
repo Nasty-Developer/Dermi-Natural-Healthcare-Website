@@ -1,0 +1,661 @@
+PREMIUM PROFESSIONAL ANIMATION OVERHAUL — DERMI NATURAL HEALTHCARE WEBSITE
+
+I want you to perform a complete animation and interaction refinement across the entire Dermi Natural Healthcare website.
+
+The website already has the overall visual direction, but now I want the experience to feel MUCH more premium, polished, smooth, modern, and professionally animated.
+
+IMPORTANT:
+I do NOT want childish, flashy, gaming-style, or excessive animations.
+
+I want the type of animation used on high-end:
+- healthcare websites
+- luxury skincare brands
+- premium wellness brands
+- modern editorial websites
+- sophisticated corporate websites
+
+The website should feel alive and interactive, but still calm, elegant, trustworthy, and fast.
+
+==================================================
+1. GLOBAL ANIMATION LANGUAGE
+==================================================
+
+Create one consistent animation system across the whole website.
+
+The animation style should be:
+
+- Smooth
+- Elegant
+- Premium
+- Natural
+- Subtle but noticeable
+- Fast enough to never feel slow
+- Fluid
+- Professional
+- Lightweight
+
+Do NOT make every element bounce, spin, or zoom.
+
+Every animation should have a purpose.
+
+Think:
+“Luxury brand motion design”
+
+NOT:
+“Every element is moving because CSS exists.”
+
+==================================================
+2. PAGE LOAD EXPERIENCE
+==================================================
+
+Create a beautiful branded initial loading experience.
+
+When the website first loads:
+
+1. Show a clean ivory/cream background.
+2. Display the official Dermi Natural logo.
+3. Use a subtle logo reveal animation.
+4. Optionally use a very soft opacity/scale transition.
+5. Transition smoothly into the homepage.
+6. Avoid long loading delays.
+
+The loading screen should disappear quickly once the essential page content is ready.
+
+Do NOT create:
+- spinning loaders
+- giant progress bars
+- unnecessary waiting
+- flashy effects
+
+The logo should feel naturally integrated into the loading experience.
+
+==================================================
+3. HEADER ANIMATIONS
+==================================================
+
+Make the navigation feel polished.
+
+On initial load:
+- Header fades in smoothly.
+- Logo reveals naturally.
+- Navigation links appear with a subtle stagger.
+- Enquire button enters slightly after the navigation.
+
+On hover:
+- Navigation links should have a tasteful animated underline or opacity/position transition.
+- Do not use aggressive scaling.
+
+Enquire button:
+- subtle hover elevation
+- tiny arrow movement
+- smooth background transition
+- elegant press state
+
+The header should feel highly responsive.
+
+==================================================
+4. HERO SECTION — MAJOR ANIMATION IMPROVEMENT
+==================================================
+
+The Hero section should be the most visually impressive area.
+
+For:
+
+“Care, made considerate.”
+
+Create a sophisticated text entrance sequence.
+
+Animation example:
+
+1. Small section label appears.
+2. Main heading reveals smoothly.
+3. “Care, made” appears first.
+4. “considerate.” follows with elegant timing.
+5. Supporting paragraph fades/slides in.
+6. CTA buttons appear afterward.
+7. Right-side visual reveals separately.
+
+Do NOT animate every letter individually.
+
+Use elegant line/word-level reveals.
+
+==================================================
+5. HERO RIGHT-SIDE VISUAL
+==================================================
+
+The current website previously felt too square and static on the right side.
+
+Continue improving that area.
+
+Create a sophisticated animated visual composition using:
+
+- organic shapes
+- subtle floating elements
+- soft circles / elliptical elements
+- botanical-inspired motion
+- gentle parallax
+- layered depth
+- subtle opacity changes
+- very slow movement
+
+The official logo or visual elements should feel integrated into the composition.
+
+Use gentle motion such as:
+- 4–10px floating movement
+- slow rotation where appropriate
+- extremely subtle scale changes
+- layered parallax
+
+Do NOT make it dramatic.
+
+==================================================
+6. SCROLL-BASED ANIMATIONS
+==================================================
+
+Make the entire website feel alive as the user scrolls.
+
+Sections should enter the viewport with beautiful reveal animations.
+
+Examples:
+
+- Fade-up
+- Fade-right
+- Fade-left
+- Soft scale reveal
+- Image reveal
+- Mask reveal
+- Staggered content reveal
+
+Use Intersection Observer or a similarly efficient approach.
+
+Do not animate content repeatedly every time the user scrolls past it unless there is a reason.
+
+Animations should trigger naturally when sections enter the viewport.
+
+==================================================
+7. ABOUT / OUR STORY SECTION
+==================================================
+
+Add elegant scroll animations to:
+
+- section heading
+- paragraph content
+- imagery
+- decorative lines
+- supporting content
+
+Possible sequence:
+
+Heading → paragraph → image → secondary details
+
+Use a subtle stagger.
+
+Keep movement small and refined.
+
+==================================================
+8. PRODUCT PAGE ANIMATIONS
+==================================================
+
+The Products page should have premium animations.
+
+When the page loads:
+
+- Product heading reveals smoothly.
+- Product count fades in.
+- Brand/category controls animate into place.
+
+Product cards:
+
+On initial appearance:
+- subtle fade
+- slight translate
+- small stagger between cards
+
+On hover:
+- product image can scale VERY slightly
+- image position can shift subtly
+- card can lift by a few pixels
+- arrow can move
+- border/background can transition smoothly
+
+IMPORTANT:
+Do NOT crop the actual product image.
+
+Do NOT animate product images in a way that distorts them.
+
+The complete product must remain visible.
+
+==================================================
+9. PRODUCT IMAGE HOVER
+==================================================
+
+Create a premium product-image hover interaction.
+
+For example:
+
+Default:
+- Product is centered and clean.
+
+Hover:
+- product image gently scales to approximately 1.02–1.04
+- background changes very subtly
+- soft shadow appears
+- arrow moves slightly
+
+Keep everything smooth.
+
+Do NOT use:
+- huge zoom
+- spinning product
+- aggressive movement
+- flashing
+
+==================================================
+10. PRODUCT DETAIL PAGE
+==================================================
+
+Add a cinematic but fast product-detail entrance.
+
+Suggested:
+
+Product image:
+- gentle reveal
+
+Product title:
+- fade/slide
+
+Product details:
+- staggered reveal
+
+Buttons:
+- smooth entrance afterward
+
+When switching between product images:
+- use elegant crossfade
+- subtle opacity transition
+- smooth image replacement
+
+Never create a disruptive transition.
+
+==================================================
+11. BUTTON MICRO-INTERACTIONS
+==================================================
+
+ALL major buttons across the website should feel premium.
+
+Examples:
+- Explore our Products
+- Meet Dermi Natural
+- Enquire
+- Contact
+- View Product
+
+Hover:
+- subtle movement
+- smooth color transition
+- arrow/icon translation
+- tiny elevation
+
+Press:
+- subtle scale-down or feedback
+
+No giant button scaling.
+
+No bounce.
+
+No flashy gradients.
+
+==================================================
+12. LINKS AND ICONS
+==================================================
+
+Arrow icons should have elegant motion.
+
+Example:
+
+Default:
+→
+
+Hover:
+arrow shifts slightly to the right
+
+Use the same interaction language consistently across the website.
+
+Icons should transition smoothly rather than appearing to teleport around.
+
+==================================================
+13. IMAGE REVEAL ANIMATIONS
+==================================================
+
+Where appropriate, add premium image reveals.
+
+Possible patterns:
+- soft fade mask
+- upward reveal
+- side reveal
+- gentle clip-path animation
+
+Keep these lightweight.
+
+Do NOT overuse dramatic clip-path effects.
+
+The imagery should feel like it is being intentionally introduced to the viewer.
+
+==================================================
+14. ORGANIC MOTION
+==================================================
+
+Because Dermi Natural has a healthcare + wellness + botanical identity, use some subtle organic motion.
+
+Examples:
+- slow floating shapes
+- botanical-inspired movement
+- soft atmospheric background motion
+- very slow circular movement
+- gentle depth changes
+
+Keep movement extremely slow.
+
+The page should feel calm and natural.
+
+==================================================
+15. SECTION TRANSITIONS
+==================================================
+
+Make transitions between major sections smoother.
+
+Instead of every section feeling like a hard stop, use:
+
+- subtle overlap
+- soft spacing transitions
+- decorative lines
+- gentle background changes
+- smooth reveal timing
+
+Do not create unnecessary animation between every section.
+
+==================================================
+16. FOOTER ANIMATION
+==================================================
+
+The footer should also have subtle interactions.
+
+On entry:
+- content fades in
+- navigation links reveal subtly
+
+On hover:
+- links transition smoothly
+- social/contact icons have elegant micro-interactions
+
+Keep it restrained.
+
+==================================================
+17. CONTACT / ENQUIRE AREA
+==================================================
+
+Create a premium entrance animation for the Contact / Enquire section.
+
+Fields should not all appear simultaneously.
+
+Use a subtle stagger if appropriate.
+
+Buttons should have the same premium interaction system as the rest of the site.
+
+Do not animate form fields excessively.
+
+==================================================
+18. CURSOR / MOUSE INTERACTIONS
+==================================================
+
+Desktop can have subtle cursor-responsive effects where appropriate.
+
+Possible:
+- slight movement of decorative hero elements
+- subtle image parallax
+- tiny movement of interactive arrows
+
+Keep this extremely subtle.
+
+Do NOT create:
+- giant custom cursor
+- glowing cursor trail
+- distracting particles
+- heavy mouse-following effects
+
+The website is healthcare-focused, not a gaming portfolio.
+
+==================================================
+19. MOBILE ANIMATION
+==================================================
+
+Animations MUST remain smooth on mobile.
+
+Reduce animation complexity automatically on:
+- smaller screens
+- lower-powered devices
+
+Do not run heavy parallax effects on mobile if they hurt performance.
+
+Touch interactions should still feel responsive.
+
+==================================================
+20. PERFORMANCE REQUIREMENTS
+==================================================
+
+This is extremely important.
+
+Animations must NEVER make the website lag.
+
+Use:
+- transform
+- opacity
+- efficient CSS transitions
+- requestAnimationFrame only when actually needed
+- Intersection Observer
+- lightweight motion libraries only if already appropriate
+
+Avoid unnecessary:
+- layout-triggering animations
+- expensive filters
+- huge blur effects
+- continuous JavaScript loops
+- heavy 3D rendering
+
+Prefer GPU-friendly properties such as:
+- transform
+- opacity
+
+The website should remain fast and responsive.
+
+==================================================
+21. REDUCED MOTION
+==================================================
+
+Respect:
+
+prefers-reduced-motion
+
+If the user has reduced motion enabled:
+- minimize animations
+- disable non-essential motion
+- preserve functionality
+- keep transitions extremely subtle
+
+==================================================
+22. DO NOT OVER-ANIMATE
+==================================================
+
+This is one of the most important requirements.
+
+I want:
+
+PREMIUM ANIMATION
+
+NOT:
+
+ANIMATION EVERYWHERE.
+
+Some things should remain static so the animated elements stand out.
+
+Use a clear visual hierarchy.
+
+==================================================
+23. CONSISTENT TIMING
+==================================================
+
+Establish consistent animation timing across the project.
+
+For example:
+
+Fast:
+~180–250ms
+
+Medium:
+~300–500ms
+
+Slow:
+~600–1000ms
+
+Long atmospheric motion:
+Several seconds
+
+Use easing that feels natural and refined.
+
+Avoid random animation durations everywhere.
+
+==================================================
+24. HOVER STATES
+==================================================
+
+Audit every interactive element.
+
+Make sure:
+- links
+- buttons
+- cards
+- product images
+- arrows
+- navigation items
+
+have polished hover/focus states.
+
+Every interaction should feel intentional.
+
+==================================================
+25. ACCESSIBILITY
+==================================================
+
+Animations must not interfere with:
+- keyboard navigation
+- focus indicators
+- screen-reader usability
+- form usability
+
+Never rely on animation to communicate important information.
+
+==================================================
+26. FINAL VISUAL QUALITY AUDIT
+==================================================
+
+After implementing the animation system:
+
+OPEN THE ACTUAL WEBSITE IN THE BROWSER.
+
+Do not only inspect the source code.
+
+Scroll through the entire website.
+
+Check:
+
+- Initial loading
+- Header
+- Hero
+- Hero visual
+- About
+- Products
+- Product cards
+- Product details
+- Contact
+- Footer
+- Mobile layout
+
+Look specifically for:
+
+- lag
+- jank
+- animation collisions
+- excessive movement
+- awkward timing
+- elements appearing too late
+- text becoming hard to read
+- product images moving incorrectly
+- layout shifts
+
+Then refine the animations.
+
+==================================================
+27. FINAL DESIGN TARGET
+==================================================
+
+The website should feel like:
+
+A high-end custom healthcare / skincare / wellness brand website with professional motion design.
+
+The overall experience should communicate:
+
+CARE
+TRUST
+QUALITY
+NATURE
+SOPHISTICATION
+PROFESSIONALISM
+
+The animation should make the website feel:
+
+ALIVE
+SMOOTH
+PREMIUM
+MODERN
+POLISHED
+
+Without feeling:
+
+FLASHY
+CHILDISH
+GIMMICKY
+SLOW
+LAGGY
+OVERDONE
+
+==================================================
+FINAL INSTRUCTION
+==================================================
+
+Do a COMPLETE animation polish pass across the existing Dermi Natural website.
+
+Do not just add one fade-in animation and consider the task complete.
+
+Create a coherent animation system covering:
+
+- Loading experience
+- Header
+- Hero
+- Hero visual
+- Scroll reveals
+- About
+- Products
+- Product image hover
+- Product detail
+- Buttons
+- Links
+- Icons
+- Contact
+- Footer
+- Mobile interactions
+
+Keep animations professional, subtle, smooth, fast, and performance-friendly.
+
+After implementation, verify everything in the real browser and refine anything that looks awkward.
+
+THE FINAL WEBSITE SHOULD FEEL LIKE A PREMIUM BRAND EXPERIENCE FROM THE FIRST SECOND THE PAGE LOADS.

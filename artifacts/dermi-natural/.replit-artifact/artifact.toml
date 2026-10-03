@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/dermi-natural/"
+title = "Dermi Natural Healthcare"
+description = "The official Dermi Natural Healthcare website with company information, a searchable catalog for GLETSY, NEUTOGLOW and NEUTOZINC, and direct contact details."
+version = "1.0.0"
+id = "artifacts/dermi-natural"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/dermi-natural/" ]
+localPort = 25270
+
+[services.development]
+run = "pnpm --filter @workspace/dermi-natural run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dermi-natural", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dermi-natural/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25270"
+BASE_PATH = "/dermi-natural/"
