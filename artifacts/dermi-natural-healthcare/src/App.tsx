@@ -49,7 +49,8 @@ function Header() {
 }
 
 function Footer() {
-  return <footer className="footer">
+  const { ref, isVisible } = useScrollReveal<HTMLElement>();
+  return <footer ref={ref} className={`footer scroll-reveal${isVisible ? ' is-visible' : ''}`}>
     <div className="footer-main">
       <div className="footer-brand"><Brand dark /><p>Thoughtful healthcare and wellness, with clear product information at the centre.</p></div>
       <div className="footer-column"><span className="eyebrow">EXPLORE</span><Link href="/about">Our Story</Link><Link href="/products">All products</Link><Link href="/contact">Contact</Link></div>
@@ -70,19 +71,21 @@ function BrandPill({ brand }: { brand: ProductBrand }) { return <span className=
 function ProductArt({ product, image, compact = false }: { product: Product; image?: ProductImage; compact?: boolean }) {
   const currentImage = image || product.images[0];
   return <div className={`product-art art-${product.brand.toLowerCase()} ${compact ? 'product-art-compact' : ''}`} data-testid={`visual-product-${product.slug}`}>
-    <img className="real-pack-image" src={currentImage.src} alt={currentImage.alt} loading={compact ? 'lazy' : undefined} decoding="async" />
+    <img key={currentImage.src} className="real-pack-image gallery-image-enter" src={currentImage.src} alt={currentImage.alt} loading={compact ? 'lazy' : undefined} decoding="async" />
   </div>;
 }
 
 function ProductCard({ product }: { product: Product }) {
-  return <Link href={`/products/${product.slug}`} className="product-card" data-testid={`card-product-${product.slug}`}>
+  const { ref, isVisible } = useScrollReveal<HTMLAnchorElement>();
+  return <Link ref={ref} href={`/products/${product.slug}`} className={`product-card scroll-reveal${isVisible ? ' is-visible' : ''}`} data-testid={`card-product-${product.slug}`}>
     <ProductArt product={product} compact />
     <div className="product-card-copy"><div className="product-meta"><BrandPill brand={product.brand} /><span>{product.category}</span></div><h3>{product.name}</h3><p>{product.sizePack}{product.ingredients.length ? ` · ${product.ingredients.slice(0, 2).join(' · ')}` : ''}</p><span className="card-arrow" aria-hidden="true"><ArrowUpRight size={17} /></span></div>
   </Link>;
 }
 
 function FamilyStrip() {
-  return <section className="family-strip page-wrap" aria-label="Browse brands">
+  const { ref, isVisible } = useScrollReveal<HTMLElement>();
+  return <section ref={ref} className={`family-strip page-wrap scroll-reveal${isVisible ? ' is-visible' : ''}`} aria-label="Browse brands">
     <div className="family-strip-heading"><Eyebrow>TWO DISTINCT BRANDS</Eyebrow><p>Explore each range</p></div>
     {families.map((family) => <Link key={family.slug} href={`/${family.slug}`} className="family-tile" data-testid={`link-family-${family.slug}`}><span>{family.mark}</span><div><b>{family.title}</b><small>{family.descriptor}</small></div><ArrowUpRight size={17} /></Link>)}
   </section>;
@@ -90,6 +93,10 @@ function FamilyStrip() {
 
 function Home() {
   const featured = publishedProducts.filter((product) => product.featured).slice(0, 3);
+  const featuredReveal = useScrollReveal<HTMLElement>();
+  const manifestoReveal = useScrollReveal<HTMLElement>();
+  const aboutReveal = useScrollReveal<HTMLElement>();
+  const contactReveal = useScrollReveal<HTMLElement>();
   return <Shell><div className="page-enter">
     <section className="home-hero">
       <div className="hero-copy"><Eyebrow>HEALTHCARE & WELLNESS</Eyebrow><h1 className="serif">Care, made<br /><em>considerate.</em></h1><p className="hero-lede">A healthcare company with a clear point of view: thoughtful product ranges, and information you can actually find.</p><div className="hero-actions"><Link href="/products" className="button-primary" data-testid="link-hero-products">Explore our products <ArrowRight size={16} /></Link><Link href="/about" className="text-link" data-testid="link-hero-story">Meet Dermi Natural <ArrowUpRight size={15} /></Link></div><div className="hero-note"><span className="note-mark">01</span><span>Independent product information.<br />A considered portfolio.</span></div></div>
@@ -102,21 +109,24 @@ function Home() {
       <div className="hero-footline"><span>DERMI NATURAL HEALTHCARE PVT LTD</span><span>THOUGHTFUL BY DESIGN <ArrowDownRight size={13} /></span></div>
     </section>
     <FamilyStrip />
-    <section className="featured-section page-wrap"><SectionIntro label="A CLOSER LOOK" title="Selected from our ranges" body="Start with a few products across the Dermi Natural portfolio." link="View all products" to="/products" /><div className="product-grid featured-grid">{featured.map((product) => <ProductCard key={product.id} product={product} />)}</div></section>
-    <section className="manifesto"><div className="manifesto-number">01 / 03</div><div className="manifesto-copy"><Eyebrow>A CLEARER WAY TO EXPLORE</Eyebrow><h2 className="serif">Good information<br />belongs <em>up front.</em></h2><p>We believe it should be simple to understand what a product is called, which brand it belongs to, and which ingredients are listed. So we put those details where they belong: in the open.</p><Link href="/products" className="button-outline" data-testid="link-manifesto-products">Browse product details <ArrowRight size={16} /></Link></div><div className="manifesto-aside"><span className="big-initial">D</span><span>OUR APPROACH</span><p>Clarity in the details.<br />Care in the presentation.</p></div></section>
-    <section className="home-about page-wrap"><div className="about-number">01<span> / ABOUT</span></div><div><Eyebrow>ABOUT DERMI NATURAL</Eyebrow><h2 className="serif">A company focused<br />on <em>everyday care.</em></h2></div><div className="home-about-text"><p>{company} brings together skincare and nutritional supplement ranges under one roof. Our aim here is simple: a thoughtful, clear place to learn about our products and connect with us.</p><Link href="/about" className="text-link" data-testid="link-home-about">More about us <ArrowUpRight size={15} /></Link></div></section>
-    <section className="contact-banner"><div><Eyebrow>HAVE A QUESTION?</Eyebrow><h2 className="serif">We’re easy to<br /><em>reach.</em></h2></div><div className="contact-banner-right"><p>For product enquiries or general information, get in touch with our team directly.</p><Link href="/contact" className="button-primary button-gold" data-testid="link-home-contact">Contact Dermi Natural <ArrowRight size={16} /></Link></div><span className="banner-mark">DNH</span></section>
+     <section ref={featuredReveal.ref} className={`featured-section page-wrap scroll-reveal${featuredReveal.isVisible ? ' is-visible' : ''}`}><SectionIntro label="A CLOSER LOOK" title="Selected from our ranges" body="Start with a few products across the Dermi Natural portfolio." link="View all products" to="/products" /><div className="product-grid featured-grid">{featured.map((product) => <ProductCard key={product.id} product={product} />)}</div></section>
+     <section ref={manifestoReveal.ref} className={`manifesto scroll-reveal${manifestoReveal.isVisible ? ' is-visible' : ''}`}><div className="manifesto-number">01 / 03</div><div className="manifesto-copy"><Eyebrow>A CLEARER WAY TO EXPLORE</Eyebrow><h2 className="serif">Good information<br />belongs <em>up front.</em></h2><p>We believe it should be simple to understand what a product is called, which brand it belongs to, and which ingredients are listed. So we put those details where they belong: in the open.</p><Link href="/products" className="button-outline" data-testid="link-manifesto-products">Browse product details <ArrowRight size={16} /></Link></div><div className="manifesto-aside"><span className="big-initial">D</span><span>OUR APPROACH</span><p>Clarity in the details.<br />Care in the presentation.</p></div></section>
+     <section ref={aboutReveal.ref} className={`home-about page-wrap scroll-reveal${aboutReveal.isVisible ? ' is-visible' : ''}`}><div className="about-number">01<span> / ABOUT</span></div><div><Eyebrow>ABOUT DERMI NATURAL</Eyebrow><h2 className="serif">A company focused<br />on <em>everyday care.</em></h2></div><div className="home-about-text"><p>{company} brings together skincare and nutritional supplement ranges under one roof. Our aim here is simple: a thoughtful, clear place to learn about our products and connect with us.</p><Link href="/about" className="text-link" data-testid="link-home-about">More about us <ArrowUpRight size={15} /></Link></div></section>
+     <section ref={contactReveal.ref} className={`contact-banner scroll-reveal${contactReveal.isVisible ? ' is-visible' : ''}`}><div><Eyebrow>HAVE A QUESTION?</Eyebrow><h2 className="serif">We’re easy to<br /><em>reach.</em></h2></div><div className="contact-banner-right"><p>For product enquiries or general information, get in touch with our team directly.</p><Link href="/contact" className="button-primary button-gold" data-testid="link-home-contact">Contact Dermi Natural <ArrowRight size={16} /></Link></div><span className="banner-mark">DNH</span></section>
   </div></Shell>;
 }
 
 function About() {
+  const featureReveal = useScrollReveal<HTMLDivElement>();
+  const valuesReveal = useScrollReveal<HTMLElement>();
+  const ctaReveal = useScrollReveal<HTMLElement>();
   return <Shell><div className="page-enter">
     <div className="page-hero page-wrap"><div><Eyebrow>ABOUT DERMI NATURAL</Eyebrow><h1 className="serif">Care is in the<br /><em>consideration.</em></h1></div><div className="page-hero-side"><span className="page-index">01 <i /> ABOUT</span><p>A healthcare and wellness company bringing considered product brands into one clear, connected portfolio.</p></div></div>
-    <div className="about-feature"><div className="about-feature-mark"><img src={officialLogo} alt="Dermi Natural Healthcare official transparent brand mark" /><span>THE OFFICIAL MARK</span></div><div className="about-feature-copy"><Eyebrow>WHO WE ARE</Eyebrow><h2 className="serif">Introducing<br />Dermi Natural Healthcare.</h2><p>Dermi Natural Healthcare is a healthcare and wellness company with two product brands: GLETSY and NEUTOGLOW. Each has its own place in the portfolio, from skincare to nutritional supplements.</p><p>This site is designed to make our product information easier to navigate and our company easier to contact.</p></div></div>
+     <div ref={featureReveal.ref} className={`about-feature scroll-reveal${featureReveal.isVisible ? ' is-visible' : ''}`}><div className="about-feature-mark"><img src={officialLogo} alt="Dermi Natural Healthcare official transparent brand mark" /><span>THE OFFICIAL MARK</span></div><div className="about-feature-copy"><Eyebrow>WHO WE ARE</Eyebrow><h2 className="serif">Introducing<br />Dermi Natural Healthcare.</h2><p>Dermi Natural Healthcare is a healthcare and wellness company with two product brands: GLETSY and NEUTOGLOW. Each has its own place in the portfolio, from skincare to nutritional supplements.</p><p>This site is designed to make our product information easier to navigate and our company easier to contact.</p></div></div>
     <LeadershipSection />
-    <section className="values-section page-wrap"><SectionIntro label="WHAT GUIDES US" title="Clarity is a form of care." body="The way information is shared matters. We keep the product names and provided ingredient details visible, and avoid making claims beyond them."/><div className="values-list"><article><span>01</span><div><h3>Clear by default</h3><p>Find product names, brands and ingredient details without having to search through noise.</p></div><ArrowDownRight /></article><article><span>02</span><div><h3>Thoughtful presentation</h3><p>Distinct product ranges, brought together through a consistent and considered company identity.</p></div><ArrowDownRight /></article><article><span>03</span><div><h3>Open conversation</h3><p>Questions and enquiries have a direct route to the people behind Dermi Natural.</p></div><ArrowDownRight /></article></div></section>
+     <section ref={valuesReveal.ref} className={`values-section page-wrap scroll-reveal${valuesReveal.isVisible ? ' is-visible' : ''}`}><SectionIntro label="WHAT GUIDES US" title="Clarity is a form of care." body="The way information is shared matters. We keep the product names and provided ingredient details visible, and avoid making claims beyond them."/><div className="values-list"><article><span>01</span><div><h3>Clear by default</h3><p>Find product names, brands and ingredient details without having to search through noise.</p></div><ArrowDownRight /></article><article><span>02</span><div><h3>Thoughtful presentation</h3><p>Distinct product ranges, brought together through a consistent and considered company identity.</p></div><ArrowDownRight /></article><article><span>03</span><div><h3>Open conversation</h3><p>Questions and enquiries have a direct route to the people behind Dermi Natural.</p></div><ArrowDownRight /></article></div></section>
     <FamilyStrip />
-    <section className="about-cta"><Eyebrow>GET TO KNOW OUR PORTFOLIO</Eyebrow><h2 className="serif">Explore the ranges<br /><em>at your own pace.</em></h2><Link href="/products" className="button-primary" data-testid="link-about-products">Discover products <ArrowRight size={16} /></Link></section>
+     <section ref={ctaReveal.ref} className={`about-cta scroll-reveal${ctaReveal.isVisible ? ' is-visible' : ''}`}><Eyebrow>GET TO KNOW OUR PORTFOLIO</Eyebrow><h2 className="serif">Explore the ranges<br /><em>at your own pace.</em></h2><Link href="/products" className="button-primary" data-testid="link-about-products">Discover products <ArrowRight size={16} /></Link></section>
   </div></Shell>;
 }
 
@@ -160,6 +170,7 @@ function Products() {
   const [query, setQuery] = useState('');
   const [brand, setBrand] = useState('All');
   const [category, setCategory] = useState('All');
+  const directoryReveal = useScrollReveal<HTMLDivElement>();
   const categories = useMemo(() => [...new Set(publishedProducts.map((product) => product.category))], []);
   const filtered = useMemo(() => publishedProducts.filter((product) => {
     const q = query.trim().toLowerCase();
@@ -168,7 +179,7 @@ function Products() {
   }), [query, brand, category]);
   return <Shell><div className="page-enter">
     <div className="products-hero page-wrap"><div><Eyebrow>THE DERMI NATURAL PORTFOLIO</Eyebrow><h1 className="serif">Products,<br /><em>in focus.</em></h1></div><div className="products-hero-side"><span className="page-index">01 <i /> PRODUCT DIRECTORY</span><p>Explore skincare and nutritional supplement ranges. Product information is shared as provided by the company.</p><span className="directory-count">{publishedProducts.length.toString().padStart(2, '0')} <small>PUBLISHED PRODUCTS</small></span></div></div>
-    <div className="directory page-wrap"><div className="directory-controls"><label className="search-box"><Search size={17} /><span className="sr-only">Search products</span><input type="search" placeholder="Search names, ingredients or products" value={query} onChange={(event) => setQuery(event.target.value)} data-testid="input-product-search" /></label><div className="filter-tabs" role="group" aria-label="Filter products by brand">{['All', ...families.map((family) => family.title)].map((item) => <button key={item} className={brand === item ? 'filter-active' : ''} onClick={() => setBrand(item)} type="button" aria-pressed={brand === item} data-testid={`filter-brand-${item.toLowerCase()}`}>{item === 'All' ? 'All brands' : item}</button>)}</div></div>
+    <div ref={directoryReveal.ref} className={`directory page-wrap scroll-reveal${directoryReveal.isVisible ? ' is-visible' : ''}`}><div className="directory-controls"><label className="search-box"><Search size={17} /><span className="sr-only">Search products</span><input type="search" placeholder="Search names, ingredients or products" value={query} onChange={(event) => setQuery(event.target.value)} data-testid="input-product-search" /></label><div className="filter-tabs" role="group" aria-label="Filter products by brand">{['All', ...families.map((family) => family.title)].map((item) => <button key={item} className={brand === item ? 'filter-active' : ''} onClick={() => setBrand(item)} type="button" aria-pressed={brand === item} data-testid={`filter-brand-${item.toLowerCase()}`}>{item === 'All' ? 'All brands' : item}</button>)}</div></div>
       <div className="directory-controls category-controls"><div className="filter-tabs" role="group" aria-label="Filter products by category">{['All', ...categories].map((item) => <button key={item} className={category === item ? 'filter-active' : ''} onClick={() => setCategory(item)} type="button" aria-pressed={category === item} data-testid={`filter-category-${item.toLowerCase().replaceAll(' ', '-')}`}>{item === 'All' ? 'All categories' : item}</button>)}</div></div>
       <div className="results-line" aria-live="polite"><span>{filtered.length === 1 ? '01 PRODUCT' : `${filtered.length.toString().padStart(2, '0')} PRODUCTS`}</span><span>{brand === 'All' ? 'ALL BRANDS' : brand}</span></div>
       {filtered.length ? <div className="product-grid">{filtered.map((product) => <ProductCard key={product.id} product={product} />)}</div> : <div className="empty-results"><div className="empty-icon"><Search /></div><h2 className="serif">Nothing in this view.</h2><p>Try another product name, ingredient or category.</p><button type="button" className="text-link" onClick={() => { setQuery(''); setBrand('All'); setCategory('All'); }} data-testid="button-clear-search">Clear filters <X size={14} /></button></div>}
@@ -180,24 +191,26 @@ function ProductDetail() {
   const params = useParams<{ slug: string }>();
   const product = publishedProducts.find((item) => item.slug === params.slug);
   const [imageIndex, setImageIndex] = useState(0);
+  const detailReveal = useScrollReveal<HTMLElement>();
   useEffect(() => setImageIndex(0), [params.slug]);
   if (!product) return <NotFound />;
   const related = publishedProducts.filter((item) => item.brand === product.brand && item.id !== product.id).slice(0, 3);
   const activeImage = product.images[Math.min(imageIndex, product.images.length - 1)];
   return <Shell><div className="page-enter">
     <div className="breadcrumb page-wrap"><Link href="/products" data-testid="link-back-products">Products</Link><span>/</span><Link href={`/${product.brand.toLowerCase()}`}>{product.brand}</Link><span>/</span><span>{product.name}</span></div>
-    <section className="detail-layout page-wrap"><div className="detail-visual"><div className="detail-art"><ProductArt product={product} image={activeImage} /></div>{product.images.length > 1 && <div className="gallery-thumbs" role="group" aria-label="Product images">{product.images.map((image, index) => <button type="button" key={image.src} className={`gallery-thumb ${imageIndex === index ? 'active' : ''}`} aria-label={`Show image ${index + 1}: ${image.alt}`} aria-pressed={imageIndex === index} onClick={() => setImageIndex(index)}><img src={image.src} alt="" loading="lazy" /></button>)}</div>}</div><div className="detail-copy"><Link href="/products" className="back-link"><ArrowLeft size={14} /> All products</Link><Eyebrow>{product.brand} / {product.category}</Eyebrow><h1 className="serif">{product.name}</h1><p className="detail-note">{product.description}</p><div className="size-line"><span>Size / pack</span><strong>{product.sizePack}</strong></div>{product.ingredients.length > 0 && <><div className="detail-rule" /><Eyebrow>INGREDIENTS / FORMULA</Eyebrow><ul className="formula-list">{product.ingredients.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span>{item}</li>)}</ul></>}{product.highlights.length > 0 && <><div className="detail-rule" /><Eyebrow>PACK HIGHLIGHTS</Eyebrow><ul className="highlight-list">{product.highlights.map((item) => <li key={item}>{item}</li>)}</ul></>}<p className="information-note">Product information is shown as provided by Dermi Natural Healthcare. For product-specific questions, please contact the company.</p><Link href="/contact" className="button-primary" data-testid="link-product-enquiry">Ask us about this product <ArrowRight size={16} /></Link></div></section>
+    <section ref={detailReveal.ref} className={`detail-layout page-wrap scroll-reveal${detailReveal.isVisible ? ' is-visible' : ''}`}><div className="detail-visual"><div className="detail-art"><ProductArt product={product} image={activeImage} /></div>{product.images.length > 1 && <div className="gallery-thumbs" role="group" aria-label="Product images">{product.images.map((image, index) => <button type="button" key={image.src} className={`gallery-thumb ${imageIndex === index ? 'active' : ''}`} aria-label={`Show image ${index + 1}: ${image.alt}`} aria-pressed={imageIndex === index} onClick={() => setImageIndex(index)}><img src={image.src} alt="" loading="lazy" /></button>)}</div>}</div><div className="detail-copy"><Link href="/products" className="back-link"><ArrowLeft size={14} /> All products</Link><Eyebrow>{product.brand} / {product.category}</Eyebrow><h1 className="serif">{product.name}</h1><p className="detail-note">{product.description}</p><div className="size-line"><span>Size / pack</span><strong>{product.sizePack}</strong></div>{product.ingredients.length > 0 && <><div className="detail-rule" /><Eyebrow>INGREDIENTS / FORMULA</Eyebrow><ul className="formula-list">{product.ingredients.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span>{item}</li>)}</ul></>}{product.highlights.length > 0 && <><div className="detail-rule" /><Eyebrow>PACK HIGHLIGHTS</Eyebrow><ul className="highlight-list">{product.highlights.map((item) => <li key={item}>{item}</li>)}</ul></>}<p className="information-note">Product information is shown as provided by Dermi Natural Healthcare. For product-specific questions, please contact the company.</p><Link href="/contact" className="button-primary" data-testid="link-product-enquiry">Ask us about this product <ArrowRight size={16} /></Link></div></section>
     {related.length > 0 && <section className="related-section page-wrap"><SectionIntro label={`MORE FROM ${product.brand}`} title="Explore the range" link="All products" to="/products" /><div className="product-grid related-grid">{related.map((item) => <ProductCard key={item.id} product={item} />)}</div></section>}
   </div></Shell>;
 }
 
 function BrandPage({ brandSlug }: { brandSlug: string }) {
   const family = families.find((item) => item.slug === brandSlug);
+  const familyReveal = useScrollReveal<HTMLElement>();
   if (!family) return <NotFound />;
   const familyProducts = publishedProducts.filter((product) => product.brand === family.title);
   return <Shell><div className="page-enter">
     <div className={`family-hero family-hero-${family.slug}`}><div className="family-hero-inner page-wrap"><div><span className="family-mark">{family.mark}</span><Eyebrow>{family.descriptor}</Eyebrow><h1 className="serif">{family.title}</h1><p>{family.intro}</p><Link href="/products" className="button-outline" data-testid={`link-${family.slug}-catalogue`}>Browse all products <ArrowRight size={16} /></Link></div><div className="family-hero-graphic" aria-hidden="true"><span className="family-ring ring-a" /><span className="family-ring ring-b" /><span className="family-watermark">{family.title.slice(0, 1)}</span><span className="family-graphic-caption">A DNH PRODUCT BRAND <i /> {family.mark}</span></div></div></div>
-    <section className="family-products page-wrap"><div className="family-results-heading"><div><Eyebrow>THE {family.title} COLLECTION</Eyebrow><h2 className="serif">{familyProducts.length.toString().padStart(2, '0')} products</h2></div><p>Product names, pack details and formula information, together in one place.</p></div><div className="product-grid">{familyProducts.map((product) => <ProductCard key={product.id} product={product} />)}</div></section>
+     <section ref={familyReveal.ref} className={`family-products page-wrap scroll-reveal${familyReveal.isVisible ? ' is-visible' : ''}`}><div className="family-results-heading"><div><Eyebrow>THE {family.title} COLLECTION</Eyebrow><h2 className="serif">{familyProducts.length.toString().padStart(2, '0')} products</h2></div><p>Product names, pack details and formula information, together in one place.</p></div><div className="product-grid">{familyProducts.map((product) => <ProductCard key={product.id} product={product} />)}</div></section>
     <section className="family-crosslink"><Eyebrow>DISCOVER MORE</Eyebrow><p>Explore the full Dermi Natural portfolio.</p><Link className="text-link" href="/products" data-testid="link-family-all-products">View all products <ArrowUpRight size={15} /></Link></section>
   </div></Shell>;
 }
@@ -206,6 +219,7 @@ function Contact() {
   const [values, setValues] = useState({ name: '', email: '', subject: '', message: '' });
   const [attempted, setAttempted] = useState(false);
   const [handoff, setHandoff] = useState(false);
+  const contactReveal = useScrollReveal<HTMLDivElement>();
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email);
   const errors = { name: !values.name.trim(), email: !emailOk, subject: !values.subject.trim(), message: values.message.trim().length < 12 };
   const valid = !Object.values(errors).some(Boolean);
@@ -220,7 +234,7 @@ function Contact() {
   function update(field: keyof typeof values, value: string) { setValues((old) => ({ ...old, [field]: value })); setHandoff(false); }
   return <Shell><div className="page-enter">
     <div className="page-hero contact-hero page-wrap"><div><Eyebrow>CONTACT DERMI NATURAL</Eyebrow><h1 className="serif">A conversation<br /><em>starts here.</em></h1></div><div className="page-hero-side"><span className="page-index">OPEN CHANNEL <i /> DIRECT ENQUIRIES</span><p>For product enquiries or general information, write to us or give us a call.</p></div></div>
-    <div className="contact-layout page-wrap"><aside className="contact-details"><Eyebrow>REACH OUR TEAM</Eyebrow><h2 className="serif">We’re listening.</h2><p>Choose whichever channel works best for you. We look forward to hearing from you.</p><a href="mailto:derminatural@gmail.com" className="contact-method" data-testid="link-contact-email"><span>EMAIL</span><b>derminatural@gmail.com</b><ArrowUpRight size={16} /></a><a href="tel:9137277233" className="contact-method" data-testid="link-contact-phone"><span>PHONE</span><b>91372 77233</b><ArrowUpRight size={16} /></a><div className="contact-details-foot"><span>DERMI NATURAL HEALTHCARE</span><span>DIRECT ENQUIRIES</span></div></aside>
+    <div ref={contactReveal.ref} className={`contact-layout page-wrap scroll-reveal${contactReveal.isVisible ? ' is-visible' : ''}`}><aside className="contact-details"><Eyebrow>REACH OUR TEAM</Eyebrow><h2 className="serif">We’re listening.</h2><p>Choose whichever channel works best for you. We look forward to hearing from you.</p><a href="mailto:derminatural@gmail.com" className="contact-method" data-testid="link-contact-email"><span>EMAIL</span><b>derminatural@gmail.com</b><ArrowUpRight size={16} /></a><a href="tel:9137277233" className="contact-method" data-testid="link-contact-phone"><span>PHONE</span><b>91372 77233</b><ArrowUpRight size={16} /></a><div className="contact-details-foot"><span>DERMI NATURAL HEALTHCARE</span><span>DIRECT ENQUIRIES</span></div></aside>
       <form className="contact-form" onSubmit={submit} noValidate data-testid="form-contact"><div className="form-heading"><span>01 — 04</span><span>YOUR ENQUIRY</span></div>
         <div className="form-row"><label>Your name<input value={values.name} onChange={(event) => update('name', event.target.value)} autoComplete="name" aria-invalid={attempted && errors.name} aria-describedby={attempted && errors.name ? 'err-name' : undefined} placeholder="How should we address you?" data-testid="input-contact-name" />{attempted && errors.name && <small className="field-error" id="err-name">Please enter your name.</small>}</label><label>Email address<input type="email" value={values.email} onChange={(event) => update('email', event.target.value)} autoComplete="email" aria-invalid={attempted && errors.email} aria-describedby={attempted && errors.email ? 'err-email' : undefined} placeholder="you@example.com" data-testid="input-contact-email" />{attempted && errors.email && <small className="field-error" id="err-email">Enter a valid email address.</small>}</label></div>
         <label>Subject<input value={values.subject} onChange={(event) => update('subject', event.target.value)} aria-invalid={attempted && errors.subject} aria-describedby={attempted && errors.subject ? 'err-subject' : undefined} placeholder="What would you like to know?" data-testid="input-contact-subject" />{attempted && errors.subject && <small className="field-error" id="err-subject">Please add a subject.</small>}</label>
@@ -281,17 +295,8 @@ function Metadata() {
   }, [location]);
   return null;
 }
-function InitialMark() {
-  const [visible, setVisible] = useState(true);
-  useEffect(() => {
-    const timer = window.setTimeout(() => setVisible(false), 650);
-    return () => window.clearTimeout(timer);
-  }, []);
-  if (!visible) return null;
-  return <div className="initial-mark" aria-hidden="true"><img src={officialLogo} alt="" /></div>;
-}
 function App() {
-  return <QueryClientProvider client={queryClient}><TooltipProvider><WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}><Metadata /><InitialMark /><Router /></WouterRouter><Toaster /></TooltipProvider></QueryClientProvider>;
+  return <QueryClientProvider client={queryClient}><TooltipProvider><WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}><Metadata /><Router /></WouterRouter><Toaster /></TooltipProvider></QueryClientProvider>;
 }
 
 export default App;

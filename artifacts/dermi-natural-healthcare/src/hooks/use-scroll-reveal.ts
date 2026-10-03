@@ -8,20 +8,25 @@ export function useScrollReveal<T extends HTMLElement = HTMLElement>() {
     const element = ref.current;
     if (!element) return;
 
-    if (!('IntersectionObserver' in window)) {
-      setIsVisible(true);
+    const revealImmediately = () => setIsVisible(true);
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      revealImmediately();
       return;
     }
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.unobserve(entry.target);
-      }
-    }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
-
-    observer.observe(element);
-    return () => observer.disconnect();
+    try {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          revealImmediately();
+          observer.unobserve(entry.target);
+        }
+      }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+      observer.observe(element);
+      return () => observer.disconnect();
+    } catch {
+      revealImmediately();
+    }
+    return undefined;
   }, []);
 
   return { ref, isVisible };
