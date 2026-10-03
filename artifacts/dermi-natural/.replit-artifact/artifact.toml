@@ -1,5 +1,5 @@
 kind = "web"
-previewPath = "/"
+previewPath = "/dermi-natural/"
 title = "Dermi Natural Healthcare"
 description = "The official Dermi Natural Healthcare website with company information, a searchable catalog for GLETSY, NEUTOGLOW and NEUTOZINC, and direct contact details."
 version = "1.0.0"
@@ -8,7 +8,7 @@ router = "path"
 
 [[services]]
 name = "web"
-paths = [ "/" ]
+paths = [ "/dermi-natural/" ]
 localPort = 25270
 
 [services.development]
@@ -25,4 +25,4 @@ to = "/index.html"
 
 [services.env]
 PORT = "25270"
-BASE_PATH = "/"
+BASE_PATH = "/dermi-natural/"
