@@ -2,7 +2,7 @@ services:
   - type: web
     name: dermi-natural-healthcare
     runtime: static
-    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm --filter @workspace/dermi-natural-healthcare run build
+    buildCommand: corepack pnpm@10.26.1 install --frozen-lockfile && corepack pnpm@10.26.1 --filter @workspace/dermi-natural-healthcare run build
     staticPublishPath: ./artifacts/dermi-natural-healthcare/dist/public
     envVars:
       - key: NODE_VERSION
