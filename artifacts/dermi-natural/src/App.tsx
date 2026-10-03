@@ -8,6 +8,7 @@ import { Route, Switch, useLocation, Router as WouterRouter, Link, useParams } f
 import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Check, Menu, Search, X } from 'lucide-react';
 import { families, products, type Family, type Product } from '@/data/products';
 import officialLogo from '@/assets/brand/official-logo.jpg';
+import officialHeroLogo from '@/assets/brand/official-logo-transparent.png';
 
 const queryClient = new QueryClient();
 const company = 'DERMI NATURAL HEALTHCARE PVT LTD';
@@ -130,7 +131,7 @@ function Home() {
            <path d="M121 164C123 129 143 101 178 82C173 116 154 143 127 171" fill="#c6cbb8" fillOpacity=".75" />
            <path d="M150 122L165 101M91 204L54 180" stroke="#a99a71" strokeWidth="1" />
          </svg>
-         <div className="logo-presence"><img src={officialLogo} alt="Official Dermi Natural leaf and monogram" /></div>
+         <div className="logo-presence"><img src={officialHeroLogo} alt="Official Dermi Natural leaf and monogram" /></div>
          <div className="stage-note"><span className="stage-note-rule" /><span>SKINCARE<br />NUTRITIONAL SUPPLEMENTS</span></div>
          <span className="stage-coordinate">DNH&nbsp; / &nbsp;03 FAMILIES</span>
          <span className="stage-orb orb-gold" /><span className="stage-orb orb-ivory" />

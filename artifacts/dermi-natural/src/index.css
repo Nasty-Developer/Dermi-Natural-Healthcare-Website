@@ -174,13 +174,13 @@
   top:28%;
   width:64%;
   animation: logo-arrive .5s .1s both;
+  mix-blend-mode:multiply;
 }
 .logo-presence img {
   display:block;
   width:100%;
   height:auto;
   object-fit:contain;
-  clip-path:ellipse(49% 44% at 50% 50%);
 }
 .stage-note {
   position:absolute;
