@@ -1,0 +1,360 @@
+ADD SECOND DIRECTOR TO THE WEBSITE — G. MOINUDDIN
+
+I have now uploaded the official photo for the second Director.
+
+Use the exact uploaded image as the profile photo for the second Director on the Dermi Natural Healthcare website.
+
+SECOND DIRECTOR NAME:
+G. Moinuddin
+
+ROLE:
+Director
+
+COMPANY:
+Dermi Natural Healthcare Pvt Ltd
+
+IMPORTANT:
+This is the SECOND Director.
+
+The website should now have exactly these two Directors:
+
+1. Israr Siddique
+2. G. Moinuddin
+
+Do NOT create any additional Directors or placeholder people.
+
+Do NOT invent:
+- Biography
+- Qualifications
+- Achievements
+- Awards
+- Experience
+- Certifications
+- Professional claims
+
+I will provide additional information later if required.
+
+==================================================
+USE THE UPLOADED IMAGE
+==================================================
+
+Use the exact image I have just uploaded for:
+
+G. Moinuddin
+
+Do NOT:
+- Generate another image
+- Use a stock photo
+- Replace the uploaded photo
+- Alter the person's appearance
+- Recolor the photograph
+- Apply unnecessary filters
+- Distort the image
+- Stretch the image
+- Crop the face awkwardly
+
+Preserve the original image proportions.
+
+The portrait should remain professional and clearly visible.
+
+==================================================
+UPDATE THE EXISTING LEADERSHIP SECTION
+==================================================
+
+Do NOT create a completely separate random section for the second Director.
+
+Update the existing Leadership / Directors section so both Directors are presented as part of the same professionally designed composition.
+
+The two Directors should feel like part of one cohesive leadership presentation.
+
+DIRECTORS:
+
+ISRAR SIDDIQUE
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+G. MOINUDDIN
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+The current website has too many square and rigid visual elements.
+
+Continue improving the Leadership section using:
+
+- Soft rounded geometry
+- Organic visual framing
+- Elegant spacing
+- Premium editorial layout
+- Subtle borders
+- Soft shadows
+- Warm ivory/cream backgrounds
+- Deep navy typography
+- Muted gold accents
+
+Do NOT make the Directors look like generic square employee cards.
+
+Avoid:
+- Bootstrap-style team grids
+- Harsh rectangular boxes
+- Thick borders
+- Generic avatars
+- Overly rounded cartoonish cards
+
+The design should feel:
+
+PREMIUM
+PROFESSIONAL
+ELEGANT
+MODERN
+TRUSTWORTHY
+HEALTHCARE-FOCUSED
+
+==================================================
+TWO-DIRECTOR LAYOUT
+==================================================
+
+Create a visually sophisticated layout for the two Directors.
+
+Possible desktop direction:
+
+DIRECTOR 1:
+Israr Siddique portrait + information
+
+DIRECTOR 2:
+G. Moinuddin portrait + information
+
+However, do NOT force both into identical rigid cards if a more editorial asymmetric composition looks better.
+
+The important requirement is that both Directors are clearly presented and visually balanced.
+
+Use appropriate spacing between the portraits.
+
+Each portrait should have enough room so that the full professional portrait is visible.
+
+==================================================
+IMAGE HANDLING
+==================================================
+
+Because the two uploaded portraits may have different dimensions/aspect ratios:
+
+Do NOT force them into aggressive fixed cropping.
+
+Preserve their proportions.
+
+Use a flexible portrait image container.
+
+Make sure:
+
+- Face remains visible
+- Upper body remains naturally framed
+- No awkward clipping
+- No stretching
+- No distortion
+
+Consistency should come from the surrounding design and spacing, not from cutting the portraits into identical crops.
+
+==================================================
+DIRECTOR INFORMATION
+==================================================
+
+Display only factual information currently provided:
+
+Israr Siddique
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+G. Moinuddin
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+Do not add any made-up biography or additional information.
+
+Leave the section architecture ready for biographies later.
+
+==================================================
+ANIMATION
+==================================================
+
+Add subtle premium animation when the Leadership section enters the viewport.
+
+For example:
+
+- Portrait fade/reveal
+- Very subtle upward movement
+- Gentle image scale
+- Name fade-in
+- Role fade-in
+- Slight stagger between the two Directors
+
+Keep the animation:
+
+- Smooth
+- Lightweight
+- Elegant
+- Fast
+
+Do NOT use:
+
+- Bouncing
+- Spinning
+- Flashing
+- Excessive zoom
+- Heavy 3D
+- Distracting motion
+
+Respect:
+
+prefers-reduced-motion
+
+==================================================
+MOBILE DESIGN
+==================================================
+
+On mobile:
+
+Stack the Directors naturally.
+
+Example:
+
+Israr Siddique
+[Portrait]
+Director
+
+then
+
+G. Moinuddin
+[Portrait]
+Director
+
+Make sure the spacing is generous and the images remain fully visible.
+
+Do not allow:
+
+- Horizontal overflow
+- Cropped faces
+- Broken layouts
+- Text overlap
+- Tiny portraits
+- Excessive scrolling caused by oversized elements
+
+==================================================
+ADMIN / FUTURE SCALABILITY
+==================================================
+
+Keep the leadership system structured so more Directors or leadership members can be added later.
+
+For now there are exactly two:
+
+1. Israr Siddique
+2. G. Moinuddin
+
+Use reusable structured data rather than duplicating hardcoded markup unnecessarily.
+
+Potential fields:
+
+- name
+- role
+- company
+- image
+- biography
+- display order
+- status
+
+Do not expose empty/fake content to visitors.
+
+==================================================
+BRAND CONSISTENCY
+==================================================
+
+The Leadership section must match the rest of Dermi Natural Healthcare.
+
+Use:
+
+- Deep navy
+- Muted gold
+- Warm cream
+- Ivory
+- Soft grey
+
+Do NOT use purple or neon colors.
+
+The section should feel connected to:
+
+- Hero
+- Our Story
+- Products
+- Contact
+- Footer
+
+==================================================
+IMPORTANT — DO NOT BREAK EXISTING WEBSITE
+==================================================
+
+Do not break:
+
+- Header
+- Navigation
+- Hero
+- Products
+- Product details
+- Contact
+- Existing admin panel
+- Backend
+- Existing routes
+- Responsive behavior
+
+This task is to update/refine the Leadership section.
+
+==================================================
+BROWSER VERIFICATION
+==================================================
+
+After implementing the second Director:
+
+OPEN THE ACTUAL WEBSITE IN THE BROWSER.
+
+Visually inspect the rendered Leadership section.
+
+Check:
+
+- Israr Siddique image
+- G. Moinuddin image
+- Image proportions
+- Face visibility
+- Typography
+- Spacing
+- Alignment
+- Two-person composition
+- Mobile responsiveness
+- Animation smoothness
+- Brand consistency
+
+Then make a refinement pass.
+
+Do not consider the task complete just because the component renders without a code error.
+
+==================================================
+FINAL REQUIREMENT
+==================================================
+
+The website must now show EXACTLY TWO Directors:
+
+1. ISRAR SIDDIQUE
+   Director
+   Dermi Natural Healthcare Pvt Ltd
+
+2. G. MOINUDDIN
+   Director
+   Dermi Natural Healthcare Pvt Ltd
+
+Use the official uploaded images for both.
+
+Do not invent additional information.
+
+Make the two-person Leadership section look extremely polished, premium, smooth, organic, and integrated with the Dermi Natural Healthcare brand.
+
+The final result should look like a professionally designed corporate healthcare website, not a generic team-card template.
