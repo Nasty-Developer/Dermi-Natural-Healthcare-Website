@@ -1,19 +1,18 @@
 # Product image files
 
-Place each official pack image in `public/products/` using the matching filename below. The product cards and detail page load the image by its stable product slug; no layout changes are needed.
+The typed catalog in `src/data/products.ts` is the source of truth for product names, brands, facts, display order, status, and image associations. Each product's first image is its primary pack shot. Additional images remain grouped with that product for detail-page galleries.
 
-| Product | Filename |
-| --- | --- |
-| GLETSY GLOW SOAP | `gletsy-glow-soap.jpg` |
-| GLETSY FACE WASH | `gletsy-face-wash.jpg` |
-| GLETSY ACNE FACE WASH | `gletsy-acne-face-wash.jpg` |
-| GLETSY CREAM | `gletsy-cream.jpg` |
-| GLETSY MOISTURISER | `gletsy-moisturiser.jpg` |
-| GLETSY SUNSCREEN CREAM | `gletsy-sunscreen-cream.jpg` |
-| NEUTOGLOW - B | `neutoglow-b.jpg` |
-| NEUTOGLOW - G600 | `neutoglow-g600.jpg` |
-| NEUTOGLOW - G100 | `neutoglow-g100.jpg` |
-| NEUTOGLOW - VC | `neutoglow-vc.jpg` |
-| NEUTOZINC - TAB | `neutozinc-tab.jpg` |
+The original supplied PNGs are preserved in the workspace attachments. The files listed below are transparent WebP display derivatives sized for the website; product packaging has not been altered.
 
-Keep product names and formulas in `src/data/products.ts`. For a supplied image in a different format or an additional gallery image, update that product's `image` or `gallery` path there.
+| Product | Primary image | Additional image |
+| --- | --- | --- |
+| Gletsy Acne Control Face Wash | `gletsy-acne-control-face-wash.webp` | `gletsy-acne-control-face-wash-angle.webp` |
+| Gletsy Skin Lightening & Brightening Cream | `gletsy-skin-lightening-brightening-cream.webp` | `gletsy-skin-lightening-brightening-cream-box.webp` |
+| Gletsy Oil Free Moisturizer | `gletsy-oil-free-moisturizer.webp` | `gletsy-oil-free-moisturizer-box.webp` |
+| Gletsy Sunscreen Cream SPF 50 PA+++ | `gletsy-sunscreen-spf-50-pa-plus-plus-plus.webp` | — |
+| Gletsy Face Wash – Skin Brightening | `gletsy-face-wash-skin-brightening.webp` | — |
+| NeutoGlow 1000 mg Vitamin C Tablet | `neutoglow-vitamin-c-1000mg.webp` | — |
+| NeutoGlow Biotin Tablet | `neutoglow-biotin-tablet.webp` | — |
+| NeutoGlow L-Glutathione Tablet | `neutoglow-l-glutathione-tablet.webp` | — |
+
+Keep images, alternate views, and product facts linked in the product record when the catalog changes. Add new products through the same structured data instead of placing product-specific content in page components.
