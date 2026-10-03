@@ -1,167 +1,261 @@
-export type Family = 'Gletsy' | 'Neutoglow' | 'Neutozinc';
+export type ProductBrand = 'GLETSY' | 'NEUTOGLOW';
+export type ProductStatus = 'published' | 'draft';
+
+export type ProductImage = {
+  src: string;
+  alt: string;
+};
 
 export type Product = {
   id: string;
   slug: string;
-  family: Family;
+  brand: ProductBrand;
   name: string;
+  category: string;
+  sizePack: string;
   description: string;
   ingredients: string[];
-  image: string;
-  gallery: string[];
   highlights: string[];
-  status: 'listed';
-  category: string;
+  images: ProductImage[];
+  status: ProductStatus;
+  displayOrder: number;
+  featured?: boolean;
+};
+
+const listed = {
+  status: 'published' as const,
 };
 
 export const products: Product[] = [
   {
-    id: 'gletsy-glow-soap',
-    slug: 'gletsy-glow-soap',
-    family: 'Gletsy',
-    name: 'GLETSY GLOW SOAP',
-    description: 'A cleansing bar from the GLETSY family. The listed formula is shown below.',
-    ingredients: ['Glutathione', 'Kojic Acid', 'Vitamin-E'],
-    image: '/products/gletsy-glow-soap.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Cleansing bar',
-  },
-  {
-    id: 'gletsy-face-wash',
-    slug: 'gletsy-face-wash',
-    family: 'Gletsy',
-    name: 'GLETSY FACE WASH',
-    description: 'A face wash from the GLETSY family with its formula details listed below.',
-    ingredients: ['Glutathione', 'Kojic Acid', 'Olive Oil'],
-    image: '/products/gletsy-face-wash.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
+    id: 'gletsy-acne-control-face-wash',
+    slug: 'gletsy-acne-control-face-wash',
+    brand: 'GLETSY',
+    name: 'Gletsy Acne Control Face Wash',
     category: 'Face wash',
+    sizePack: '100 ml',
+    description:
+      'A 100 ml face wash. The supplied packaging names acne and acne-prone skin and lists salicylic acid and tea tree oil.',
+    ingredients: ['Salicylic Acid', 'Tea Tree Oil'],
+    highlights: ['Acne Control', 'For acne-prone skin'],
+    images: [
+      {
+        src: '/products/gletsy-acne-control-face-wash.webp',
+        alt: 'Front of the Gletsy Acne Control Face Wash 100 ml box',
+      },
+      {
+        src: '/products/gletsy-acne-control-face-wash-angle.webp',
+        alt: 'Angled view of the Gletsy Acne Control Face Wash 100 ml box',
+      },
+    ],
+    ...listed,
+    displayOrder: 1,
+    featured: true,
   },
   {
-    id: 'gletsy-acne-face-wash',
-    slug: 'gletsy-acne-face-wash',
-    family: 'Gletsy',
-    name: 'GLETSY ACNE FACE WASH',
-    description: 'A GLETSY face wash with Salicylic Acid and Teatree Oil listed in the formula.',
-    ingredients: ['Salicylic Acid', 'Teatree Oil'],
-    image: '/products/gletsy-acne-face-wash.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Face wash',
-  },
-  {
-    id: 'gletsy-cream',
-    slug: 'gletsy-cream',
-    family: 'Gletsy',
-    name: 'GLETSY CREAM',
-    description: 'A cream from the GLETSY family with its formula details listed below.',
-    ingredients: ['Glutathione', 'Kojic Acid', 'Mullberry'],
-    image: '/products/gletsy-cream.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
+    id: 'gletsy-skin-lightening-brightening-cream',
+    slug: 'gletsy-skin-lightening-brightening-cream',
+    brand: 'GLETSY',
+    name: 'Gletsy Skin Lightening & Brightening Cream',
     category: 'Cream',
+    sizePack: '30 g',
+    description:
+      'A 30 g cream. The supplied packaging lists kojic acid dipalmitate, glutathione, and mulberry.',
+    ingredients: ['Kojic Acid Dipalmitate', 'Glutathione', 'Mulberry'],
+    highlights: ['Skin Lightening & Brightening'],
+    images: [
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream.webp',
+        alt: 'Front of the Gletsy Skin Lightening and Brightening Cream 30 g box',
+      },
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-box.webp',
+        alt: 'Alternate view of the Gletsy Skin Lightening and Brightening Cream box',
+      },
+    ],
+    ...listed,
+    displayOrder: 2,
   },
   {
-    id: 'gletsy-moisturiser',
-    slug: 'gletsy-moisturiser',
-    family: 'Gletsy',
-    name: 'GLETSY MOISTURISER',
-    description: 'A moisturiser from the GLETSY family with its formula details listed below.',
-    ingredients: ['Aquaporin Booster', 'Cicaf Extract', 'Willo Bark Extract'],
-    image: '/products/gletsy-moisturiser.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Moisturiser',
+    id: 'gletsy-oil-free-moisturizer',
+    slug: 'gletsy-oil-free-moisturizer',
+    brand: 'GLETSY',
+    name: 'Gletsy Oil Free Moisturizer',
+    category: 'Moisturizer',
+    sizePack: '70 g',
+    description:
+      'A 70 g oil-free moisturizer. The supplied packaging notes hydration, quick absorption, and a non-oily, non-greasy texture.',
+    ingredients: [],
+    highlights: [
+      'Oil free',
+      'Intense hydration',
+      'Quick absorption',
+      'Non-oily, non-greasy texture',
+    ],
+    images: [
+      {
+        src: '/products/gletsy-oil-free-moisturizer.webp',
+        alt: 'Front of the Gletsy Oil Free Moisturizer 70 g box',
+      },
+      {
+        src: '/products/gletsy-oil-free-moisturizer-box.webp',
+        alt: 'Alternate view of the Gletsy Oil Free Moisturizer 70 g box',
+      },
+    ],
+    ...listed,
+    displayOrder: 3,
   },
   {
-    id: 'gletsy-sunscreen-cream',
-    slug: 'gletsy-sunscreen-cream',
-    family: 'Gletsy',
-    name: 'GLETSY SUNSCREEN CREAM',
-    description: 'A sunscreen cream from the GLETSY family with its formula details listed below.',
-    ingredients: ['Ceto Stearyl Alcohol', 'Benzophenone-3', 'Avobenzone', 'Ethylhexyl Salicylate', 'C12 Alkyl Benzoate'],
-    image: '/products/gletsy-sunscreen-cream.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Sunscreen cream',
+    id: 'gletsy-sunscreen-cream-spf-50',
+    slug: 'gletsy-sunscreen-cream-spf-50',
+    brand: 'GLETSY',
+    name: 'Gletsy Sunscreen Cream SPF 50 PA+++',
+    category: 'Sunscreen',
+    sizePack: '50 g',
+    description:
+      'A 50 g sunscreen cream labeled SPF 50 PA+++. The supplied packaging lists UVA/UVB, IR, and blue-light protection.',
+    ingredients: [],
+    highlights: [
+      'SPF 50 PA+++',
+      'UVA & UVB protection',
+      'IR protection',
+      'Blue-light protection',
+    ],
+    images: [
+      {
+        src: '/products/gletsy-sunscreen-spf-50-pa-plus-plus-plus.webp',
+        alt: 'Front of the Gletsy Sunscreen Cream SPF 50 PA+++ 50 g box',
+      },
+    ],
+    ...listed,
+    displayOrder: 4,
   },
   {
-    id: 'neutoglow-b',
-    slug: 'neutoglow-b',
-    family: 'Neutoglow',
-    name: 'NEUTOGLOW - B',
-    description: 'A NEUTOGLOW product with Biotin 10mg listed in the supplied formula.',
-    ingredients: ['Biotin 10mg'],
-    image: '/products/neutoglow-b.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
+    id: 'gletsy-face-wash-skin-brightening',
+    slug: 'gletsy-face-wash-skin-brightening',
+    brand: 'GLETSY',
+    name: 'Gletsy Face Wash – Skin Brightening',
+    category: 'Face wash',
+    sizePack: '100 ml',
+    description:
+      'A 100 ml face wash. The supplied packaging names skin brightening and lists kojic acid dipalmitate and glutathione.',
+    ingredients: ['Kojic Acid Dipalmitate', 'Glutathione'],
+    highlights: ['Skin Brightening'],
+    images: [
+      {
+        src: '/products/gletsy-face-wash-skin-brightening.webp',
+        alt: 'Front of the Gletsy Face Wash for Skin Brightening 100 ml box',
+      },
+    ],
+    ...listed,
+    displayOrder: 5,
+  },
+  {
+    id: 'neutoglow-vitamin-c-1000-mg',
+    slug: 'neutoglow-vitamin-c-1000-mg',
+    brand: 'NEUTOGLOW',
+    name: 'NeutoGlow 1000 mg Vitamin C Tablet',
+    category: 'Vitamin supplement',
+    sizePack: '3 × 10 tablets',
+    description:
+      'A 3 × 10 tablet pack. The supplied packaging lists Vitamin C 1000 mg and Amla Extract.',
+    ingredients: ['Vitamin C 1000 mg', 'Amla Extract'],
+    highlights: ['Vitamin C 1000 mg'],
+    images: [
+      {
+        src: '/products/neutoglow-vitamin-c-1000mg.webp',
+        alt: 'Front of the NeutoGlow 1000 mg Vitamin C Tablet 3 × 10 pack',
+      },
+    ],
+    ...listed,
+    displayOrder: 6,
+    featured: true,
+  },
+  {
+    id: 'neutoglow-biotin-tablet',
+    slug: 'neutoglow-biotin-tablet',
+    brand: 'NEUTOGLOW',
+    name: 'NeutoGlow Biotin Tablet',
     category: 'Nutritional supplement',
+    sizePack: '3 × 10 tablets',
+    description:
+      'A 3 × 10 tablet pack. The supplied packaging lists biotin, B vitamins, vitamins C, D and E, zinc, and iron.',
+    ingredients: [
+      'Beta-carotene',
+      'Vitamin B1',
+      'Vitamin B2',
+      'Niacinamide',
+      'Calcium Pantothenate',
+      'Pantothenic Acid',
+      'Biotin',
+      'Folic Acid',
+      'Vitamin C',
+      'Vitamin D',
+      'Vitamin E',
+      'Zinc',
+      'Iron',
+    ],
+    highlights: ['Biotin'],
+    images: [
+      {
+        src: '/products/neutoglow-biotin-tablet.webp',
+        alt: 'Front of the NeutoGlow Biotin Tablet 3 × 10 pack',
+      },
+    ],
+    ...listed,
+    displayOrder: 7,
   },
   {
-    id: 'neutoglow-g600',
-    slug: 'neutoglow-g600',
-    family: 'Neutoglow',
-    name: 'NEUTOGLOW - G600',
-    description: 'A NEUTOGLOW product with Glutathione 600mg and Vitamin C 20mg listed in the supplied formula.',
-    ingredients: ['Glutathione 600mg', 'Vitamin C 20mg'],
-    image: '/products/neutoglow-g600.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
+    id: 'neutoglow-l-glutathione-tablet',
+    slug: 'neutoglow-l-glutathione-tablet',
+    brand: 'NEUTOGLOW',
+    name: 'NeutoGlow L-Glutathione Tablet',
     category: 'Nutritional supplement',
-  },
-  {
-    id: 'neutoglow-g100',
-    slug: 'neutoglow-g100',
-    family: 'Neutoglow',
-    name: 'NEUTOGLOW - G100',
-    description: 'A NEUTOGLOW product with Glutathione 100mg and Vitamin C 100mg listed in the supplied formula.',
-    ingredients: ['Glutathione 100mg', 'Vitamin C 100mg'],
-    image: '/products/neutoglow-g100.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Nutritional supplement',
-  },
-  {
-    id: 'neutoglow-vc',
-    slug: 'neutoglow-vc',
-    family: 'Neutoglow',
-    name: 'NEUTOGLOW - VC',
-    description: 'A NEUTOGLOW product with Vitamin C Complex 1000 mg listed in the supplied formula.',
-    ingredients: ['Vitamin C Complex 1000 mg'],
-    image: '/products/neutoglow-vc.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Nutritional supplement',
-  },
-  {
-    id: 'neutozinc-tab',
-    slug: 'neutozinc-tab',
-    family: 'Neutozinc',
-    name: 'NEUTOZINC - TAB',
-    description: 'A NEUTOZINC product with Multivitamin listed in the supplied formula.',
-    ingredients: ['Multivitamin'],
-    image: '/products/neutozinc-tab.jpg',
-    gallery: [],
-    highlights: [],
-    status: 'listed',
-    category: 'Nutritional supplement',
+    sizePack: '3 × 10 tablets',
+    description:
+      'A 3 × 10 tablet pack. The supplied packaging lists an L-glutathione complex, NAC, astaxanthin, grape seed extract, licorice, vitamins C and E, and zinc.',
+    ingredients: [
+      'L-Glutathione Complex',
+      'N-Acetyl Cysteine (NAC)',
+      'Astaxanthin',
+      'Grape Seed Extract',
+      'Licorice Extract',
+      'Vitamin C',
+      'Vitamin E',
+      'Zinc',
+    ],
+    highlights: ['L-Glutathione'],
+    images: [
+      {
+        src: '/products/neutoglow-l-glutathione-tablet.webp',
+        alt: 'Front of the NeutoGlow L-Glutathione Tablet 3 × 10 pack',
+      },
+    ],
+    ...listed,
+    displayOrder: 8,
+    featured: true,
   },
 ];
 
-export const families: { slug: string; title: Family; descriptor: string; intro: string; mark: string }[] = [
-  { slug: 'gletsy', title: 'Gletsy', descriptor: 'SKINCARE', intro: 'A considered skincare range, presented with clarity around each product and its listed ingredients.', mark: '01' },
-  { slug: 'neutoglow', title: 'Neutoglow', descriptor: 'NUTRITIONAL SUPPLEMENTS', intro: 'A focused range of nutritional supplements, with product information made easy to explore.', mark: '02' },
-  { slug: 'neutozinc', title: 'Neutozinc', descriptor: 'NUTRITIONAL SUPPLEMENTS', intro: 'A straightforward supplement range with one clearly identified product.', mark: '03' },
+export const families: {
+  slug: string;
+  title: ProductBrand;
+  descriptor: string;
+  intro: string;
+  mark: string;
+}[] = [
+  {
+    slug: 'gletsy',
+    title: 'GLETSY',
+    descriptor: 'SKINCARE',
+    intro: 'Explore the Gletsy skincare range and the product information shown on each pack.',
+    mark: '01',
+  },
+  {
+    slug: 'neutoglow',
+    title: 'NEUTOGLOW',
+    descriptor: 'NUTRITIONAL SUPPLEMENTS',
+    intro: 'Explore NeutoGlow supplement packs and the information shown on each pack.',
+    mark: '02',
+  },
 ];
