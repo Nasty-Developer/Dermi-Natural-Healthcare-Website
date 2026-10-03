@@ -109,7 +109,32 @@ function Home() {
   return <Shell><div className="page-enter">
     <section className="home-hero">
       <div className="hero-copy"><Eyebrow>HEALTHCARE & WELLNESS</Eyebrow><h1 className="serif">Care, made<br /><em>considerate.</em></h1><p className="hero-lede">A healthcare company with a clear point of view: thoughtful product ranges, and information you can actually find.</p><div className="hero-actions"><Link href="/products" className="button-primary" data-testid="link-hero-products">Explore our products <ArrowRight size={16} /></Link><Link href="/about" className="text-link" data-testid="link-hero-story">Meet Dermi Natural <ArrowUpRight size={15} /></Link></div><div className="hero-note"><span className="note-mark">01</span><span>Independent product information.<br />A considered portfolio.</span></div></div>
-      <div className="hero-art hero-grid" aria-label="Dermi Natural brand identity"><div className="hero-art-top"><span>DERMI NATURAL</span><span>PRODUCT PORTFOLIO</span></div><div className="hero-logo-card"><img src={officialLogo} alt="Official Dermi Natural leaf and monogram" /><div className="logo-card-caption"><span>THE DNH MARK</span><span>FORM / BOTANICAL</span></div></div><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="hero-art-bottom"><span>SKINCARE</span><i></i><span>NUTRITION</span><i></i><span>WELLNESS</span></div><div className="hero-index">01<br /><small>— 03</small></div></div>
+       <div className="hero-art botanical-stage" role="img" aria-label="Dermi Natural official leaf and monogram with a botanical illustration">
+         <div className="stage-wash" />
+         <div className="stage-arc stage-arc-one" />
+         <div className="stage-arc stage-arc-two" />
+         <span className="stage-kicker">DERMI NATURAL</span>
+         <div className="botanical-shadow botanical-shadow-one" />
+         <div className="botanical-shadow botanical-shadow-two" />
+         <svg className="botanical-branch branch-one" viewBox="0 0 250 390" fill="none" aria-hidden="true">
+           <path d="M124 374C116 290 126 212 159 114C172 76 190 44 222 15" stroke="#8b967d" strokeWidth="1.4" />
+           <path d="M142 257C94 238 66 207 44 165C83 172 119 198 146 231" fill="#b7bea8" fillOpacity=".72" />
+           <path d="M155 195C162 150 188 117 229 91C229 135 208 172 164 205" fill="#c6cbb8" fillOpacity=".8" />
+           <path d="M126 312C82 298 53 273 29 235C70 240 105 261 131 290" fill="#d2d4c3" fillOpacity=".9" />
+           <path d="M170 145C170 105 183 68 210 37C222 78 209 116 176 151" fill="#b7bea8" fillOpacity=".7" />
+           <path d="M142 257L88 209M155 195L203 138M126 312L73 269" stroke="#929d84" strokeWidth="1" />
+         </svg>
+         <svg className="botanical-branch branch-two" viewBox="0 0 220 320" fill="none" aria-hidden="true">
+           <path d="M33 300C70 226 117 151 190 48" stroke="#aa9a6d" strokeWidth="1.2" />
+           <path d="M77 228C48 218 30 196 23 163C56 176 75 195 84 216" fill="#d1c69e" fillOpacity=".8" />
+           <path d="M121 164C123 129 143 101 178 82C173 116 154 143 127 171" fill="#c6cbb8" fillOpacity=".75" />
+           <path d="M150 122L165 101M91 204L54 180" stroke="#a99a71" strokeWidth="1" />
+         </svg>
+         <div className="logo-presence"><img src={officialLogo} alt="Official Dermi Natural leaf and monogram" /></div>
+         <div className="stage-note"><span className="stage-note-rule" /><span>SKINCARE<br />NUTRITIONAL SUPPLEMENTS</span></div>
+         <span className="stage-coordinate">DNH&nbsp; / &nbsp;03 FAMILIES</span>
+         <span className="stage-orb orb-gold" /><span className="stage-orb orb-ivory" />
+       </div>
       <div className="hero-footline"><span>DERMI NATURAL HEALTHCARE PVT LTD</span><span>THOUGHTFUL BY DESIGN <ArrowDownRight size={13} /></span></div>
     </section>
     <FamilyStrip />
