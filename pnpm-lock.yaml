@@ -221,7 +221,11 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
 
+<<<<<<< HEAD
   artifacts/dermi-natural-healthcare:
+=======
+  artifacts/dermi-natural:
+>>>>>>> origin/main~
     devDependencies:
       '@hookform/resolvers':
         specifier: ^3.10.0
