@@ -5,6 +5,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, useLocation, Router as WouterRouter, Link, useParams } from 'wouter';
 import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Check, Menu, Search, X } from 'lucide-react';
+import { WhatsAppButton } from '@/components/whatsapp-button';
+import { GlowAIChat } from '@/components/glow-ai-chat';
 import { families, products, type Product, type ProductBrand, type ProductImage } from '@/data/products';
 import { leadershipProfiles } from '@/data/leadership';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
@@ -288,10 +290,73 @@ function Metadata() {
     setMetaContent('meta[name="description"]', page.description, 'name', 'description');
     setMetaContent('meta[property="og:title"]', page.title, 'property', 'og:title');
     setMetaContent('meta[property="og:description"]', page.description, 'property', 'og:description');
-    setMetaContent('meta[property="og:image"]', new URL(officialLogo, window.location.href).toString(), 'property', 'og:image');
+    const origin = window.location.origin;
+    const normalizedPath = location === '/' ? '/' : location.replace(/\/+$/, '') || '/';
+    const canonicalUrl = new URL(normalizedPath, origin).toString();
+    const logoUrl = new URL(officialLogo, origin).toString();
+    setMetaContent('meta[property="og:url"]', canonicalUrl, 'property', 'og:url');
+    setMetaContent('meta[property="og:site_name"]', company, 'property', 'og:site_name');
+    setMetaContent('meta[property="og:image"]', logoUrl, 'property', 'og:image');
     setMetaContent('meta[name="twitter:title"]', page.title, 'name', 'twitter:title');
     setMetaContent('meta[name="twitter:description"]', page.description, 'name', 'twitter:description');
-    setMetaContent('meta[name="twitter:image"]', new URL(officialLogo, window.location.href).toString(), 'name', 'twitter:image');
+    setMetaContent('meta[name="twitter:image"]', logoUrl, 'name', 'twitter:image');
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': `${origin}/#organization`,
+          name: company,
+          url: origin,
+          logo: logoUrl,
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${origin}/#website`,
+          name: 'Dermi Natural Healthcare',
+          url: origin,
+          publisher: { '@id': `${origin}/#organization` },
+        },
+        ...(product
+          ? [
+              {
+                '@type': 'Product',
+                '@id': `${canonicalUrl}#product`,
+                name: product.name,
+                description: product.description,
+                image: product.images.map((image) =>
+                  new URL(image.src, origin).toString(),
+                ),
+                category: product.category,
+                brand: {
+                  '@type': 'Brand',
+                  name: product.brand,
+                },
+              },
+            ]
+          : []),
+      ],
+    };
+    let structuredDataScript =
+      document.querySelector<HTMLScriptElement>(
+        'script[type="application/ld+json"][data-site-structured-data]',
+      );
+    if (!structuredDataScript) {
+      structuredDataScript = document.createElement('script');
+      structuredDataScript.type = 'application/ld+json';
+      structuredDataScript.dataset.siteStructuredData = 'true';
+      document.head.appendChild(structuredDataScript);
+    }
+    structuredDataScript.textContent = JSON.stringify(structuredData);
   }, [location]);
   return null;
 }
@@ -317,7 +382,7 @@ function App() {
     };
   }, []);
 
-  return <QueryClientProvider client={queryClient}><TooltipProvider><WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}><Metadata /><Router /></WouterRouter><Toaster /></TooltipProvider></QueryClientProvider>;
+  return <QueryClientProvider client={queryClient}><TooltipProvider><WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}><Metadata /><Router /></WouterRouter><WhatsAppButton /><GlowAIChat /><Toaster /></TooltipProvider></QueryClientProvider>;
 }
 
 export default App;

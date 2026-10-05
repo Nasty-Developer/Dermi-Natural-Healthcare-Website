@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: glowai
+    description: Dermi Natural Healthcare’s product information assistant
 paths:
   /healthz:
     get:
@@ -24,6 +26,48 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /glowai/chat:
+    post:
+      operationId: streamGlowAiChat
+      tags: [glowai]
+      summary: Stream a GlowAI product-assistant reply
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GlowAiChatInput"
+      responses:
+        "200":
+          description: Server-sent events containing reply text chunks
+          content:
+            text/event-stream:
+              schema:
+                type: string
+        "400":
+          description: Invalid chat input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GlowAiChatError"
+        "429":
+          description: The chat rate limit was reached
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GlowAiChatError"
+        "502":
+          description: The configured AI provider failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GlowAiChatError"
+        "503":
+          description: GlowAI is not configured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GlowAiChatError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +77,31 @@ components:
           type: string
       required:
         - status
+    GlowAiMessage:
+      type: object
+      properties:
+        role:
+          type: string
+          enum: [user, assistant]
+        content:
+          type: string
+          minLength: 1
+          maxLength: 1200
+      required: [role, content]
+    GlowAiChatInput:
+      type: object
+      properties:
+        messages:
+          type: array
+          minItems: 1
+          maxItems: 12
+          items:
+            $ref: "#/components/schemas/GlowAiMessage"
+      required: [messages]
+    GlowAiChatError:
+      type: object
+      properties:
+        error:
+          type: string
+      required: [error]
 
