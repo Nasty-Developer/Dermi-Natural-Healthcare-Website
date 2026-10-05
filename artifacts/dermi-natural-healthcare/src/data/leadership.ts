@@ -7,8 +7,7 @@ export interface LeadershipProfile {
   role: string;
   company: string;
   image: string;
-  imageWidth: number;
-  imageHeight: number;
+  imageObjectPosition?: string;
   biography?: string;
 }
 
@@ -19,8 +18,6 @@ export const leadershipProfiles: readonly LeadershipProfile[] = [
     role: 'Director',
     company: 'Dermi Natural Healthcare Pvt Ltd',
     image: directorPortrait,
-    imageWidth: 1086,
-    imageHeight: 1448,
   },
   {
     id: 'g-moinuddin',
@@ -28,7 +25,6 @@ export const leadershipProfiles: readonly LeadershipProfile[] = [
     role: 'Director',
     company: 'Dermi Natural Healthcare Pvt Ltd',
     image: secondDirectorPortrait,
-    imageWidth: 704,
-    imageHeight: 1524,
+    imageObjectPosition: 'center top',
   },
 ];

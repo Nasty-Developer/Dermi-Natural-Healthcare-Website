@@ -134,21 +134,26 @@ function About() {
 
 function LeadershipSection() {
   const { ref, isVisible } = useScrollReveal<HTMLElement>();
-  const maxPortraitHeight = 620;
   return <section id="leadership" ref={ref} className={`leadership-section page-wrap${isVisible ? ' is-visible' : ''}`} aria-labelledby="leadership-title" data-testid="section-leadership">
     <header className="leadership-heading">
       <Eyebrow>LEADERSHIP</Eyebrow>
       <h2 id="leadership-title" className="serif">Meet Our <em>Directors</em></h2>
     </header>
     <div className="leadership-grid">
-      {leadershipProfiles.map((director, index) => {
-        const portraitWidth = Math.min(460, director.imageWidth / director.imageHeight * maxPortraitHeight);
-        return <article className="leadership-card" key={director.id} data-testid={`card-director-${director.id}`}>
+      {leadershipProfiles.map((director, index) => (
+        <article className="leadership-card" key={director.id} data-testid={`card-director-${director.id}`}>
           <figure className="leadership-portrait">
-            <div className="leadership-photo-frame" style={{ width: `min(100%, ${portraitWidth}px)`, aspectRatio: `${director.imageWidth} / ${director.imageHeight}` }}>
-              <img src={director.image} alt={`Portrait of ${director.name}`} loading="lazy" decoding="async" data-testid={`img-director-${director.id}`} />
+            <div className="leadership-photo-frame">
+              <img
+                src={director.image}
+                alt={`Portrait of ${director.name}`}
+                loading="lazy"
+                decoding="async"
+                style={director.imageObjectPosition ? { objectPosition: director.imageObjectPosition } : undefined}
+                data-testid={`img-director-${director.id}`}
+              />
             </div>
-            <figcaption className="leadership-photo-caption" style={{ width: `min(100%, ${portraitWidth}px)` }}>
+            <figcaption className="leadership-photo-caption">
               <span>OFFICIAL PORTRAIT</span>
               <span>{String(index + 1).padStart(2, '0')} / LEADERSHIP</span>
             </figcaption>
@@ -162,8 +167,8 @@ function LeadershipSection() {
             <h3>{director.name}</h3>
             <p className="leadership-company">{director.company}</p>
           </div>
-        </article>;
-      })}
+        </article>
+      ))}
     </div>
   </section>;
 }

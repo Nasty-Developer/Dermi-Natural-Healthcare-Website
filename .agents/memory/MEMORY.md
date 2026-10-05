@@ -1,2 +1,3 @@
 - [Product content accuracy](dnh-product-claims.md) — Keep Dermi Natural product details factual and grounded in official packaging or supplied briefs.
 - [Leadership content accuracy](dnh-leadership-content.md) — Publish only user-supplied leadership details; do not invent biographies or additional profiles.
+- [Visual preview reveal behavior](visual-preview-reveal.md) — Tall initial viewports reveal below-the-fold sections that full-page captures may leave hidden.
