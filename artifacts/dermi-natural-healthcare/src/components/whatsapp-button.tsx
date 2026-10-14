@@ -8,9 +8,11 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
+      title="Chat with us on WhatsApp"
       data-testid="link-whatsapp"
     >
       <FaWhatsapp aria-hidden="true" focusable="false" />
+      <span>WhatsApp</span>
     </a>
   );
 }

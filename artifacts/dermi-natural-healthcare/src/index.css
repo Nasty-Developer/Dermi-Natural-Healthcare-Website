@@ -275,3 +275,90 @@ button,input,textarea { font:inherit; } button,a { -webkit-tap-highlight-color:t
 @media(prefers-reduced-motion:reduce) {
   .scroll-reveal,.scroll-reveal.is-visible,.family-strip .family-tile,.values-list article,.footer .footer-main,.footer .footer-bottom { opacity:1!important;transform:none!important;transition:none!important; }
 }
+
+/* Final polish: warm editorial surfaces, legible controls and a safe floating-action rail. */
+:root {
+  --paper: #f6f3eb;
+  --cream: #ece8dd;
+  --navy: #172947;
+  --navy-deep: #101d35;
+  --gold: #b39a5c;
+  --line: #ddd8cb;
+  --ink-soft: #626d7d;
+}
+body { background:var(--paper); }
+.site-header { background:rgba(246,243,235,.94); }
+.brand-lockup { min-width:0; }
+.desktop-nav { gap:clamp(17px,2.6vw,39px); }
+.nav-contact { min-height:44px; }
+.nav-contact svg,.button-primary svg,.button-outline svg,.text-link svg { transition:transform .2s ease; }
+.nav-contact:hover svg,.button-primary:hover svg,.button-outline:hover svg,.text-link:hover svg { transform:translate(2px,-1px); }
+.button-primary,.button-outline,.nav-contact,.filter-tabs button,.gallery-thumb,.mobile-menu-button,.glowai-widget button {
+  -webkit-tap-highlight-color:transparent;
+}
+.button-primary:focus-visible,.button-outline:focus-visible,.nav-contact:focus-visible,
+.text-link:focus-visible,.nav-link:focus-visible,.mobile-nav a:focus-visible,
+.brand-lockup:focus-visible,.product-card:focus-visible,.family-tile:focus-visible,
+.contact-method:focus-visible,.footer a:focus-visible,.filter-tabs button:focus-visible,
+.gallery-thumb:focus-visible,.mobile-menu-button:focus-visible,.whatsapp-float:focus-visible {
+  outline:2px solid #a68b49;
+  outline-offset:4px;
+}
+.nav-link { font-size:12px; }
+.mobile-menu-button { border-radius:50%; }
+.mobile-menu-button:hover { background:#ece8dd; }
+.mobile-nav a { transition:color .18s ease,padding .18s ease; }
+.mobile-nav a:hover { color:#8a7139; padding-left:8px; }
+.product-card:focus-visible { outline-offset:5px; }
+.product-art { background-color:#efede5; }
+.detail-art { background-color:#eeece5; }
+.contact-form { border:1px solid rgba(23,41,71,.08); }
+.contact-form input:focus-visible,.contact-form textarea:focus-visible { box-shadow:0 0 0 3px rgba(179,154,92,.19); }
+.whatsapp-float {
+  position:fixed;
+  z-index:39;
+  right:max(24px,env(safe-area-inset-right,0px));
+  bottom:calc(22px + env(safe-area-inset-bottom,0px));
+  min-width:54px;
+  height:52px;
+  padding:0 17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border:1px solid rgba(255,255,255,.82);
+  border-radius:999px;
+  background:#183c37;
+  color:#f7f3e8;
+  box-shadow:0 10px 28px rgba(16,38,36,.2),0 2px 7px rgba(16,38,36,.1);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.025em;
+  transition:background-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.whatsapp-float svg { width:20px;height:20px;flex:none; }
+.whatsapp-float:hover { background:#24564e;transform:translateY(-2px);box-shadow:0 13px 32px rgba(16,38,36,.24); }
+.whatsapp-float:active { transform:translateY(0) scale(.98); }
+.whatsapp-float:focus-visible { outline-color:#b39a5c; }
+.glowai-widget { bottom:calc(22px + env(safe-area-inset-bottom,0px) + 76px); }
+.glowai-panel { max-height:calc(100dvh - 142px - env(safe-area-inset-bottom,0px)); }
+@media(max-width:680px) {
+  .whatsapp-float { right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));height:48px;min-width:48px;padding-inline:14px; }
+  .glowai-widget { bottom:calc(16px + env(safe-area-inset-bottom,0px) + 70px);right:max(16px,env(safe-area-inset-right,0px)); }
+  .glowai-panel { bottom:calc(82px + env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 112px - env(safe-area-inset-bottom,0px)); }
+}
+@media(max-width:360px) {
+  .whatsapp-float { width:48px;min-width:48px;padding:0; }
+  .whatsapp-float span { position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap; }
+  .hero-actions { align-items:flex-start;flex-direction:column; }
+  .product-grid,.related-section .product-grid { gap:10px; }
+  .product-card-copy { padding-inline:7px; }
+}
+@media(min-width:681px) and (max-width:900px) {
+  .whatsapp-float { right:max(24px,env(safe-area-inset-right,0px)); }
+  .glowai-widget { right:max(24px,env(safe-area-inset-right,0px)); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .whatsapp-float,.nav-contact svg,.button-primary svg,.button-outline svg,.text-link svg { transition:none!important; }
+}

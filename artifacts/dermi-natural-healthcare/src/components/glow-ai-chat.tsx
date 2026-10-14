@@ -6,7 +6,7 @@ type ChatRole = 'user' | 'assistant';
 type ChatMessage = { id: string; role: ChatRole; content: string };
 type StreamRecord = { content?: string; done?: boolean; error?: string };
 
-const welcomeMessage = "Hi! 👋 I'm GlowAI, your skincare assistant. I can help you explore our products, understand ingredients, and build a simple skincare routine.";
+const welcomeMessage = "Hello, I'm GlowAI, your skincare assistant. I can help you explore our products, understand ingredients, and build a simple skincare routine.";
 const quickActions = ['Build My Routine', 'Find a Product', 'Explain Ingredients', 'Acne Care', 'Brightening', 'Sunscreen'];
 const makeId = () => `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
