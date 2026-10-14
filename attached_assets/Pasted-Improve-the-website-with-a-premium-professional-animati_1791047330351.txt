@@ -1,0 +1,114 @@
+Improve the website with a premium, professional animation system across the entire Dermi Natural Healthcare website.
+
+IMPORTANT:
+- Keep the existing design, branding, colors, content, images, logo, layout, and functionality intact.
+- Do NOT redesign the website from scratch.
+- Do NOT change the brand colors or product image colors.
+- Do NOT add excessive flashy effects.
+- The animations must feel like a high-end modern healthcare / skincare brand website.
+- Everything must remain responsive on desktop, tablet, and mobile.
+
+Add sophisticated animations throughout the website:
+
+1. HERO SECTION
+- Add a smooth entrance animation for the hero content.
+- Headline, description, CTA buttons, and product imagery should appear sequentially with subtle staggered motion.
+- Add a very subtle floating/parallax effect to appropriate visual elements.
+- Add smooth image reveal animations.
+- Keep the hero immediately usable and avoid long loading animations.
+
+2. SCROLL REVEAL ANIMATIONS
+- Add smooth reveal animations as sections enter the viewport.
+- Use subtle fade-up, fade-in, scale, and slide animations.
+- Use staggered animations for cards, products, features, and lists.
+- Elements should animate only when entering the viewport, not continuously.
+
+3. PRODUCT CARDS
+- Add elegant hover interactions.
+- Product cards should slightly lift on hover.
+- Product images can have a very subtle scale effect.
+- Add smooth transitions for buttons, badges, and interactive elements.
+- Do not make cards jump, shake, or rotate excessively.
+
+4. PRODUCT GALLERY
+- Add smooth image transitions when switching product images.
+- Add a premium image zoom interaction where appropriate.
+- Keep image proportions and colors completely unchanged.
+
+5. BUTTONS
+- Add subtle hover and active states.
+- Use smooth transform and opacity transitions.
+- Add a refined micro-interaction when clicking important CTA buttons.
+- Do not use excessive glowing effects.
+
+6. NAVBAR
+- Add a smooth navbar entrance on initial page load.
+- Add subtle hover animations to navigation links.
+- If the website already has a sticky navbar, make its transition smooth when scrolling.
+- Do not make the navbar distracting.
+
+7. SECTION TRANSITIONS
+- Create smooth visual transitions between major sections.
+- Use subtle background movement, opacity transitions, or decorative motion where appropriate.
+- Keep the overall page clean and premium.
+
+8. STATS / FEATURES
+- Animate statistics or numbers when they enter the viewport.
+- Add subtle staggered reveal animations to feature cards and icons.
+
+9. ABOUT / STORY / DIRECTORS / TEAM SECTIONS
+- Add elegant reveal animations for portraits, text, and cards.
+- Use staggered timing so elements don't appear simultaneously.
+- Keep the existing structure and content unchanged.
+
+10. FOOTER
+- Add a subtle reveal animation when the footer enters the viewport.
+- Add smooth hover states to social links and important footer links.
+
+11. PAGE TRANSITIONS
+- Add subtle transitions when navigating between pages/routes if the existing architecture supports it.
+- Never introduce a blank white screen or noticeable delay during navigation.
+
+12. PERFORMANCE
+- Prioritize performance above visual effects.
+- Prefer CSS transforms and opacity for animations.
+- Use GPU-friendly animations.
+- Avoid expensive continuous JavaScript animations.
+- Avoid excessive blur, huge shadows, or effects that hurt mobile performance.
+- Respect prefers-reduced-motion for accessibility.
+- Lazy-load below-the-fold images where appropriate.
+- Animations must never block page rendering or interaction.
+
+13. PREMIUM MOTION STYLE
+The animation style should feel:
+- Modern
+- Premium
+- Elegant
+- Minimal
+- Smooth
+- Professional
+- Healthcare/skincare appropriate
+- Apple-level polish
+- High-end e-commerce quality
+
+Avoid:
+- Cartoon animations
+- Bouncing everywhere
+- Excessive rotations
+- Flashing effects
+- Neon/glowing effects
+- Purple gradients
+- Excessive particles
+- Distracting background animations
+- Long loading screens
+- Anything that makes the website feel cheap
+
+Use consistent easing, timing, and stagger values across the site so the entire website feels like one professionally designed motion system.
+
+After implementing the animations:
+- Test every major section.
+- Test desktop and mobile responsiveness.
+- Make sure no content disappears permanently because of animation states.
+- Make sure navigation and buttons remain functional.
+- Make sure the page loads quickly.
+- Run the production build and fix any animation-related build errors.

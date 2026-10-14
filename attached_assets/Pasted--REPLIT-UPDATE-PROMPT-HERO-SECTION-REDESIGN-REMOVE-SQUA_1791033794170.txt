@@ -1,0 +1,316 @@
+🚨 REPLIT UPDATE PROMPT — HERO SECTION REDESIGN + REMOVE SQUARATIC LOOK
+I want you to redesign the current homepage Hero section of the Dermi Natural Healthcare website.
+I have reviewed the current implementation and the major issue is that the website, especially the Hero section, feels too square, boxed, rigid, and static.
+The left side with:
+“Care, made considerate.”
+is good in concept and should remain the primary messaging, but the entire right-side visual needs to be completely rethought and upgraded.
+The current right-side composition containing the large rectangular frame with the DN/H logo looks too much like a static presentation card. Do not simply add a border-radius to the existing box. Replace/reconceptualize the visual treatment.
+🎯 PRIMARY GOAL
+Make the Hero section feel:
+Premium + Elegant + Modern + Healthcare + Beauty + Natural + Editorial + Sophisticated + Animated
+It should look like a professionally designed premium healthcare/skincare brand website, not a generic startup landing page.
+The visual language should be soft, organic, flowing, spacious, and cinematic rather than geometric and square.
+1. REDESIGN THE RIGHT SIDE COMPLETELY
+The current right-side logo card should NOT remain in its current rectangular form.
+Create a much more visually impressive hero visual.
+Preferred direction:
+Build an organic animated visual composition around the Dermi Natural identity.
+The DN/H logo can still be incorporated, because it is the official company logo, but it should no longer look like it is simply sitting inside a giant square card.
+Consider a composition involving:
+- Large soft circular/organic forms
+- Subtle botanical-inspired shapes
+- Floating translucent layers
+- Elegant curved lines
+- Very subtle gold accents
+- Soft cream/off-white background elements
+- Gentle depth
+- Floating product-related elements
+- Subtle motion
+- Editorial-style composition
+- Layered visual hierarchy
+- Asymmetric positioning
+The composition should feel designed, not like a collection of UI cards.
+2. USE ORGANIC SHAPES INSTEAD OF RECTANGLES
+Throughout the Hero visual, avoid excessive:
+- rectangular containers
+- hard borders
+- square cards
+- boxed graphics
+- repetitive grids
+- obvious dashboard-like components
+Use:
+- circles
+- arcs
+- soft blobs
+- flowing curves
+- irregular organic masks
+- rounded image crops
+- elliptical compositions
+- subtle radial elements
+The design should visually communicate:
+health + nature + care + refinement
+without becoming overly decorative.
+3. MAKE THE RIGHT-SIDE VISUAL ANIMATED
+I want the right side to have high-quality subtle animation.
+Do NOT create childish or excessive animations.
+The animation should feel like a premium website animation.
+For example:
+Background motion
+Create extremely subtle slow-moving organic shapes or gradients.
+Floating elements
+Allow selected visual elements to very slowly:
+- move vertically
+- rotate slightly
+- fade in/out subtly
+- shift position by a few pixels
+Botanical motion
+The botanical-inspired elements can have an extremely subtle floating effect.
+Logo motion
+The DN/H logo can have a very subtle entrance animation or soft parallax movement.
+Decorative rings
+The circular/curved elements can move extremely slowly.
+The animation should create a feeling that the Hero section is alive, while still maintaining a luxury aesthetic.
+4. DO NOT MAKE THE ANIMATION DISTRACTING
+This is extremely important.
+I do NOT want:
+- bouncing elements
+- fast rotations
+- excessive particles
+- flashy gradients
+- neon effects
+- aggressive parallax
+- excessive blur
+- gimmicky animations
+- over-the-top 3D
+Everything must remain:
+calm + elegant + slow + premium
+Think luxury skincare / healthcare editorial website, not gaming website.
+5. MAKE THE HERO FEEL MORE EDITORIAL
+The left side currently contains:
+HEALTHCARE & WELLNESS
+
+Care, made
+considerate.
+
+A healthcare company with a clear point of view: thoughtful product ranges, and information you can actually find.
+
+Explore our products
+
+Meet Dermi Natural
+
+Keep this content structure, but improve its relationship with the right-side visual.
+The entire Hero should feel like one composition, not:
+LEFT = text
+RIGHT = rectangular card
+Instead, the visual relationship should feel intentional.
+The typography and visual should interact with each other.
+6. IMPROVE THE HERO COMPOSITION
+Create more visual sophistication through:
+Asymmetry
+Do not make everything perfectly aligned into two equal boxes.
+Negative space
+Use generous whitespace, but make it feel intentional.
+Layering
+Let some elements overlap subtly.
+Depth
+Use very subtle shadows, transparency, scale differences and layering.
+Organic framing
+Use curved visual boundaries instead of obvious rectangular cards.
+7. HERO VISUAL CONCEPT
+A possible direction:
+Create a large organic circular / elliptical visual field on the right.
+Inside/around it:
+- Dermi Natural DN/H logo
+- botanical-inspired elements
+- subtle gold arc
+- soft ivory/cream shapes
+- faint grid or linework only where necessary
+- extremely subtle product-inspired visuals
+- floating decorative elements
+The logo should appear as part of the overall composition rather than being trapped inside a rectangular box.
+The visual should have enough movement that when someone opens the website, the Hero immediately feels polished and premium.
+8. KEEP THE BRAND COLORS
+Use the existing visual identity as the foundation:
+Primary Navy
+Deep sophisticated navy similar to the existing logo/text.
+Gold
+Muted elegant gold inspired by the official DN/H logo.
+Cream / Ivory
+Warm premium off-white.
+Soft Grey
+For secondary visual elements.
+Do NOT introduce:
+- purple
+- neon colors
+- bright gradients
+- excessive blue
+- random colors
+Keep everything cohesive with the official logo.
+9. USE THE OFFICIAL LOGO CORRECTLY
+The uploaded Dermi Natural logo is the official brand logo.
+Do not:
+- redraw it
+- distort it
+- stretch it
+- change its colors
+- recreate it using text
+- modify its proportions
+Use the supplied logo asset exactly.
+It may be displayed through:
+- elegant floating placement
+- central placement within an organic composition
+- subtle parallax layer
+- circular framing
+- editorial visual treatment
+But the actual logo itself must remain faithful to the original.
+10. REMOVE THE CURRENT “PRODUCT PORTFOLIO” BOX FEEL
+The current right panel has labels such as:
+DERMI NATURAL
+PRODUCT PORTFOLIO
+and the large rectangular logo frame.
+I do not want this to feel like a PowerPoint slide.
+You can preserve useful micro-labels where appropriate, but redesign them into a much more sophisticated editorial composition.
+Use small typography, spacing, fine lines, and subtle positioning rather than enclosing everything inside boxes.
+11. ADD PREMIUM MICRO-INTERACTIONS
+Use tasteful interactions such as:
+- button hover movement
+- tiny arrow translation
+- soft opacity transitions
+- subtle image scale
+- cursor-responsive movement where appropriate
+- smooth section entrance
+- gentle parallax
+- elegant page transitions
+For example:
+Explore our products button
+On hover:
+- button slightly shifts
+- arrow moves a few pixels
+- background transition is smooth
+- no exaggerated scaling
+Meet Dermi Natural
+The arrow should subtly move on hover.
+Everything should feel responsive and expensive.
+12. TYPOGRAPHY
+Keep the existing editorial typography direction.
+The large:
+Care, made considerate.
+headline should remain visually dominant.
+Improve:
+- spacing
+- line-height
+- balance
+- responsive scaling
+- relationship between serif and sans-serif typography
+The gold italic word “considerate.” should remain elegant.
+Do not turn the typography into a generic SaaS website.
+13. MAKE THE HERO LESS “SQUARE” EVERYWHERE
+This applies beyond just the right-side panel.
+Audit the complete Hero section and remove unnecessary visual rigidity.
+Look for:
+- square cards
+- excessive 90-degree corners
+- rectangular visual blocks
+- overly rigid columns
+- repeated box patterns
+Replace them where appropriate with:
+- rounded shapes
+- organic forms
+- flowing visual boundaries
+- soft layering
+- asymmetrical composition
+Do NOT add rounded corners to every element just for the sake of it.
+The goal is organic design, not “everything has border-radius: 24px”.
+14. RESPONSIVE DESIGN
+The redesigned Hero must work beautifully on:
+Desktop
+Large editorial composition with impressive right-side visual.
+Laptop
+Maintain the visual hierarchy without crowding.
+Tablet
+Rebalance the composition.
+Mobile
+Do not simply shrink the desktop version.
+Create an intentional mobile composition.
+The right-side visual should:
+- resize naturally
+- maintain proportions
+- avoid horizontal overflow
+- remain visually interesting
+- not push the text excessively far down
+Buttons should also remain easy to tap.
+15. PERFORMANCE
+Animations must be lightweight.
+Do not create animations that make the site slow.
+Use efficient CSS transforms/opacity and optimized assets.
+Avoid unnecessary huge assets, excessive JavaScript animation loops, or expensive rendering.
+The website should remain fast on normal laptops and mobile devices.
+Respect:
+prefers-reduced-motion
+Users who disable motion should receive a clean static version.
+16. IMPORTANT: DO NOT BREAK THE EXISTING SITE
+Do not remove or break:
+- Products page
+- About / Our Story page
+- Contact page
+- Navigation
+- Enquire button
+- Existing routing
+- Existing product architecture
+- Existing admin/backend functionality
+- Existing responsive behavior
+This task is primarily a Hero visual and design-system refinement.
+Maintain all existing functionality.
+17. CREATE A MORE IMPRESSIVE HERO EXPERIENCE
+The final Hero should give the impression that:
+“This is a real healthcare and wellness company with an established premium identity.”
+It should NOT look like:
+- a template
+- a Bootstrap website
+- a basic portfolio
+- a generic React landing page
+- a dashboard
+- a school project
+- a collection of cards
+The first screen should immediately communicate trust, quality, sophistication and care.
+18. DO NOT USE PLACEHOLDER DESIGN
+Do not create fake product packaging just to fill the Hero.
+I will be uploading the real product images separately.
+For now, build the visual system so those real product images can later be integrated naturally into the Hero and product sections.
+The architecture should make it easy to swap the current temporary visual for the official product assets once uploaded.
+19. ADD A STRONG ENTRANCE ANIMATION
+When the homepage loads:
+The Hero should reveal itself in a polished sequence:
+1. Navigation appears smoothly.
+2. Small “HEALTHCARE & WELLNESS” label fades/slides in.
+3. Main headline appears elegantly.
+4. Supporting paragraph follows.
+5. CTA buttons appear.
+6. Right-side organic visual gradually reveals itself.
+7. Floating decorative elements settle into position.
+Keep the timing fast enough that the user does not wait for the content.
+No long loading animation.
+20. QUALITY BAR
+Do not stop after making a basic visual adjustment.
+After implementing the redesign, inspect the Hero as a professional UI/UX designer would.
+Ask internally:
+- Does it still look too rectangular?
+- Does the right-side visual feel premium?
+- Does the logo feel integrated?
+- Is there enough visual depth?
+- Is the composition balanced?
+- Does the animation feel expensive rather than gimmicky?
+- Does the page feel like a real healthcare/skincare brand?
+- Does it look custom-built?
+- Does it work on mobile?
+- Are the animations smooth?
+- Is anything visually unnecessary?
+Then refine it.
+🚨 MOST IMPORTANT INSTRUCTION
+DO NOT JUST ROUND THE EXISTING RECTANGLE.
+I specifically want the right-side Hero visual concept redesigned.
+The current composition is too square and static.
+Create something much more organic, artistic, animated, premium and visually memorable, while staying faithful to Dermi Natural's navy + gold + ivory identity and the official DN/H logo.
+The finished Hero should feel like a high-end custom brand website built from scratch, not a modified template.
+Take the existing Hero as the starting point, but feel free to completely rethink the right-side visual composition.
+After implementing it, check the actual rendered website in the browser and make another refinement pass based on what is visually happening on screen. Do not assume the first implementation is enough.

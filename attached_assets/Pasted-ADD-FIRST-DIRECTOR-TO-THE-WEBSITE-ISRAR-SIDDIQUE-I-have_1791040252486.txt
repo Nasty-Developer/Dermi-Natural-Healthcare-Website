@@ -1,0 +1,195 @@
+ADD FIRST DIRECTOR TO THE WEBSITE — ISRAR SIDDIQUE
+
+I have just uploaded the official photo for the first Director.
+
+Use the uploaded image as the profile photo for the first Director on the Dermi Natural Healthcare website.
+
+DIRECTOR NAME:
+Israr Siddique
+
+IMPORTANT:
+For now, add ONLY this one Director.
+Do NOT create a second director with placeholder information.
+I will provide the second Director's photo and details separately later.
+
+DIRECTOR SECTION DESIGN:
+
+Add a professional Director / Leadership section to the website, preferably within the About / Our Story area or as a dedicated leadership section where it fits naturally with the current website structure.
+
+The section should feel:
+
+- Premium
+- Professional
+- Elegant
+- Healthcare-focused
+- Trustworthy
+- Modern
+- Minimal
+- Sophisticated
+
+Do NOT make it look like a generic employee card grid.
+
+USE THE UPLOADED PHOTO:
+
+Use the exact uploaded photo as the Director's profile image.
+
+Do NOT:
+- generate a replacement image
+- use a stock photo
+- alter the person's appearance
+- add unnecessary filters
+- distort the image
+- stretch the image
+- crop the face awkwardly
+
+Keep the photo professional and properly proportioned.
+
+IMAGE PRESENTATION:
+
+The website currently has too many rigid square/rectangular elements, so do NOT put the Director photo inside another harsh square card.
+
+Use a more refined presentation such as:
+
+- soft rounded image framing
+- elegant portrait crop
+- subtle border
+- soft shadow
+- organic/rounded visual treatment
+- generous whitespace
+- premium editorial composition
+
+The image should feel naturally integrated with the page.
+
+Do not over-round everything. Keep the shape sophisticated and intentional.
+
+DIRECTOR INFORMATION:
+
+Display:
+
+Israr Siddique
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+Do not invent any additional biography, qualifications, achievements, awards, experience, or claims because I have not provided those details yet.
+
+Leave the structure ready so that I can add a proper biography later through the website/admin system.
+
+LAYOUT:
+
+Create a visually strong leadership composition rather than a basic card.
+
+For example:
+
+LEFT:
+Director portrait
+
+RIGHT:
+Small section label such as:
+LEADERSHIP
+
+Large heading:
+Meet Our Director
+
+Director name:
+Israr Siddique
+
+Role:
+Director
+
+Then leave space for a future biography/description.
+
+Use the existing Dermi Natural brand direction:
+- Deep navy
+- Muted gold
+- Ivory
+- Warm cream
+- Soft grey
+
+No purple.
+No neon.
+No random colors.
+
+ANIMATION:
+
+Add subtle premium animation when the Director section enters the viewport.
+
+For example:
+- image fade/reveal
+- slight upward movement
+- subtle image scale
+- text fade-in
+- elegant staggered entrance
+
+Keep animations smooth and lightweight.
+
+Do NOT use:
+- bouncing
+- spinning
+- flashy effects
+- excessive parallax
+- distracting motion
+
+RESPONSIVE DESIGN:
+
+Make the Director section work perfectly on:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+On mobile, the portrait and information should stack naturally with proper spacing.
+
+Make sure the face is visible and the portrait is not awkwardly cropped.
+
+ADMIN / FUTURE CONTENT:
+
+Keep the Director section structured so that additional leadership members can be added later.
+
+For now there is only:
+
+1. Israr Siddique
+
+Later I will provide another Director and their image/details.
+
+Do NOT create fake second-person data now.
+
+IMPORTANT WEBSITE STYLE:
+
+The Director section must match the rest of the Dermi Natural website.
+
+It should feel like part of the same custom-designed brand experience.
+
+Avoid:
+- Bootstrap-style employee cards
+- generic profile grids
+- excessive boxes
+- harsh square borders
+- placeholder avatars
+
+The final result should look like a premium healthcare company's leadership section.
+
+AFTER IMPLEMENTATION:
+
+Open the actual website in the browser and inspect the rendered Director section.
+
+Check:
+- portrait quality
+- image proportions
+- face visibility
+- typography
+- spacing
+- alignment
+- mobile responsiveness
+- animation smoothness
+- consistency with the Dermi Natural visual identity
+
+Do not just implement the component in code and stop. Verify the actual browser rendering and refine it visually.
+
+For now, the ONLY Director to display is:
+
+ISRAR SIDDIQUE
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+Use the uploaded image I just provided as his official website photo.

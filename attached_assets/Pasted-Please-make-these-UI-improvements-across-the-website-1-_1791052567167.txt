@@ -1,0 +1,69 @@
+Please make these UI improvements across the website:
+
+1. ADD A PROFESSIONAL CHATBOT
+- Add a floating chatbot to the website.
+- The chatbot should match the existing Dermi Natural branding and visual style.
+- Make it look premium, clean, modern, and professional.
+- Use a smooth rounded chat bubble fixed at the bottom-right.
+- Add a subtle entrance animation and elegant hover interaction.
+- The chatbot panel should have smooth rounded corners, clean spacing, and a polished healthcare/skincare aesthetic.
+- Make it fully responsive on mobile.
+- Make sure the chatbot does NOT cause horizontal overflow.
+- Make sure it does not cover or conflict with the existing floating WhatsApp button.
+- Position the WhatsApp button and chatbot with proper spacing so both are easily accessible.
+- Do not make the chatbot overly large or distracting.
+
+2. MAKE WEBSITE BUTTONS MORE ROUNDED
+The existing buttons throughout the website currently have corners that feel too sharp/blocky.
+
+Please update the button styling so the corners are:
+- More rounded
+- Smooth
+- Premium
+- Modern
+- Consistent throughout the website
+
+Use a refined rounded-corner style rather than extremely pill-shaped buttons.
+
+Apply this consistently to:
+- Primary CTA buttons
+- Secondary buttons
+- Navigation buttons
+- Product buttons
+- Enquire buttons
+- Form buttons
+- Cards' action buttons
+- Other interactive buttons
+
+IMPORTANT:
+- Do NOT make every element completely pill-shaped.
+- Keep buttons proportional to their existing size.
+- Maintain the current colors and typography.
+- Do not redesign the website.
+- Do not change the existing content or functionality.
+
+3. CARDS AND UI ELEMENTS
+Where appropriate, slightly soften the corners of cards, input fields, dropdowns, and other UI elements so the overall interface feels more cohesive and polished.
+
+Keep the corner radius consistent across the design system.
+
+4. ANIMATIONS
+Add subtle transitions to the rounded buttons:
+- Smooth hover
+- Slight lift/scale
+- Smooth press state
+- No excessive bouncing
+- No flashy effects
+
+5. MOBILE
+Check the entire interface on mobile.
+Make sure:
+- Buttons fit inside the viewport.
+- Chatbot does not overlap WhatsApp.
+- No horizontal scrolling occurs.
+- Touch targets are large enough.
+- Rounded elements do not become distorted.
+
+The final UI should feel like a premium modern skincare/healthcare website with soft, sophisticated rounded geometry.
+
+Do NOT change the existing brand colors, logo, images, typography, content, or overall layout.

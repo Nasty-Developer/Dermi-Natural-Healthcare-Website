@@ -1,0 +1,49 @@
+Ravi, I want to deploy this Dermi Natural Healthcare website on Render.
+
+Please make this project fully deployable on Render as quickly and cleanly as possible.
+
+First inspect the entire project structure and determine the correct deployment configuration for this specific repository.
+
+I need you to:
+
+1. Identify the correct Root Directory for the Render deployment.
+2. Identify the exact Install Command.
+3. Identify the exact Build Command.
+4. Identify the exact Start Command, if Render requires one.
+5. Identify the correct Publish Directory / Output Directory for a static site.
+6. Determine whether this should be deployed as a Render Static Site or Web Service.
+7. Make any necessary project configuration changes so Render can build and deploy it successfully.
+8. Make sure the pnpm workspace/monorepo structure works correctly on Render.
+9. Make sure pnpm is used instead of npm because this project uses pnpm and pnpm-lock.yaml.
+10. Make sure the Vite production build works correctly.
+11. Fix the current PORT-related build issue if it affects deployment. The Vite production build should NOT require a PORT environment variable just to run `vite build`.
+12. Do not introduce unnecessary backend/server functionality.
+13. Do not change the website design, content, branding, images, animations, or existing functionality.
+14. Keep the existing project structure unless changing it is genuinely necessary for reliable Render deployment.
+15. If a render.yaml would make deployment easier and more reliable, create one with the correct configuration.
+16. Test the production build locally in Replit before finishing.
+17. Verify that the final build output actually exists in the directory you configure as Render's publish directory.
+18. Make sure SPA routes work correctly on Render, including direct navigation/refreshes.
+19. Make the deployment configuration simple and reliable so I can connect the GitHub repository to Render and deploy it without manually guessing settings.
+
+IMPORTANT:
+Do not just tell me what commands I should use.
+
+Actually inspect the project and configure it for Render.
+
+At the end, give me a simple deployment summary in this exact format:
+
+Root Directory:
+Install Command:
+Build Command:
+Start Command:
+Publish Directory:
+Render Service Type:
+
+Also tell me exactly which Render settings I need to select.
+
+Do not use destructive Git commands.
+Do not delete existing website functionality.
+Do not change the visual design.
+
+The goal is: GitHub → Render → successful production deployment with the minimum possible manual configuration.
