@@ -23,7 +23,9 @@
   --floating-side-inset: max(24px, env(safe-area-inset-right, 0px));
   --floating-bottom-inset: calc(22px + env(safe-area-inset-bottom, 0px));
   --floating-panel-top-reserve: calc(84px + env(safe-area-inset-top, 0px));
-  --floating-control-gap: 16px; --whatsapp-control-height: 52px; --glowai-control-height: 50px;
+  --floating-control-width: clamp(148px, 42vw, 168px);
+  --floating-control-height: 64px; --floating-control-radius: 999px; --floating-control-padding: 12px;
+  --floating-control-gap: 18px; --whatsapp-control-height: var(--floating-control-height);
   --button-outline: rgba(23,39,70,.14); --badge-outline: rgba(23,39,70,.08); --elevate-1: rgba(23,39,70,.03); --elevate-2: rgba(23,39,70,.08);
   --sidebar: 42 35% 96%; --sidebar-foreground: 222 43% 18%; --sidebar-border: 39 20% 83%; --sidebar-primary: 222 48% 20%;
   --sidebar-primary-foreground: 42 35% 96%; --sidebar-accent: 42 24% 90%; --sidebar-accent-foreground: 222 43% 18%; --sidebar-ring: 44 44% 57%;
@@ -227,7 +229,7 @@ button,input,textarea { font:inherit; } button,a { -webkit-tap-highlight-color:t
  .hero-art {overflow:hidden}
 }
 @media(max-width:680px) {
- :root {--page-gutter:20px;--floating-side-inset:max(16px,env(safe-area-inset-right,0px));--floating-bottom-inset:calc(16px + env(safe-area-inset-bottom,0px));--whatsapp-control-height:48px}
+ :root {--page-gutter:20px;--floating-side-inset:max(16px,env(safe-area-inset-right,0px));--floating-bottom-inset:calc(16px + env(safe-area-inset-bottom,0px))}
  .header-inner {height:70px}.site-header.is-compact .header-inner{height:62px}
  .brand-lockup img {width:46px;height:43px}.brand-lockup b{font-size:10px}.brand-lockup small{font-size:7px}
  .desktop-nav {display:none}.mobile-menu-button {display:grid;place-items:center;border:0;background:transparent;color:var(--navy);padding:10px;cursor:pointer}.mobile-menu-button svg{width:21px}
@@ -339,16 +341,17 @@ body { background:var(--paper); }
 .whatsapp-float {
   position:relative;
   z-index:auto;
-  min-width:54px;
-  height:52px;
+  width:var(--floating-control-width);
+  min-width:var(--floating-control-width);
+  height:var(--floating-control-height);
   flex:none;
-  padding:0 17px;
+  padding:0 var(--floating-control-padding);
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:10px;
+  justify-content:flex-start;
+  gap:9px;
   border:1px solid rgba(255,255,255,.82);
-  border-radius:999px;
+  border-radius:var(--floating-control-radius);
   background:#183c37;
   color:#f7f3e8;
   box-shadow:0 10px 28px rgba(16,38,36,.2),0 2px 7px rgba(16,38,36,.1);
@@ -375,13 +378,7 @@ body { background:var(--paper); }
 }
 .floating-controls > * { pointer-events:auto; }
 @media(max-width:680px) {
-  :root {--floating-panel-top-reserve:calc(76px + env(safe-area-inset-top,0px));--floating-control-gap:8px;--glowai-control-height:48px;--whatsapp-control-height:48px}
-  .floating-controls { gap:8px; }
-  .glowai-launcher { width:48px;min-width:48px;height:48px;justify-content:center;gap:0;padding:0; }
-  .glowai-launcher-icon { width:28px;height:28px; }
-  .glowai-launcher-label,.glowai-launcher-chat-icon { display:none; }
-  .whatsapp-float { width:48px;min-width:48px;height:48px;padding:0;border-radius:50%; }
-  .whatsapp-float span { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0; }
+  :root {--floating-panel-top-reserve:calc(76px + env(safe-area-inset-top,0px))}
 }
 @media(max-width:360px) {
   .hero-actions { align-items:flex-start;flex-direction:column; }
@@ -401,4 +398,9 @@ body { background:var(--paper); }
   .family-pill { padding:6px 8px; font-size:8px; }
   .product-card h3 { font-size:15px; margin:13px 30px 6px 0; }
   .product-card-copy>p { max-width:100%; font-size:11px; line-height:1.55; }
+}
+
+/* Keep footer links clear of the fixed action stack at the end of the page. */
+.footer {
+  padding-bottom:calc(var(--floating-control-height) + var(--floating-control-height) + var(--floating-control-gap) + var(--floating-bottom-inset) + 12px);
 }
