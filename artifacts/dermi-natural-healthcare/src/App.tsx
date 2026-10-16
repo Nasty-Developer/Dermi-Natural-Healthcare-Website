@@ -72,14 +72,14 @@ function BrandPill({ brand }: { brand: ProductBrand }) { return <span className=
 
 function ProductArt({ product, image, compact = false }: { product: Product; image?: ProductImage; compact?: boolean }) {
   const currentImage = image || product.images[0];
-  return <div className={`product-art art-${product.brand.toLowerCase()} ${compact ? 'product-art-compact' : ''}`} data-testid={`visual-product-${product.slug}`}>
+  return <div className={`product-art product-art-${product.packagingOrientation} art-${product.brand.toLowerCase()} ${compact ? 'product-art-compact' : ''}`} data-testid={`visual-product-${product.slug}`}>
     <img key={currentImage.src} className="real-pack-image gallery-image-enter" src={currentImage.src} alt={currentImage.alt} loading={compact ? 'lazy' : undefined} decoding="async" />
   </div>;
 }
 
 function ProductCard({ product }: { product: Product }) {
   const { ref, isVisible } = useScrollReveal<HTMLAnchorElement>();
-  return <Link ref={ref} href={`/products/${product.slug}`} className={`product-card scroll-reveal${isVisible ? ' is-visible' : ''}`} data-testid={`card-product-${product.slug}`}>
+  return <Link ref={ref} href={`/products/${product.slug}`} className={`product-card product-card-${product.packagingOrientation} scroll-reveal${isVisible ? ' is-visible' : ''}`} data-testid={`card-product-${product.slug}`}>
     <ProductArt product={product} compact />
     <div className="product-card-copy"><div className="product-meta"><BrandPill brand={product.brand} /><span>{product.category}</span></div><h3>{product.name}</h3><p>{product.sizePack}{product.ingredients.length ? ` · ${product.ingredients.slice(0, 2).join(' · ')}` : ''}</p><span className="card-arrow" aria-hidden="true"><ArrowUpRight size={17} /></span></div>
   </Link>;

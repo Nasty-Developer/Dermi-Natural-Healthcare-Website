@@ -12,6 +12,7 @@ export type Product = {
   brand: ProductBrand;
   name: string;
   category: string;
+  packagingOrientation: 'portrait' | 'landscape';
   sizePack: string;
   description: string;
   ingredients: string[];
@@ -33,6 +34,7 @@ export const products: Product[] = [
     brand: 'GLETSY',
     name: 'Gletsy Acne Control Face Wash',
     category: 'Face wash',
+    packagingOrientation: 'portrait',
     sizePack: '100 ml',
     description:
       'A 100 ml face wash. The supplied packaging names acne and acne-prone skin and lists salicylic acid and tea tree oil.',
@@ -58,6 +60,7 @@ export const products: Product[] = [
     brand: 'GLETSY',
     name: 'Gletsy Skin Lightening & Brightening Cream',
     category: 'Cream',
+    packagingOrientation: 'portrait',
     sizePack: '30 g',
     description:
       'A 30 g cream. The supplied packaging lists kojic acid dipalmitate, glutathione, and mulberry.',
@@ -82,6 +85,7 @@ export const products: Product[] = [
     brand: 'GLETSY',
     name: 'Gletsy Oil Free Moisturizer',
     category: 'Moisturizer',
+    packagingOrientation: 'portrait',
     sizePack: '70 g',
     description:
       'A 70 g oil-free moisturizer. The supplied packaging notes hydration, quick absorption, and a non-oily, non-greasy texture.',
@@ -111,6 +115,7 @@ export const products: Product[] = [
     brand: 'GLETSY',
     name: 'Gletsy Sunscreen Cream SPF 50 PA+++',
     category: 'Sunscreen',
+    packagingOrientation: 'portrait',
     sizePack: '50 g',
     description:
       'A 50 g sunscreen cream labeled SPF 50 PA+++. The supplied packaging lists UVA/UVB, IR, and blue-light protection.',
@@ -136,6 +141,7 @@ export const products: Product[] = [
     brand: 'GLETSY',
     name: 'Gletsy Face Wash – Skin Brightening',
     category: 'Face wash',
+    packagingOrientation: 'portrait',
     sizePack: '100 ml',
     description:
       'A 100 ml face wash. The supplied packaging names skin brightening and lists kojic acid dipalmitate and glutathione.',
@@ -156,6 +162,7 @@ export const products: Product[] = [
     brand: 'NEUTOGLOW',
     name: 'NeutoGlow 1000 mg Vitamin C Tablet',
     category: 'Vitamin supplement',
+    packagingOrientation: 'landscape',
     sizePack: '3 × 10 tablets',
     description:
       'A 3 × 10 tablet pack. The supplied packaging lists Vitamin C 1000 mg and Amla Extract.',
@@ -177,6 +184,7 @@ export const products: Product[] = [
     brand: 'NEUTOGLOW',
     name: 'NeutoGlow Biotin Tablet',
     category: 'Nutritional supplement',
+    packagingOrientation: 'landscape',
     sizePack: '3 × 10 tablets',
     description:
       'A 3 × 10 tablet pack. The supplied packaging lists biotin, B vitamins, vitamins C, D and E, zinc, and iron.',
@@ -211,6 +219,7 @@ export const products: Product[] = [
     brand: 'NEUTOGLOW',
     name: 'NeutoGlow L-Glutathione Tablet',
     category: 'Nutritional supplement',
+    packagingOrientation: 'landscape',
     sizePack: '3 × 10 tablets',
     description:
       'A 3 × 10 tablet pack. The supplied packaging lists an L-glutathione complex, NAC, astaxanthin, grape seed extract, licorice, vitamins C and E, and zinc.',
