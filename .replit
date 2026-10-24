@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 modules = ["nodejs-24", "python-base-3.13"]
+=======
+modules = ["nodejs-24"]
+>>>>>>> fa3ed5c (Initial commit)
 
 [deployment]
 router = "application"

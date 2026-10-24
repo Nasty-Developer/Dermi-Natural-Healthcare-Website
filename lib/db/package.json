@@ -14,12 +14,20 @@
   "dependencies": {
     "drizzle-orm": "catalog:",
     "drizzle-zod": "^0.8.3",
+<<<<<<< HEAD
     "pg": "^8.23.0",
+=======
+    "pg": "^8.23.1",
+>>>>>>> fa3ed5c (Initial commit)
     "zod": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
     "@types/pg": "^8.23.1",
+<<<<<<< HEAD
     "drizzle-kit": "^0.31.10"
+=======
+    "drizzle-kit": "^0.31.11"
+>>>>>>> fa3ed5c (Initial commit)
   }
 }

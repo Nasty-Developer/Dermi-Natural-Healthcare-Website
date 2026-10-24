@@ -6,7 +6,11 @@
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "rootDir": "src",
+<<<<<<< HEAD
     "lib": ["dom", "dom.iterable", "es2022"]
+=======
+    "lib": ["dom", "es2022"]
+>>>>>>> fa3ed5c (Initial commit)
   },
   "include": ["src"]
 }

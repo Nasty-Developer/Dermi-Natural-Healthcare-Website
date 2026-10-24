@@ -5,7 +5,10 @@ import router from "./routes";
 import { logger } from "./lib/logger";
 
 const app: Express = express();
+<<<<<<< HEAD
 app.set("trust proxy", 1);
+=======
+>>>>>>> fa3ed5c (Initial commit)
 
 app.use(
   pinoHttp({

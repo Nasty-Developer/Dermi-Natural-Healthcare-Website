@@ -10,8 +10,11 @@ servers:
 tags:
   - name: health
     description: Health operations
+<<<<<<< HEAD
   - name: glowai
     description: Dermi Natural Healthcare’s product information assistant
+=======
+>>>>>>> fa3ed5c (Initial commit)
 paths:
   /healthz:
     get:
@@ -26,6 +29,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+<<<<<<< HEAD
   /glowai/chat:
     post:
       operationId: streamGlowAiChat
@@ -68,6 +72,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/GlowAiChatError"
+=======
+>>>>>>> fa3ed5c (Initial commit)
 components:
   schemas:
     HealthStatus:
@@ -77,6 +83,7 @@ components:
           type: string
       required:
         - status
+<<<<<<< HEAD
     GlowAiMessage:
       type: object
       properties:
@@ -104,4 +111,6 @@ components:
         error:
           type: string
       required: [error]
+=======
+>>>>>>> fa3ed5c (Initial commit)
 

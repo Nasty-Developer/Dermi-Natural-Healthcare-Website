@@ -1,10 +1,13 @@
 {
   "name": "workspace",
   "version": "0.0.0",
+<<<<<<< HEAD
   "packageManager": "pnpm@10.26.1",
   "engines": {
     "node": "24.x"
   },
+=======
+>>>>>>> fa3ed5c (Initial commit)
   "license": "MIT",
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
@@ -17,7 +20,11 @@
     "@replit/connectors-sdk": "^0.4.3"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "prettier": "^3.9.6",
+=======
+    "prettier": "^3.9.10",
+>>>>>>> fa3ed5c (Initial commit)
     "typescript": "~5.9.3"
   }
 }
