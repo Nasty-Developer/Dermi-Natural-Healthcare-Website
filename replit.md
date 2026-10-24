@@ -1,6 +1,6 @@
-# [Project name]
+# Dermi Natural Healthcare
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+The official Dermi Natural Healthcare website, imported from https://github.com/Nasty-Developer/Dermi-Natural-Healthcare-Website.
 
 ## Run & Operate
 
@@ -22,7 +22,10 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/dermi-natural-healthcare/` — primary website and product catalog.
+- `artifacts/api-server/` — shared API server.
+- `lib/api-spec/openapi.yaml` — API contract source of truth.
+- `artifacts/mockup-sandbox/` — reusable design canvas preview.
 
 ## Architecture decisions
 
@@ -30,7 +33,7 @@ _Populate as you build — non-obvious choices a reader couldn't infer from the 
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The website presents Dermi Natural Healthcare, its GLETSY and NEUTOGLOW product ranges, leadership, and contact options. It includes a GlowAI chat widget and WhatsApp contact button.
 
 ## User preferences
 
@@ -38,7 +41,7 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The imported GlowAI widget sends requests to `/api/glowai/chat`, but the current shared API only has a health route; chat responses need a backend implementation.
 
 ## Pointers
 
