@@ -20,12 +20,12 @@
   --navy: #172746; --navy-deep: #111e37; --gold: #b89c54; --paper: #f7f5ee; --cream: #eeece3;
   --ink-soft: #667080; --line: #dedbd1; --radius: .45rem; --tracking-normal: 0em; --spacing: .25rem;
   --content-max: 1192px; --header-max: 1320px; --page-gutter: clamp(20px, 3.5vw, 36px);
-  --floating-side-inset: max(24px, env(safe-area-inset-right, 0px));
-  --floating-bottom-inset: calc(22px + env(safe-area-inset-bottom, 0px));
+  --floating-side-inset: max(22px, env(safe-area-inset-right, 0px));
+  --floating-bottom-inset: calc(24px + env(safe-area-inset-bottom, 0px));
   --floating-panel-top-reserve: calc(84px + env(safe-area-inset-top, 0px));
-  --floating-control-width: clamp(148px, 42vw, 168px);
-  --floating-control-height: 64px; --floating-control-radius: 999px; --floating-control-padding: 12px;
-  --floating-control-gap: 18px; --whatsapp-control-height: var(--floating-control-height);
+  --floating-control-width: 144px;
+  --floating-control-height: 56px; --floating-control-radius: 999px; --floating-control-padding: 10px;
+  --floating-control-gap: 14px; --whatsapp-control-height: var(--floating-control-height);
   --button-outline: rgba(23,39,70,.14); --badge-outline: rgba(23,39,70,.08); --elevate-1: rgba(23,39,70,.03); --elevate-2: rgba(23,39,70,.08);
   --sidebar: 42 35% 96%; --sidebar-foreground: 222 43% 18%; --sidebar-border: 39 20% 83%; --sidebar-primary: 222 48% 20%;
   --sidebar-primary-foreground: 42 35% 96%; --sidebar-accent: 42 24% 90%; --sidebar-accent-foreground: 222 43% 18%; --sidebar-ring: 44 44% 57%;
@@ -229,7 +229,7 @@ button,input,textarea { font:inherit; } button,a { -webkit-tap-highlight-color:t
  .hero-art {overflow:hidden}
 }
 @media(max-width:680px) {
- :root {--page-gutter:20px;--floating-side-inset:max(16px,env(safe-area-inset-right,0px));--floating-bottom-inset:calc(16px + env(safe-area-inset-bottom,0px))}
+  :root {--page-gutter:20px}
  .header-inner {height:70px}.site-header.is-compact .header-inner{height:62px}
  .brand-lockup img {width:46px;height:43px}.brand-lockup b{font-size:10px}.brand-lockup small{font-size:7px}
  .desktop-nav {display:none}.mobile-menu-button {display:grid;place-items:center;border:0;background:transparent;color:var(--navy);padding:10px;cursor:pointer}.mobile-menu-button svg{width:21px}
@@ -348,21 +348,21 @@ body { background:var(--paper); }
   padding:0 var(--floating-control-padding);
   display:flex;
   align-items:center;
-  justify-content:flex-start;
-  gap:9px;
+  justify-content:center;
+  gap:8px;
   border:1px solid rgba(255,255,255,.82);
   border-radius:var(--floating-control-radius);
   background:#183c37;
   color:#f7f3e8;
-  box-shadow:0 10px 28px rgba(16,38,36,.2),0 2px 7px rgba(16,38,36,.1);
+  box-shadow:0 8px 22px rgba(16,38,36,.16),0 2px 6px rgba(16,38,36,.08);
   text-decoration:none;
   font-size:11px;
   font-weight:600;
   letter-spacing:.025em;
   transition:background-color .2s ease,transform .2s ease,box-shadow .2s ease;
 }
-.whatsapp-float svg { width:20px;height:20px;flex:none; }
-.whatsapp-float:hover { background:#24564e;transform:translateY(-2px);box-shadow:0 13px 32px rgba(16,38,36,.24); }
+.whatsapp-float svg { width:18px;height:18px;flex:none; }
+.whatsapp-float:hover { background:#24564e;transform:translateY(-2px);box-shadow:0 10px 26px rgba(16,38,36,.2); }
 .whatsapp-float:active { transform:translateY(0) scale(.98); }
 .whatsapp-float:focus-visible { outline-color:#b39a5c; }
 .floating-controls {
@@ -378,7 +378,15 @@ body { background:var(--paper); }
 }
 .floating-controls > * { pointer-events:auto; }
 @media(max-width:680px) {
-  :root {--floating-panel-top-reserve:calc(76px + env(safe-area-inset-top,0px))}
+  :root {
+    --floating-side-inset: max(16px, env(safe-area-inset-right, 0px));
+    --floating-bottom-inset: calc(18px + env(safe-area-inset-bottom, 0px));
+    --floating-panel-top-reserve: calc(76px + env(safe-area-inset-top, 0px));
+    --floating-control-width: 136px;
+    --floating-control-height: 48px;
+    --floating-control-padding: 8px;
+    --floating-control-gap: 12px;
+  }
 }
 @media(max-width:360px) {
   .hero-actions { align-items:flex-start;flex-direction:column; }

@@ -8,7 +8,7 @@
   --glowai-line: #dedbd1;
   position: relative;
   z-index: auto;
-  min-height: var(--floating-control-height, 64px);
+  min-height: var(--floating-control-height, 56px);
   pointer-events: auto;
   color: var(--glowai-navy);
   font-family: 'DM Sans', sans-serif;
@@ -20,28 +20,29 @@
 .glowai-widget *::after { box-sizing: border-box; }
 
 .glowai-launcher {
-  width: var(--floating-control-width, 168px);
-  min-width: var(--floating-control-width, 168px);
-  height: var(--floating-control-height, 64px);
+  width: var(--floating-control-width, 144px);
+  min-width: var(--floating-control-width, 144px);
+  height: var(--floating-control-height, 56px);
   flex: none;
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 0 var(--floating-control-padding, 12px);
+  justify-content: center;
+  gap: 8px;
+  padding: 0 var(--floating-control-padding, 10px);
   border: 1px solid rgba(255,255,255,.72);
   border-radius: var(--floating-control-radius, 999px);
   background: var(--glowai-navy);
   color: var(--glowai-paper);
-  box-shadow: 0 11px 30px rgba(17,30,55,.22), 0 2px 7px rgba(17,30,55,.1);
+  box-shadow: 0 8px 22px rgba(17,30,55,.16), 0 2px 6px rgba(17,30,55,.08);
   cursor: pointer;
   transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
   animation: glowai-arrive .45s .18s both;
 }
-.glowai-launcher:hover { background: #253858; box-shadow: 0 14px 34px rgba(17,30,55,.24); transform: translateY(-2px); }
+.glowai-launcher:hover { background: #253858; box-shadow: 0 10px 26px rgba(17,30,55,.2); transform: translateY(-2px); }
 .glowai-launcher:active { transform: scale(.98); }
 .glowai-launcher-icon {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
   flex: none;
@@ -49,8 +50,8 @@
   border-radius: 50%;
   background: #d9c583;
 }
-.glowai-launcher-label { font-size: 13px; font-weight: 600; letter-spacing: .015em; }
-.glowai-launcher-chat-icon { margin-left: auto; color: #d9c583; opacity: .9; }
+.glowai-launcher-label { font-size: 12px; font-weight: 600; letter-spacing: .015em; }
+.glowai-launcher-chat-icon { color: #d9c583; opacity: .9; }
 
 .glowai-panel {
   position: absolute;

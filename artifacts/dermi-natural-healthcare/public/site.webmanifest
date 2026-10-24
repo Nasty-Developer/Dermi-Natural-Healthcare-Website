@@ -3,19 +3,19 @@
   "short_name": "Dermi Natural",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png?v=20261024",
+      "src": "/android-chrome-192x192.png?v=20261024-2",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-512x512.png?v=20261024",
+      "src": "/android-chrome-512x512.png?v=20261024-2",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-maskable-512x512.png?v=20261024",
+      "src": "/android-chrome-maskable-512x512.png?v=20261024-2",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
