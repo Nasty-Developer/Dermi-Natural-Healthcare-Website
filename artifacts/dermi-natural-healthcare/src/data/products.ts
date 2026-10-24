@@ -49,6 +49,18 @@ export const products: Product[] = [
         src: '/products/gletsy-acne-control-face-wash-angle.webp',
         alt: 'Angled view of the Gletsy Acne Control Face Wash 100 ml box',
       },
+      {
+        src: '/products/gletsy-acne-control-face-wash-poster.jpeg',
+        alt: 'Gletsy Acne Control Face Wash 100 ml product information poster',
+      },
+      {
+        src: '/products/gletsy-acne-control-face-wash-tube-promo.jpeg',
+        alt: 'Gletsy Acne Control Face Wash 100 ml tube and formula details',
+      },
+      {
+        src: '/products/gletsy-acne-control-face-wash-box-photo.jpeg',
+        alt: 'Gletsy Acne Control Face Wash 100 ml box in a product setting',
+      },
     ],
     ...listed,
     displayOrder: 1,
@@ -74,6 +86,18 @@ export const products: Product[] = [
       {
         src: '/products/gletsy-skin-lightening-brightening-cream-box.webp',
         alt: 'Alternate view of the Gletsy Skin Lightening and Brightening Cream box',
+      },
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-front-photo.jpeg',
+        alt: 'Gletsy Skin Lightening and Brightening Cream 30 g package',
+      },
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-tube-promo.jpeg',
+        alt: 'Gletsy Skin Lightening and Brightening Cream tube and product details',
+      },
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-poster.jpeg',
+        alt: 'Gletsy Skin Lightening and Brightening Cream product information poster',
       },
     ],
     ...listed,
@@ -105,6 +129,18 @@ export const products: Product[] = [
         src: '/products/gletsy-oil-free-moisturizer-box.webp',
         alt: 'Alternate view of the Gletsy Oil Free Moisturizer 70 g box',
       },
+      {
+        src: '/products/gletsy-oil-free-moisturizer-poster.jpeg',
+        alt: 'Gletsy Oil Free Moisturizer product information poster',
+      },
+      {
+        src: '/products/gletsy-oil-free-moisturizer-tube-promo.jpeg',
+        alt: 'Gletsy Oil Free Moisturizer 70 g tube and product details',
+      },
+      {
+        src: '/products/gletsy-oil-free-moisturizer-box-photo.jpeg',
+        alt: 'Gletsy Oil Free Moisturizer 70 g box in a product setting',
+      },
     ],
     ...listed,
     displayOrder: 3,
@@ -131,6 +167,18 @@ export const products: Product[] = [
         src: '/products/gletsy-sunscreen-spf-50-pa-plus-plus-plus.webp',
         alt: 'Front of the Gletsy Sunscreen Cream SPF 50 PA+++ 50 g box',
       },
+      {
+        src: '/products/gletsy-sunscreen-spf-50-package-front.png',
+        alt: 'Front panel of the Gletsy SPF 50 PA+++ sunscreen package',
+      },
+      {
+        src: '/products/gletsy-sunscreen-spf-50-promo.jpeg',
+        alt: 'Gletsy SPF 50 PA+++ sunscreen tube and product information',
+      },
+      {
+        src: '/products/gletsy-sunscreen-spf-50-package-back.png',
+        alt: 'Benefits, ingredients, and directions panel on the Gletsy SPF 50 sunscreen package',
+      },
     ],
     ...listed,
     displayOrder: 4,
@@ -152,6 +200,10 @@ export const products: Product[] = [
         src: '/products/gletsy-face-wash-skin-brightening.webp',
         alt: 'Front of the Gletsy Face Wash for Skin Brightening 100 ml box',
       },
+      {
+        src: '/products/gletsy-face-wash-skin-brightening-poster.jpeg',
+        alt: 'Gletsy Skin Brightening Face Wash product information poster',
+      },
     ],
     ...listed,
     displayOrder: 5,
@@ -172,6 +224,10 @@ export const products: Product[] = [
       {
         src: '/products/neutoglow-vitamin-c-1000mg.webp',
         alt: 'Front of the NeutoGlow 1000 mg Vitamin C Tablet 3 × 10 pack',
+      },
+      {
+        src: '/products/neutoglow-vitamin-c-poster.jpeg',
+        alt: 'NeutoGlow Vitamin C 1000 mg tablet product information poster',
       },
     ],
     ...listed,
@@ -209,6 +265,10 @@ export const products: Product[] = [
         src: '/products/neutoglow-biotin-tablet.webp',
         alt: 'Front of the NeutoGlow Biotin Tablet 3 × 10 pack',
       },
+      {
+        src: '/products/neutoglow-biotin-poster.jpeg',
+        alt: 'NeutoGlow Biotin tablet product information poster',
+      },
     ],
     ...listed,
     displayOrder: 7,
@@ -243,6 +303,31 @@ export const products: Product[] = [
     ...listed,
     displayOrder: 8,
     featured: true,
+  },
+  {
+    id: 'gletsy-glow-soap',
+    slug: 'gletsy-glow-soap',
+    brand: 'GLETSY',
+    name: 'Gletsy Glow Soap',
+    category: 'Soap',
+    packagingOrientation: 'landscape',
+    sizePack: '75 g',
+    description:
+      'A 75 g face and body soap. The supplied packaging lists glutathione, kojic acid dipalmitate, and vitamin E.',
+    ingredients: ['Glutathione', 'Kojic Acid Dipalmitate', 'Vitamin E'],
+    highlights: ['Face & body', '75 g'],
+    images: [
+      {
+        src: '/products/gletsy-glow-soap-front.png',
+        alt: 'Front of the Gletsy Glow Soap 75 g box',
+      },
+      {
+        src: '/products/gletsy-glow-soap-back.png',
+        alt: 'Ingredients, directions, and package information on the Gletsy Glow Soap box',
+      },
+    ],
+    ...listed,
+    displayOrder: 5.5,
   },
 ];
 

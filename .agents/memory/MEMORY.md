@@ -1,0 +1,1 @@
+- [Product image uploads](product-image-uploads.md) — review each upload, match it to the catalog, append gallery images, preserve prior data, and avoid duplicate products.
