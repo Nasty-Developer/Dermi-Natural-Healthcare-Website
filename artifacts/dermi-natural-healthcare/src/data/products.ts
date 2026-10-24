@@ -49,18 +49,6 @@ export const products: Product[] = [
         src: '/products/gletsy-acne-control-face-wash-angle.webp',
         alt: 'Angled view of the Gletsy Acne Control Face Wash 100 ml box',
       },
-      {
-        src: '/products/gletsy-acne-control-face-wash-poster.jpeg',
-        alt: 'Gletsy Acne Control Face Wash 100 ml product information poster',
-      },
-      {
-        src: '/products/gletsy-acne-control-face-wash-tube-promo.jpeg',
-        alt: 'Gletsy Acne Control Face Wash 100 ml tube and formula details',
-      },
-      {
-        src: '/products/gletsy-acne-control-face-wash-box-photo.jpeg',
-        alt: 'Gletsy Acne Control Face Wash 100 ml box in a product setting',
-      },
     ],
     ...listed,
     displayOrder: 1,
@@ -86,18 +74,6 @@ export const products: Product[] = [
       {
         src: '/products/gletsy-skin-lightening-brightening-cream-box.webp',
         alt: 'Alternate view of the Gletsy Skin Lightening and Brightening Cream box',
-      },
-      {
-        src: '/products/gletsy-skin-lightening-brightening-cream-front-photo.jpeg',
-        alt: 'Gletsy Skin Lightening and Brightening Cream 30 g package',
-      },
-      {
-        src: '/products/gletsy-skin-lightening-brightening-cream-tube-promo.jpeg',
-        alt: 'Gletsy Skin Lightening and Brightening Cream tube and product details',
-      },
-      {
-        src: '/products/gletsy-skin-lightening-brightening-cream-poster.jpeg',
-        alt: 'Gletsy Skin Lightening and Brightening Cream product information poster',
       },
     ],
     ...listed,
@@ -129,18 +105,6 @@ export const products: Product[] = [
         src: '/products/gletsy-oil-free-moisturizer-box.webp',
         alt: 'Alternate view of the Gletsy Oil Free Moisturizer 70 g box',
       },
-      {
-        src: '/products/gletsy-oil-free-moisturizer-poster.jpeg',
-        alt: 'Gletsy Oil Free Moisturizer product information poster',
-      },
-      {
-        src: '/products/gletsy-oil-free-moisturizer-tube-promo.jpeg',
-        alt: 'Gletsy Oil Free Moisturizer 70 g tube and product details',
-      },
-      {
-        src: '/products/gletsy-oil-free-moisturizer-box-photo.jpeg',
-        alt: 'Gletsy Oil Free Moisturizer 70 g box in a product setting',
-      },
     ],
     ...listed,
     displayOrder: 3,
@@ -167,18 +131,6 @@ export const products: Product[] = [
         src: '/products/gletsy-sunscreen-spf-50-pa-plus-plus-plus.webp',
         alt: 'Front of the Gletsy Sunscreen Cream SPF 50 PA+++ 50 g box',
       },
-      {
-        src: '/products/gletsy-sunscreen-spf-50-package-front.png',
-        alt: 'Front panel of the Gletsy SPF 50 PA+++ sunscreen package',
-      },
-      {
-        src: '/products/gletsy-sunscreen-spf-50-promo.jpeg',
-        alt: 'Gletsy SPF 50 PA+++ sunscreen tube and product information',
-      },
-      {
-        src: '/products/gletsy-sunscreen-spf-50-package-back.png',
-        alt: 'Benefits, ingredients, and directions panel on the Gletsy SPF 50 sunscreen package',
-      },
     ],
     ...listed,
     displayOrder: 4,
@@ -200,10 +152,6 @@ export const products: Product[] = [
         src: '/products/gletsy-face-wash-skin-brightening.webp',
         alt: 'Front of the Gletsy Face Wash for Skin Brightening 100 ml box',
       },
-      {
-        src: '/products/gletsy-face-wash-skin-brightening-poster.jpeg',
-        alt: 'Gletsy Skin Brightening Face Wash product information poster',
-      },
     ],
     ...listed,
     displayOrder: 5,
@@ -224,10 +172,6 @@ export const products: Product[] = [
       {
         src: '/products/neutoglow-vitamin-c-1000mg.webp',
         alt: 'Front of the NeutoGlow 1000 mg Vitamin C Tablet 3 × 10 pack',
-      },
-      {
-        src: '/products/neutoglow-vitamin-c-poster.jpeg',
-        alt: 'NeutoGlow Vitamin C 1000 mg tablet product information poster',
       },
     ],
     ...listed,
@@ -264,10 +208,6 @@ export const products: Product[] = [
       {
         src: '/products/neutoglow-biotin-tablet.webp',
         alt: 'Front of the NeutoGlow Biotin Tablet 3 × 10 pack',
-      },
-      {
-        src: '/products/neutoglow-biotin-poster.jpeg',
-        alt: 'NeutoGlow Biotin tablet product information poster',
       },
     ],
     ...listed,
@@ -327,7 +267,186 @@ export const products: Product[] = [
       },
     ],
     ...listed,
-    displayOrder: 5.5,
+    displayOrder: 9,
+  },
+  {
+    id: 'gletsy-acne-control-face-wash-new',
+    slug: 'gletsy-acne-control-face-wash-new',
+    brand: 'GLETSY',
+    name: 'Gletsy Acne Control Face Wash',
+    category: 'Face wash',
+    packagingOrientation: 'portrait',
+    sizePack: '100 ml',
+    description:
+      'An acne-control face wash. The supplied promotional images show salicylic acid and tea tree oil.',
+    ingredients: ['Salicylic Acid', 'Tea Tree Oil'],
+    highlights: ['Acne control', 'Salicylic acid', 'Tea tree oil'],
+    images: [
+      {
+        src: '/products/gletsy-acne-control-face-wash-box-photo.jpeg',
+        alt: 'Gletsy Acne Control Face Wash 100 ml box in a product setting',
+      },
+      {
+        src: '/products/gletsy-acne-control-face-wash-tube-promo.jpeg',
+        alt: 'Gletsy Acne Control Face Wash tube and formula information',
+      },
+      {
+        src: '/products/gletsy-acne-control-face-wash-poster.jpeg',
+        alt: 'Gletsy Acne Control Face Wash promotional poster',
+      },
+    ],
+    ...listed,
+    displayOrder: 10,
+  },
+  {
+    id: 'gletsy-skin-lightening-brightening-cream-new',
+    slug: 'gletsy-skin-lightening-brightening-cream-new',
+    brand: 'GLETSY',
+    name: 'Gletsy Skin Lightening & Brightening Cream',
+    category: 'Cream',
+    packagingOrientation: 'portrait',
+    sizePack: '30 g',
+    description:
+      'A skin lightening and brightening cream. The supplied packaging lists kojic acid dipalmitate and glutathione.',
+    ingredients: ['Kojic Acid Dipalmitate', 'Glutathione'],
+    highlights: ['Skin lightening', 'Skin brightening'],
+    images: [
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-front-photo.jpeg',
+        alt: 'Gletsy Skin Lightening and Brightening Cream package',
+      },
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-tube-promo.jpeg',
+        alt: 'Gletsy Skin Lightening and Brightening Cream tube and product details',
+      },
+      {
+        src: '/products/gletsy-skin-lightening-brightening-cream-poster.jpeg',
+        alt: 'Gletsy Skin Lightening and Brightening Cream product information poster',
+      },
+    ],
+    ...listed,
+    displayOrder: 11,
+  },
+  {
+    id: 'gletsy-oil-free-moisturizer-new',
+    slug: 'gletsy-oil-free-moisturizer-new',
+    brand: 'GLETSY',
+    name: 'Gletsy Oil Free Moisturizer',
+    category: 'Moisturizer',
+    packagingOrientation: 'portrait',
+    sizePack: '70 g',
+    description:
+      'An oil-free moisturizer. The supplied promotional images describe lightweight, fast-absorbing hydration.',
+    ingredients: ['Lemon Fruit Extract', 'Centella', 'Willow Bark Extract', 'Cica Extract'],
+    highlights: ['Lightweight', 'Fast absorbing', 'Oil free'],
+    images: [
+      {
+        src: '/products/gletsy-oil-free-moisturizer-box-photo.jpeg',
+        alt: 'Gletsy Oil Free Moisturizer box in a product setting',
+      },
+      {
+        src: '/products/gletsy-oil-free-moisturizer-tube-promo.jpeg',
+        alt: 'Gletsy Oil Free Moisturizer tube and product details',
+      },
+      {
+        src: '/products/gletsy-oil-free-moisturizer-poster.jpeg',
+        alt: 'Gletsy Oil Free Moisturizer product information poster',
+      },
+    ],
+    ...listed,
+    displayOrder: 12,
+  },
+  {
+    id: 'gletsy-invisible-matte-gel-sunscreen-spf-50',
+    slug: 'gletsy-invisible-matte-gel-sunscreen-spf-50',
+    brand: 'GLETSY',
+    name: 'Gletsy Invisible Matte Gel Sunscreen SPF 50 PA+++',
+    category: 'Sunscreen',
+    packagingOrientation: 'portrait',
+    sizePack: '50 g',
+    description:
+      'A 50 g invisible matte gel sunscreen labeled SPF 50 PA+++. The packaging describes broad-spectrum UVA and UVB protection.',
+    ingredients: ['Alpha Arbutin', 'Niacinamide', 'D-Panthenol'],
+    highlights: ['SPF 50 PA+++', 'Invisible matte gel', 'UVA & UVB protection'],
+    images: [
+      {
+        src: '/products/gletsy-sunscreen-spf-50-package-front.png',
+        alt: 'Front panel of the Gletsy SPF 50 sunscreen package',
+      },
+      {
+        src: '/products/gletsy-sunscreen-spf-50-promo.jpeg',
+        alt: 'Gletsy SPF 50 sunscreen promotional image',
+      },
+      {
+        src: '/products/gletsy-sunscreen-spf-50-package-back.png',
+        alt: 'Benefits, ingredients, and directions panel on the Gletsy SPF 50 sunscreen package',
+      },
+    ],
+    ...listed,
+    displayOrder: 13,
+  },
+  {
+    id: 'gletsy-skin-whitening-face-wash-new',
+    slug: 'gletsy-skin-whitening-face-wash-new',
+    brand: 'GLETSY',
+    name: 'Gletsy Skin Whitening Face Wash',
+    category: 'Face wash',
+    packagingOrientation: 'landscape',
+    sizePack: '100 ml',
+    description:
+      'A Gletsy face wash shown in the supplied skin-whitening product poster.',
+    ingredients: [],
+    highlights: ['Skin whitening'],
+    images: [
+      {
+        src: '/products/gletsy-face-wash-skin-brightening-poster.jpeg',
+        alt: 'Gletsy Skin Whitening Face Wash promotional poster',
+      },
+    ],
+    ...listed,
+    displayOrder: 14,
+  },
+  {
+    id: 'neutoglow-vitamin-c-1000-mg-new',
+    slug: 'neutoglow-vitamin-c-1000-mg-new',
+    brand: 'NEUTOGLOW',
+    name: 'NeutoGlow 1000 mg Vitamin C Tablet',
+    category: 'Vitamin supplement',
+    packagingOrientation: 'landscape',
+    sizePack: '3 × 10 tablets',
+    description:
+      'A NeutoGlow vitamin C supplement. The supplied poster lists Vitamin C 1000 mg and Amla Extract.',
+    ingredients: ['Vitamin C 1000 mg', 'Amla Extract'],
+    highlights: ['Vitamin C 1000 mg'],
+    images: [
+      {
+        src: '/products/neutoglow-vitamin-c-poster.jpeg',
+        alt: 'NeutoGlow Vitamin C 1000 mg tablet product information poster',
+      },
+    ],
+    ...listed,
+    displayOrder: 15,
+  },
+  {
+    id: 'neutoglow-biotin-tablet-new',
+    slug: 'neutoglow-biotin-tablet-new',
+    brand: 'NEUTOGLOW',
+    name: 'NeutoGlow Biotin Tablet',
+    category: 'Nutritional supplement',
+    packagingOrientation: 'landscape',
+    sizePack: '3 × 10 tablets',
+    description:
+      'A NeutoGlow biotin supplement. The supplied poster lists biotin and supporting vitamins and minerals.',
+    ingredients: ['Biotin', 'Vitamins', 'Zinc', 'Iron'],
+    highlights: ['Biotin'],
+    images: [
+      {
+        src: '/products/neutoglow-biotin-poster.jpeg',
+        alt: 'NeutoGlow Biotin tablet product information poster',
+      },
+    ],
+    ...listed,
+    displayOrder: 16,
   },
 ];
 
