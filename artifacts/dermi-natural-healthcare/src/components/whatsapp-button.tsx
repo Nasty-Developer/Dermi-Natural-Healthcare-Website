@@ -12,7 +12,6 @@ export function WhatsAppButton() {
       data-testid="link-whatsapp"
     >
       <FaWhatsapp aria-hidden="true" focusable="false" />
-      <span>WhatsApp</span>
     </a>
   );
 }

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
-import { ArrowUp, Bot, ChevronDown, MessageCircle, RotateCcw, Sparkles, Trash2, X } from 'lucide-react';
+import { ArrowUp, Bot, ChevronDown, RotateCcw, Sparkles, Trash2, X } from 'lucide-react';
 import './glow-ai-chat.css';
 
 type ChatRole = 'user' | 'assistant';
@@ -269,9 +269,7 @@ export function GlowAIChat() {
           onClick={() => { setIsOpen(true); setIsMinimized(false); }}
           data-testid="glowai-launcher"
         >
-          <span className="glowai-launcher-icon"><Sparkles size={16} strokeWidth={1.8} /></span>
-          <span className="glowai-launcher-label">GlowAI</span>
-          <MessageCircle className="glowai-launcher-chat-icon" size={12} />
+          <Sparkles className="glowai-launcher-icon" size={21} strokeWidth={1.7} aria-hidden="true" />
         </button>
       )}
     </div>
