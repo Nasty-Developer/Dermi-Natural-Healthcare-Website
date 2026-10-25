@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { Route, Switch, useLocation, Router as WouterRouter, Link, useParams } from 'wouter';
+import { Route, Switch, useLocation, Router as WouterRouter, Link, useParams, type RouterProps } from 'wouter';
 import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Check, Menu, Search, X } from 'lucide-react';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { GlowAIChat } from '@/components/glow-ai-chat';
@@ -11,10 +11,23 @@ import { families, products, type Product, type ProductBrand, type ProductImage 
 import { leadershipProfiles } from '@/data/leadership';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import officialLogo from '@/assets/brand/official-logo-transparent.png';
+import { getPageSeo, getStructuredData, SOCIAL_IMAGE_URL } from '@/lib/seo';
 
 const queryClient = new QueryClient();
 const company = 'DERMI NATURAL HEALTHCARE PVT LTD';
 const publishedProducts = [...products].filter((product) => product.status === 'published').sort((a, b) => a.displayOrder - b.displayOrder);
+
+function ensureTrailingRouteSlash(path: string) {
+  const suffixIndex = path.search(/[?#]/);
+  const pathname = suffixIndex < 0 ? path : path.slice(0, suffixIndex);
+  if (!pathname.startsWith('/') || pathname === '/' || pathname.endsWith('/')) return path;
+  return `${pathname}/${suffixIndex < 0 ? '' : path.slice(suffixIndex)}`;
+}
+
+const formatRouteHref: NonNullable<RouterProps['hrefs']> = (path) => ensureTrailingRouteSlash(path);
+const normalizeRouteNavigation: NonNullable<RouterProps['aroundNav']> = (navigate, to, options) => {
+  navigate(ensureTrailingRouteSlash(to), options);
+};
 
 function Brand({ dark = false }: { dark?: boolean }) {
   return <Link href="/" className={`brand-lockup ${dark ? 'brand-lockup-dark' : ''}`} data-testid="link-brand-home">
@@ -34,18 +47,18 @@ function Header() {
     window.addEventListener('scroll', updateCompact, { passive: true });
     return () => window.removeEventListener('scroll', updateCompact);
   }, []);
-  const nav = [['/about', 'Our Story'], ['/products', 'Products'], ['/contact', 'Contact']];
+  const nav = [['/about/', 'Our Story'], ['/products/', 'Products'], ['/contact/', 'Contact']];
   return <header className={`site-header ${compact ? 'is-compact' : ''}`}>
     <div className="header-inner">
       <Brand />
       <nav className="desktop-nav" aria-label="Main navigation">
-        {nav.map(([href, text]) => <Link key={href} href={href} className={`nav-link ${path === href || (href === '/products' && path.startsWith('/products')) ? 'is-active' : ''}`} data-testid={`link-nav-${text.toLowerCase().replace(' ', '-')}`}>{text}</Link>)}
-        <Link href="/contact" className="nav-contact" data-testid="link-nav-enquire">Enquire <ArrowUpRight size={14} /></Link>
+        {nav.map(([href, text]) => <Link key={href} href={href} className={`nav-link ${path === href || (href === '/products/' && path.startsWith('/products')) ? 'is-active' : ''}`} data-testid={`link-nav-${text.toLowerCase().replace(' ', '-')}`}>{text}</Link>)}
+        <Link href="/contact/" className="nav-contact" data-testid="link-nav-enquire">Enquire <ArrowUpRight size={14} /></Link>
       </nav>
       <button className="mobile-menu-button" type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} data-testid="button-menu-toggle">{open ? <X /> : <Menu />}</button>
     </div>
     {open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
-      {[['/', 'Home'], ...nav, ...families.map((family) => [`/${family.slug}`, family.title])].map(([href, text]) => <Link key={href} href={href} data-testid={`mobile-nav-${text.toLowerCase().replaceAll(' ', '-')}`}>{text}<ArrowUpRight size={15} /></Link>)}
+      {[['/', 'Home'], ...nav, ...families.map((family) => [`/${family.slug}/`, family.title])].map(([href, text]) => <Link key={href} href={href} data-testid={`mobile-nav-${text.toLowerCase().replaceAll(' ', '-')}`}>{text}<ArrowUpRight size={15} /></Link>)}
     </nav>}
   </header>;
 }
@@ -55,11 +68,11 @@ function Footer() {
   return <footer ref={ref} className={`footer scroll-reveal${isVisible ? ' is-visible' : ''}`}>
     <div className="footer-main">
       <div className="footer-brand"><Brand dark /><p>Thoughtful healthcare and wellness, with clear product information at the centre.</p></div>
-      <div className="footer-column"><span className="eyebrow">EXPLORE</span><Link href="/about">Our Story</Link><Link href="/products">All products</Link><Link href="/contact">Contact</Link></div>
-      <div className="footer-column"><span className="eyebrow">OUR BRANDS</span>{families.map((family) => <Link key={family.slug} href={`/${family.slug}`}>{family.title}</Link>)}</div>
+      <div className="footer-column"><span className="eyebrow">EXPLORE</span><Link href="/about/">Our Story</Link><Link href="/products/">All products</Link><Link href="/contact/">Contact</Link></div>
+      <div className="footer-column"><span className="eyebrow">OUR BRANDS</span>{families.map((family) => <Link key={family.slug} href={`/${family.slug}/`}>{family.title}</Link>)}</div>
       <div className="footer-column"><span className="eyebrow">GET IN TOUCH</span><a href="mailto:derminatural@gmail.com">derminatural@gmail.com</a><a href="tel:9137277233">91372 77233</a></div>
     </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} {company}</span><span>Product information is shown as provided.</span><Link href="/contact">Contact us <ArrowUpRight size={13} /></Link></div>
+    <div className="footer-bottom"><span>© {new Date().getFullYear()} {company}</span><span>Product information is shown as provided.</span><Link href="/contact/">Contact us <ArrowUpRight size={13} /></Link></div>
   </footer>;
 }
 
@@ -79,7 +92,7 @@ function ProductArt({ product, image, compact = false }: { product: Product; ima
 
 function ProductCard({ product }: { product: Product }) {
   const { ref, isVisible } = useScrollReveal<HTMLAnchorElement>();
-  return <Link ref={ref} href={`/products/${product.slug}`} className={`product-card product-card-${product.packagingOrientation} scroll-reveal${isVisible ? ' is-visible' : ''}`} data-testid={`card-product-${product.slug}`}>
+  return <Link ref={ref} href={`/products/${product.slug}/`} className={`product-card product-card-${product.packagingOrientation} scroll-reveal${isVisible ? ' is-visible' : ''}`} data-testid={`card-product-${product.slug}`}>
     <ProductArt product={product} compact />
     <div className="product-card-copy"><div className="product-meta"><BrandPill brand={product.brand} /><span>{product.category}</span></div><h3>{product.name}</h3><p>{product.sizePack}{product.ingredients.length ? ` · ${product.ingredients.slice(0, 2).join(' · ')}` : ''}</p><span className="card-arrow" aria-hidden="true"><ArrowUpRight size={17} /></span></div>
   </Link>;
@@ -89,7 +102,7 @@ function FamilyStrip() {
   const { ref, isVisible } = useScrollReveal<HTMLElement>();
   return <section ref={ref} className={`family-strip page-wrap scroll-reveal${isVisible ? ' is-visible' : ''}`} aria-label="Browse brands">
     <div className="family-strip-heading"><Eyebrow>TWO DISTINCT BRANDS</Eyebrow><p>Explore each range</p></div>
-    {families.map((family) => <Link key={family.slug} href={`/${family.slug}`} className="family-tile" data-testid={`link-family-${family.slug}`}><span>{family.mark}</span><div><b>{family.title}</b><small>{family.descriptor}</small></div><ArrowUpRight size={17} /></Link>)}
+    {families.map((family) => <Link key={family.slug} href={`/${family.slug}/`} className="family-tile" data-testid={`link-family-${family.slug}`}><span>{family.mark}</span><div><b>{family.title}</b><small>{family.descriptor}</small></div><ArrowUpRight size={17} /></Link>)}
   </section>;
 }
 
@@ -271,21 +284,7 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
 function Metadata() {
   const [location] = useLocation();
   useEffect(() => {
-    const product = location.startsWith('/products/') ? publishedProducts.find((item) => item.slug === location.split('/').pop()) : undefined;
-    const family = families.find((item) => location === `/${item.slug}`);
-    const page = location === '/'
-      ? { title: 'Dermi Natural Healthcare | Care, made considerate.', description: 'Explore GLETSY skincare and NEUTOGLOW nutritional supplement products from Dermi Natural Healthcare Pvt Ltd.' }
-      : location === '/about'
-        ? { title: 'Our Story | Dermi Natural Healthcare', description: 'Learn about Dermi Natural Healthcare Pvt Ltd and its GLETSY and NEUTOGLOW product brands.' }
-        : location === '/products'
-          ? { title: 'Products | Dermi Natural Healthcare', description: 'Search the Dermi Natural catalog by product name, category, listed ingredients or brand.' }
-          : location === '/contact'
-            ? { title: 'Contact | Dermi Natural Healthcare', description: 'Contact Dermi Natural Healthcare Pvt Ltd by email or phone, or prepare an enquiry.' }
-            : product
-              ? { title: `${product.name} | Dermi Natural Healthcare`, description: `${product.name} from ${product.brand}. ${product.description}` }
-              : family
-                ? { title: `${family.title} | Dermi Natural Healthcare`, description: `${family.intro} Explore ${family.title} products and their provided product details.` }
-                : { title: 'Dermi Natural Healthcare', description: 'Explore GLETSY and NEUTOGLOW products from Dermi Natural Healthcare Pvt Ltd.' };
+    const page = getPageSeo(location);
     document.title = page.title;
     const setMetaContent = (selector: string, content: string, attribute: 'name' | 'property', key: string) => {
       let tag = document.querySelector<HTMLMetaElement>(selector);
@@ -293,18 +292,21 @@ function Metadata() {
       tag.content = content;
     };
     setMetaContent('meta[name="description"]', page.description, 'name', 'description');
+    setMetaContent('meta[name="robots"]', page.robots, 'name', 'robots');
     setMetaContent('meta[property="og:title"]', page.title, 'property', 'og:title');
     setMetaContent('meta[property="og:description"]', page.description, 'property', 'og:description');
-    const origin = window.location.origin;
-    const normalizedPath = location === '/' ? '/' : location.replace(/\/+$/, '') || '/';
-    const canonicalUrl = new URL(normalizedPath, origin).toString();
-    const logoUrl = new URL(officialLogo, origin).toString();
-    setMetaContent('meta[property="og:url"]', canonicalUrl, 'property', 'og:url');
+    setMetaContent('meta[property="og:url"]', page.canonicalUrl, 'property', 'og:url');
+    setMetaContent('meta[property="og:type"]', page.openGraphType, 'property', 'og:type');
     setMetaContent('meta[property="og:site_name"]', company, 'property', 'og:site_name');
-    setMetaContent('meta[property="og:image"]', logoUrl, 'property', 'og:image');
+    setMetaContent('meta[property="og:locale"]', 'en_IN', 'property', 'og:locale');
+    setMetaContent('meta[property="og:image"]', SOCIAL_IMAGE_URL, 'property', 'og:image');
+    setMetaContent('meta[property="og:image:width"]', '1200', 'property', 'og:image:width');
+    setMetaContent('meta[property="og:image:height"]', '630', 'property', 'og:image:height');
+    setMetaContent('meta[property="og:image:alt"]', 'Dermi Natural Healthcare skincare and wellness product ranges', 'property', 'og:image:alt');
+    setMetaContent('meta[name="twitter:card"]', 'summary_large_image', 'name', 'twitter:card');
     setMetaContent('meta[name="twitter:title"]', page.title, 'name', 'twitter:title');
     setMetaContent('meta[name="twitter:description"]', page.description, 'name', 'twitter:description');
-    setMetaContent('meta[name="twitter:image"]', logoUrl, 'name', 'twitter:image');
+    setMetaContent('meta[name="twitter:image"]', SOCIAL_IMAGE_URL, 'name', 'twitter:image');
 
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -312,45 +314,9 @@ function Metadata() {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = canonicalUrl;
+    canonical.href = page.canonicalUrl;
 
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'Organization',
-          '@id': `${origin}/#organization`,
-          name: company,
-          url: origin,
-          logo: logoUrl,
-        },
-        {
-          '@type': 'WebSite',
-          '@id': `${origin}/#website`,
-          name: 'Dermi Natural Healthcare',
-          url: origin,
-          publisher: { '@id': `${origin}/#organization` },
-        },
-        ...(product
-          ? [
-              {
-                '@type': 'Product',
-                '@id': `${canonicalUrl}#product`,
-                name: product.name,
-                description: product.description,
-                image: product.images.map((image) =>
-                  new URL(image.src, origin).toString(),
-                ),
-                category: product.category,
-                brand: {
-                  '@type': 'Brand',
-                  name: product.brand,
-                },
-              },
-            ]
-          : []),
-      ],
-    };
+    const structuredData = getStructuredData(location);
     let structuredDataScript =
       document.querySelector<HTMLScriptElement>(
         'script[type="application/ld+json"][data-site-structured-data]',
@@ -365,7 +331,7 @@ function Metadata() {
   }, [location]);
   return null;
 }
-function App() {
+function App({ ssrPath }: { ssrPath?: RouterProps['ssrPath'] } = {}) {
   useEffect(() => {
     const initialMark = document.getElementById('initial-mark');
     if (!initialMark) return;
@@ -389,7 +355,12 @@ function App() {
 
   return <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+        <WouterRouter
+          base={import.meta.env.BASE_URL.replace(/\/$/, '')}
+          ssrPath={ssrPath}
+          hrefs={formatRouteHref}
+          aroundNav={normalizeRouteNavigation}
+        >
         <Metadata />
         <Router />
       </WouterRouter>
