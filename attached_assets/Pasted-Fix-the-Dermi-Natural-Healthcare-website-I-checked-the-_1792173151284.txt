@@ -1,0 +1,52 @@
+Fix the **Dermi Natural Healthcare website**. I checked the website in mobile view, and the product images are too small and unclear. The product images are not displaying properly within their cards, making it difficult for customers to see the actual products.
+
+Please inspect the entire website and fix the following issues:
+
+### 1. Product Images
+- Fix all product images across the entire website, including the product listing, product cards, product details, and related product sections.
+- Make product images clear, sharp, properly sized, and easy to recognize.
+- Use `object-fit: contain` for product packaging so the complete product remains visible without cropping.
+- Give every product image a consistent container with appropriate padding, dimensions, and alignment.
+- Fix incorrect image paths, broken images, low-resolution images, and loading issues.
+- Use the correct images for their corresponding products. Do not replace real product images with random placeholders.
+- Ensure product images look professional on both mobile and desktop.
+- Optimize image loading without compromising visual quality.
+
+### 2. Website Layout
+- Review the entire website, not just the section shown in the screenshot.
+- Fix inconsistent spacing, alignment, margins, padding, typography, and product card dimensions.
+- Make product grids balanced, visually appealing, and easy to browse.
+- Ensure headings, descriptions, buttons, navigation, and product details are properly aligned.
+- Maintain the existing premium, clean, natural healthcare brand identity.
+
+### 3. Website Animation
+- Inspect the existing animations and transitions throughout the website.
+- Fix animations that are broken, too slow, jumpy, or visually distracting.
+- Add subtle, smooth transitions where appropriate, such as product card hover effects, image loading transitions, and section reveals.
+- Keep animations lightweight and performance-friendly.
+- Respect reduced-motion accessibility preferences.
+
+### 4. Complete Website Responsiveness
+Test and fix the entire website across:
+- Mobile phones, including iPhone-sized screens around 393px wide.
+- Small Android phones and larger mobile devices.
+- Tablets and laptops.
+- Desktop screens and larger monitors.
+
+Make sure there is no horizontal overflow, clipped content, overlapping text, distorted images, or awkward empty spaces. Product cards must resize properly, and text must remain readable at every screen size.
+
+### 5. Performance and Functionality
+- Check the browser console for relevant errors and fix them.
+- Ensure all images load correctly and do not cause layout shifts.
+- Check navigation, buttons, product links, and other existing interactions.
+- Avoid unnecessary dependencies or heavy animations.
+- Preserve the existing functionality and project structure.
+
+### 6. Important Instructions
+Before making changes, inspect the existing codebase and identify the actual causes of these problems. Fix the underlying issues rather than applying temporary CSS patches.
+
+**Do not redesign the entire website unnecessarily.** Preserve its existing visual identity and improve the quality, clarity, consistency, and responsiveness of the current implementation.
+
+After implementing the fixes, test the website in mobile and desktop views, verify that the product images are clearly visible, and resolve any remaining layout issues.
+
+**Goal:** A polished, premium, fully responsive Dermi Natural Healthcare website where every product image is clearly visible, the layout feels professional, and all animations and interactions work smoothly.

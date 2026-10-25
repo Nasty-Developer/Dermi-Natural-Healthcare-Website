@@ -1,0 +1,34 @@
+2026-10-03T18:15:24.870980867Z ==> Cloning from https://github.com/Nasty-Developer/Dermi-Natural-Healthcare-Website
+2026-10-03T18:15:31.729625431Z ==> Checking out commit ca2fba6d6fd129417eaf3e6448130d625432a56c in branch main
+2026-10-03T18:15:33.215828104Z ==> Installing dependencies with pnpm...
+2026-10-03T18:15:33.28337994Z ==> Using Node.js version 24.21.0 (default)
+2026-10-03T18:15:33.283383866Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2026-10-03T18:15:39.605392288Z ==> Running build command 'corepack pnpm install --frozen-lockfile && corepack pnpm --filter @workspace/dermi-natural-healthcare run build'...
+2026-10-03T18:15:40.013629498Z Downloading the pnpm 12.8.1 binary for linux-x64...
+2026-10-03T18:15:40.697548117Z Scope: all 10 workspace projects
+2026-10-03T18:15:40.721818456Z . preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-10-03T18:15:40.725457237Z . preinstall: Done
+2026-10-03T18:15:41.030834546Z ? Verifying lockfile against supply-chain policies (477 entries)...
+2026-10-03T18:15:41.739005258Z Downloading react-icons@5.7.0: 0.00 B/22.76 MB
+2026-10-03T18:15:42.625101583Z ✓ Lockfile passes supply-chain policies (477 entries in 1.6s)
+2026-10-03T18:15:42.625119528Z Lockfile is up to date, resolution step is skipped
+2026-10-03T18:15:43.448125415Z Packages: +475
+2026-10-03T18:15:43.448140219Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-10-03T18:15:43.463103611Z Progress: resolved 475, reused 0, downloaded 475, added 475, done
+2026-10-03T18:15:43.512081894Z 
+2026-10-03T18:15:43.512094519Z dependencies:
+2026-10-03T18:15:43.512096485Z + @replit/connectors-sdk 0.4.3
+2026-10-03T18:15:43.512097998Z 
+2026-10-03T18:15:43.512099288Z devDependencies:
+2026-10-03T18:15:43.5121007Z + prettier 3.9.6
+2026-10-03T18:15:43.512102853Z + typescript 5.9.3
+2026-10-03T18:15:43.512105235Z 
+2026-10-03T18:15:43.525256138Z Error: ERR_PNPM_IGNORED_BUILDS
+2026-10-03T18:15:43.525261912Z 
+2026-10-03T18:15:43.525263225Z   × installing dependencies
+2026-10-03T18:15:43.525265042Z   ╰─▶ Ignored build scripts: esbuild@0.28.2
+2026-10-03T18:15:43.525266603Z   help: Run "pnpm approve-builds" to pick which dependencies should be allowed
+2026-10-03T18:15:43.525268587Z         to run scripts.
+2026-10-03T18:15:43.525269896Z 
+2026-10-03T18:15:43.578219569Z ==> Build failed 😞
+2026-10-03T18:15:43.57823224Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys

@@ -1,0 +1,262 @@
+Act as a world-class UI/UX designer, senior frontend engineer, and animation specialist.
+
+Your task is to transform my existing Dermi Natural Healthcare website into an exceptionally polished, premium, modern, and visually stunning website with beautiful animations and interactions throughout.
+
+IMPORTANT: First inspect the existing codebase, architecture, components, styling, and installed dependencies. Then improve the existing website directly. Do not rebuild it from scratch or remove existing functionality.
+
+PROJECT: Dermi Natural Healthcare
+DESIGN DIRECTION: Premium healthcare and wellness brand, elegant luxury aesthetics, sophisticated typography, warm ivory backgrounds, deep navy, subtle gold accents, clean layouts, and smooth cinematic animations.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. COMPLETE UI POLISH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Review and refine EVERY page and section of the website.
+
+- Improve spacing, alignment, proportions, and visual hierarchy.
+- Make typography consistent, elegant, and professionally balanced.
+- Refine headings, paragraphs, cards, borders, shadows, and backgrounds.
+- Maintain consistent spacing between sections.
+- Fix awkward whitespace, overflowing elements, and inconsistent sizing.
+- Make every section feel intentionally designed.
+- Improve image sizing, aspect ratios, cropping, and positioning.
+- Ensure all elements look polished at different browser zoom levels.
+- Maintain the existing brand identity and color palette.
+- Avoid excessive gradients, unnecessary decorations, and generic AI-generated design patterns.
+
+The final result should feel like a professionally designed premium healthcare brand website.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. BEAUTIFUL WEBSITE ANIMATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Add smooth, elegant, high-quality animations throughout the entire website.
+
+PAGE LOAD:
+- Create a refined entrance animation for the hero section.
+- Animate headings, descriptions, images, and CTA buttons with subtle staggered reveals.
+- Avoid long loading sequences or distracting effects.
+
+SCROLL ANIMATIONS:
+- Add smooth reveal animations when sections enter the viewport.
+- Animate cards with subtle opacity and vertical movement.
+- Introduce elegant staggered animations for product grids and feature sections.
+- Add subtle image reveal effects.
+- Animate statistics or decorative elements only where appropriate.
+- Ensure animations trigger reliably and do not repeatedly distract users.
+
+BUTTON ANIMATIONS:
+Every interactive button must feel responsive and premium.
+
+Include:
+- Smooth hover transitions.
+- Subtle upward movement where appropriate.
+- Elegant shadow changes.
+- Small scale changes without excessive bouncing.
+- Clear pressed and active states.
+- Smooth transitions between interaction states.
+- Beautiful arrow or icon movement for CTA buttons.
+- Proper keyboard focus indicators.
+
+Apply this consistently to:
+- Primary CTA buttons.
+- Secondary buttons.
+- Enquire buttons.
+- Product buttons.
+- Navigation links.
+- Contact buttons.
+- Chatbot controls.
+- Other interactive elements.
+
+Do not animate buttons so aggressively that they look like toys.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. PREMIUM HOVER INTERACTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRODUCT CARDS:
+- Add subtle elevation on hover.
+- Improve image transitions.
+- Animate arrows and interactive icons.
+- Use refined borders and shadows.
+- Keep all cards aligned and consistent.
+
+IMAGE INTERACTIONS:
+- Add gentle image zoom effects where appropriate.
+- Prevent image overflow outside card boundaries.
+- Preserve image aspect ratios and focal points.
+- Avoid aggressive zooming or distortion.
+
+NAVIGATION:
+- Add smooth hover transitions.
+- Use elegant underline or indicator animations.
+- Make the active navigation item easy to identify.
+- Keep dropdown interactions smooth and accessible, if dropdowns exist.
+
+LINKS AND ICONS:
+- Add subtle transitions and movement where useful.
+- Avoid unnecessary animations on decorative elements.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. HERO SECTION ENHANCEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Make the homepage hero visually impressive without losing its premium healthcare identity.
+
+- Improve the relationship between the headline, description, artwork, and CTA.
+- Add a refined entrance animation.
+- Introduce subtle motion to decorative elements where appropriate.
+- Ensure the hero remains balanced across screen sizes.
+- Make the primary CTA stand out.
+- Preserve the existing logo and brand assets.
+- Avoid excessive motion that distracts from the content.
+
+The hero should feel elegant, confident, and professionally art-directed.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. DIRECTORS / LEADERSHIP SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Preserve the existing directors and their original photographs.
+
+- Use consistent image dimensions and aspect ratios.
+- Keep both portrait frames identical in size and alignment.
+- Use object-fit: cover where appropriate.
+- Adjust object-position individually so faces remain visible.
+- Add subtle, elegant hover animations.
+- Keep names, roles, and descriptions aligned consistently.
+- Ensure the layout remains balanced on desktop, tablet, mobile, and different browser zoom levels.
+
+Do not replace the directors' photographs or distort their faces.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. GLOWAI CHATBOT AND WHATSAPP BUTTON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Preserve the existing GlowAI chatbot and WhatsApp integration.
+
+GLOWAI:
+- Refine the floating chatbot button.
+- Add a subtle hover animation and smooth open/close transitions.
+- Animate the chat panel when opening and closing.
+- Keep message transitions smooth and readable.
+- Make the chat interface responsive and accessible.
+- Ensure it does not obstruct important page content.
+
+WHATSAPP:
+- Preserve the existing WhatsApp number and integration.
+- Add a subtle hover effect.
+- Keep the button fixed near the bottom-right corner.
+- Maintain a professional icon and accessible label.
+
+CRITICAL:
+The GlowAI chatbot and WhatsApp button must NEVER overlap each other.
+
+Use responsive positioning and sensible spacing on desktop and mobile.
+
+Do not break the chatbot backend, API integration, or existing conversation functionality.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. MOBILE RESPONSIVENESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Test and refine the entire website at:
+- Small mobile screens.
+- Standard mobile screens.
+- Tablets.
+- Laptops.
+- Large desktop screens.
+- Different viewport widths and browser zoom levels.
+
+Requirements:
+- No horizontal scrolling.
+- No overlapping elements.
+- No distorted images.
+- No inconsistent card heights.
+- No clipped buttons or headings.
+- No floating controls covering important content.
+- Navigation must work correctly on mobile.
+- Animations must remain smooth on lower-powered devices.
+
+Use responsive CSS rather than relying on fixed pixel dimensions everywhere.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. ANIMATION TECHNOLOGY AND PERFORMANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+First inspect the project's existing dependencies.
+
+If Framer Motion or Motion is already installed, use the existing library appropriately.
+
+Otherwise, prefer lightweight CSS transitions and keyframe animations for simple interactions. Install another animation dependency only if genuinely necessary.
+
+Use:
+- Transform and opacity animations where possible.
+- Appropriate transition durations and easing.
+- Intersection Observer for scroll-triggered animations when needed.
+- Lazy loading for appropriate images.
+- Reduced-motion support using prefers-reduced-motion.
+- Cleanup for event listeners and animation observers.
+
+Avoid:
+- Excessive animation libraries.
+- Continuous unnecessary animations.
+- Heavy JavaScript animation loops.
+- Layout shifts.
+- Animations that make the website feel slow.
+- Excessive blur and expensive effects.
+- Animating large layout properties unnecessarily.
+
+Animations should feel smooth, refined, and intentional, not distracting.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. ACCESSIBILITY AND FUNCTIONALITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Preserve all existing routes and pages.
+- Preserve product content and existing website functionality.
+- Ensure every button and link still works.
+- Maintain readable contrast.
+- Add visible keyboard focus states.
+- Support reduced-motion preferences.
+- Do not use animation as a substitute for meaningful feedback.
+- Ensure interactive elements remain accessible on touchscreens.
+
+Do not introduce fake functionality or placeholder content.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. FINAL TESTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After implementing the improvements:
+
+1. Run the project's existing type checks.
+2. Run the production build.
+3. Fix any errors introduced by your changes.
+4. Inspect the homepage and all major sections.
+5. Verify the directors' image alignment.
+6. Test all buttons, links, and navigation.
+7. Verify GlowAI and WhatsApp positioning.
+8. Check mobile and desktop layouts.
+9. Check browser console errors where possible.
+10. Confirm that existing functionality has not been broken.
+
+Do not claim that a test passed unless you actually ran it.
+
+IMPORTANT RULES:
+- Modify the existing project directly.
+- Do not delete existing features.
+- Do not replace real content with placeholders.
+- Do not change the brand identity.
+- Do not break existing integrations.
+- Do not redesign only the homepage while ignoring the remaining pages.
+- Do not make unnecessary changes to the backend.
+- Keep the implementation clean, maintainable, and production-ready.
+
+FINAL GOAL:
+
+Deliver a complete, polished Dermi Natural Healthcare website with premium visual design, gorgeous but restrained animations, beautifully interactive buttons, smooth page transitions where appropriate, refined product cards, elegant image interactions, responsive layouts, and a consistent professional experience across the entire website.
+
+Make every detail feel deliberate and expensive.
+
+Inspect, implement, test, and fix the actual code. Do not stop after providing a plan.

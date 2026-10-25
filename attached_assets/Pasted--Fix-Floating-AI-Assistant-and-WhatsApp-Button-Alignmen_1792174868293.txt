@@ -1,0 +1,40 @@
+## Fix Floating AI Assistant and WhatsApp Button Alignment
+
+Please inspect the attached screenshot of the Der mi Natural Healthcare website and fix the visual alignment of the **GlowAI floating AI assistant button** and the **WhatsApp floating button**.
+
+### Required Changes
+
+1. **Match the dimensions**
+   - Make both floating buttons use a consistent height, preferably around 64px.
+   - Give both buttons the same overall width, or use a consistent sizing system that makes them visually balanced.
+   - Keep their border radius, padding, and overall proportions consistent.
+
+2. **Align them perfectly**
+   - Position both buttons along the same right-side vertical alignment.
+   - Use the same `right` offset for both buttons.
+   - Maintain consistent vertical spacing between them, approximately 16–20px.
+   - Keep both buttons fixed to the viewport, not positioned relative to individual page sections.
+
+3. **Preserve their individual designs**
+   - Keep the existing GlowAI icon, label, and chat icon.
+   - Keep the WhatsApp icon and label.
+   - Preserve their current brand colors, borders, typography, and professional appearance.
+   - Do not remove either button or replace the icons with text or emojis.
+
+4. **Responsive behavior**
+   - Ensure both buttons remain consistently aligned on desktop, tablet, and mobile screens.
+   - Prevent them from overlapping the footer, important page content, or each other.
+   - Respect mobile safe areas and avoid horizontal overflow.
+
+5. **Implementation requirements**
+   - Inspect the existing components and CSS before making changes.
+   - Use a shared CSS class or common design tokens for dimensions, positioning, border radius, and spacing wherever practical.
+   - Check for conflicting `bottom`, `right`, `width`, `height`, `padding`, and `z-index` values.
+   - Keep both buttons clickable and preserve all existing AI chat and WhatsApp functionality.
+   - Do not modify unrelated website sections or redesign the entire website.
+
+### Final Verification
+
+After implementing the fix, run the website and visually inspect both buttons at desktop and mobile viewport sizes. Confirm that their outer dimensions are consistent, their right edges line up perfectly, and the vertical spacing looks intentional and professional.
+
+**Goal:** Both floating buttons should look like a single, coordinated floating action group, with matching dimensions, clean alignment, and a premium, polished appearance.

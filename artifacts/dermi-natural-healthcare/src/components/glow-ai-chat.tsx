@@ -269,9 +269,9 @@ export function GlowAIChat() {
           onClick={() => { setIsOpen(true); setIsMinimized(false); }}
           data-testid="glowai-launcher"
         >
-          <span className="glowai-launcher-icon"><Sparkles size={16} strokeWidth={1.8} /></span>
+          <span className="glowai-launcher-icon"><Sparkles size={20} strokeWidth={1.8} /></span>
           <span className="glowai-launcher-label">GlowAI</span>
-          <MessageCircle className="glowai-launcher-chat-icon" size={12} />
+          <MessageCircle className="glowai-launcher-chat-icon" size={14} />
         </button>
       )}
     </div>

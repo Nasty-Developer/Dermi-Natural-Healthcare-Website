@@ -1,0 +1,468 @@
+URGENT UI FIX — DIRECTORS / LEADERSHIP SECTION LOOKS TOO SMALL, EMPTY AND UNBALANCED
+
+I have checked the actual rendered About / Our Story page in the browser, and the current Directors section needs a MAJOR layout correction.
+
+The current section looks visually weak and badly balanced.
+
+I have attached a screenshot showing the problem.
+
+IMPORTANT: I zoomed the browser out to 33% so you can clearly see the full composition and spacing issue.
+
+CURRENT PROBLEMS:
+
+1. The Director portraits are TOO SMALL.
+2. There is WAY TOO MUCH EMPTY SPACE around the Directors.
+3. The first and second Directors are stacked very far apart vertically.
+4. The portrait and text feel disconnected from each other.
+5. The section looks unfinished and sparse.
+6. The overall composition feels too narrow compared with the available screen width.
+7. The leadership section does not feel like a premium corporate website.
+8. The current layout wastes a huge amount of vertical space.
+9. The section does not create a strong visual hierarchy.
+10. The Director photographs should be much more prominent.
+
+FIX THIS PROPERLY.
+
+==================================================
+1. REDESIGN THE DIRECTORS SECTION
+==================================================
+
+Do not simply increase the image size by a few pixels.
+
+Rework the complete section layout.
+
+For desktop, use a much stronger composition where both Directors are presented as part of ONE cohesive leadership section.
+
+Preferred direction:
+
+A large section container spanning a much more appropriate portion of the page width.
+
+At the top:
+
+SMALL LABEL:
+LEADERSHIP
+
+MAIN HEADING:
+Meet Our Directors
+
+OPTIONAL SHORT SUPPORTING LINE:
+A very small factual line is acceptable if needed, but DO NOT invent biographies or claims.
+
+Then present the two Directors in a balanced premium composition.
+
+==================================================
+2. DESKTOP LAYOUT
+==================================================
+
+For large desktop screens, prefer a side-by-side composition:
+
+DIRECTOR 1                    DIRECTOR 2
+
+[LARGE PORTRAIT]             [LARGE PORTRAIT]
+
+Israr Siddique               G. Moinuddin
+Director                     Director
+
+Dermi Natural Healthcare Pvt Ltd
+Dermi Natural Healthcare Pvt Ltd
+
+The two Directors should feel visually connected.
+
+Do NOT place one tiny Director block at the top and another tiny block far below it.
+
+Use the screen width properly.
+
+Create a balanced two-column or editorial layout.
+
+==================================================
+3. MAKE THE PORTRAITS MUCH LARGER
+==================================================
+
+The current portraits are far too small.
+
+Increase their visual prominence significantly.
+
+The portraits should be large enough that the Directors are immediately recognizable when the section enters the viewport.
+
+Use responsive sizing.
+
+For desktop, use a portrait width appropriate to the available space, rather than a tiny fixed width.
+
+Do NOT let the portrait become huge enough to dominate the entire page.
+
+Aim for:
+
+LARGE + ELEGANT + BALANCED
+
+not:
+
+TINY + LOST IN WHITE SPACE.
+
+==================================================
+4. FIX THE EXCESSIVE EMPTY SPACE
+==================================================
+
+This is VERY IMPORTANT.
+
+Remove the excessive vertical spacing between:
+
+- First Director
+- Divider
+- Second Director
+
+The current spacing is far too large.
+
+The two Directors should belong to the same visual composition.
+
+Reduce unnecessary:
+
+- top padding
+- bottom padding
+- row gaps
+- section gaps
+- divider spacing
+- empty margins
+
+Use intentional whitespace, but not dead space.
+
+The section should feel spacious, NOT empty.
+
+==================================================
+5. CONNECT IMAGE AND TEXT
+==================================================
+
+The portrait and its corresponding text should visually belong together.
+
+The current implementation makes the image and text feel disconnected.
+
+Use a consistent internal relationship:
+
+PORTRAIT
+↓
+NAME
+↓
+ROLE
+↓
+COMPANY
+
+OR, on desktop, create an elegant side-by-side editorial arrangement.
+
+Make sure it is immediately obvious which text belongs to which Director.
+
+==================================================
+6. DIRECTOR 1
+==================================================
+
+Use the official uploaded image for:
+
+ISRAR SIDDIQUE
+
+Display:
+
+Israr Siddique
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+Do not invent:
+- biography
+- achievements
+- qualifications
+- experience
+- awards
+- certifications
+
+==================================================
+7. DIRECTOR 2
+==================================================
+
+Use the official uploaded image for:
+
+G. MOINUDDIN
+
+Display:
+
+G. Moinuddin
+Director
+Dermi Natural Healthcare Pvt Ltd
+
+Do not invent:
+- biography
+- achievements
+- qualifications
+- experience
+- awards
+- certifications
+
+==================================================
+8. IMAGE CROPPING
+==================================================
+
+Very important:
+
+Do NOT aggressively crop either Director portrait.
+
+Preserve the original proportions.
+
+The faces must remain clearly visible.
+
+Do not:
+- stretch
+- squash
+- distort
+- over-crop
+- cut off important parts of the portrait
+
+Create a polished portrait presentation while preserving the uploaded images.
+
+==================================================
+9. STOP MAKING IT LOOK LIKE SMALL CARDS
+==================================================
+
+Do NOT create two tiny rectangular employee cards.
+
+This should be an editorial leadership composition.
+
+Use:
+
+- large portraits
+- refined typography
+- generous but controlled whitespace
+- subtle gold details
+- deep navy text
+- ivory/cream background
+- elegant separators
+- soft organic framing
+
+Avoid:
+
+- tiny cards
+- boxed employee widgets
+- harsh rectangles
+- excessive borders
+- generic Bootstrap team layouts
+
+==================================================
+10. REMOVE THE CURRENT “TWO SMALL BLOCKS” STRUCTURE
+==================================================
+
+The current screenshot shows:
+
+small portrait + tiny text
+then
+huge empty space
+then
+small portrait + tiny text
+
+This exact structure needs to be removed.
+
+The Directors should be visually grouped together as one Leadership section.
+
+On desktop, both should preferably appear within the same viewport region.
+
+==================================================
+11. BETTER VISUAL HIERARCHY
+==================================================
+
+Create a clear hierarchy:
+
+LEADERSHIP
+↓
+Meet Our Directors
+↓
+Two large Director portraits
+↓
+Names
+↓
+Roles
+↓
+Company
+
+The main heading should be large enough to establish the section.
+
+Director names should be clearly readable.
+
+Roles should be smaller and understated.
+
+==================================================
+12. PREMIUM DESIGN LANGUAGE
+==================================================
+
+Use the existing Dermi Natural identity:
+
+- Deep navy
+- Muted gold
+- Ivory
+- Warm cream
+- Soft grey
+
+Maintain the premium healthcare/editorial aesthetic.
+
+Do NOT use:
+
+- Purple
+- Neon
+- Random colors
+- Heavy gradients
+- Flashy effects
+
+==================================================
+13. ORGANIC VISUAL TREATMENT
+==================================================
+
+The portraits should not look trapped inside rigid square boxes.
+
+Use sophisticated visual framing such as:
+
+- soft rounded portrait shape
+- subtle organic curve
+- gentle border
+- soft shadow
+- elegant background treatment
+
+Do not over-round everything.
+
+The design should feel intentional and premium.
+
+==================================================
+14. ANIMATION
+==================================================
+
+Keep the Director section animated, but subtle.
+
+When the section enters the viewport:
+
+1. Section label reveals.
+2. Heading appears.
+3. First portrait fades/reveals.
+4. Second portrait follows with a slight stagger.
+5. Director names and roles appear smoothly.
+
+Add subtle hover interaction to the portraits if appropriate.
+
+Examples:
+- very slight image scale
+- subtle shadow change
+- gentle opacity/transform
+- tiny movement
+
+Do NOT use:
+- bounce
+- spin
+- flashy effects
+- dramatic zoom
+- excessive parallax
+
+==================================================
+15. RESPONSIVE DESIGN
+==================================================
+
+Desktop:
+Two Directors side-by-side.
+
+Tablet:
+Balanced two-column or adaptive layout.
+
+Mobile:
+Stack naturally:
+
+Israr Siddique
+[Portrait]
+Director
+
+G. Moinuddin
+[Portrait]
+Director
+
+Do not create huge blank spaces between them.
+
+Keep everything compact enough to feel like one leadership section while still giving each Director enough visual breathing room.
+
+==================================================
+16. USE THE FULL SCREEN WIDTH BETTER
+==================================================
+
+The current section appears constrained to a very narrow center area.
+
+Use the available screen width much more intelligently.
+
+Do not make the Director section full-bleed if that would look excessive, but give it a strong maximum width and generous horizontal breathing room.
+
+The goal is:
+
+WIDER + STRONGER + MORE BALANCED
+
+==================================================
+17. REMOVE UNNECESSARY DIVIDERS
+==================================================
+
+The current divider between the Directors contributes to the fragmented feeling.
+
+Only keep a divider if it genuinely improves the composition.
+
+A subtle vertical divider between two desktop Directors can work.
+
+A huge horizontal divider separating two vertically stacked Directors should NOT be used unless absolutely necessary.
+
+==================================================
+18. CHECK THE ACTUAL BROWSER RESULT
+==================================================
+
+After making the changes:
+
+OPEN THE ACTUAL WEBSITE IN THE BROWSER.
+
+Inspect the complete Leadership section at normal desktop zoom.
+
+Do not judge only from the code.
+
+Also test at:
+- 100%
+- 125%
+- laptop width
+- tablet width
+- mobile width
+
+The section must remain visually balanced.
+
+==================================================
+19. FINAL VISUAL TEST
+==================================================
+
+Ask yourself:
+
+- Are the portraits large enough?
+- Can I immediately see both Directors?
+- Are the Directors visually connected?
+- Is there too much empty space?
+- Is the section using the screen width properly?
+- Does it feel premium?
+- Does it look like a real healthcare company website?
+- Does it look custom-designed?
+- Are the names clearly associated with the correct portraits?
+- Does it feel polished at normal browser zoom?
+
+If the answer to any of these is no, refine the layout again.
+
+==================================================
+FINAL REQUIREMENT
+==================================================
+
+The final Directors section should look approximately like a PREMIUM EDITORIAL LEADERSHIP SECTION, NOT TWO TINY PROFILE BLOCKS SEPARATED BY A MASSIVE EMPTY AREA.
+
+Make both Directors visually prominent.
+
+Make the section wider.
+
+Reduce unnecessary vertical whitespace.
+
+Connect the portraits and text.
+
+Use the actual uploaded photos.
+
+Keep the Dermi Natural navy + gold + ivory identity.
+
+Make it smooth, elegant, modern, and professionally animated.
+
+DO NOT STOP AFTER A BASIC CSS TWEAK.
+
+Rebuild the composition properly and verify the actual rendered result in the browser before considering the task complete.
