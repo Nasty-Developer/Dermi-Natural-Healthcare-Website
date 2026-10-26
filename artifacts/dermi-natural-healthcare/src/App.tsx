@@ -11,11 +11,11 @@ import { InstallAppButton } from '@/components/install-app-button';
 import { families, products, type Product, type ProductBrand, type ProductImage } from '@/data/products';
 import { leadershipProfiles } from '@/data/leadership';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
-import officialLogo from '@/assets/brand/official-logo-transparent.png';
 import { getPageSeo, getStructuredData, SOCIAL_IMAGE_URL } from '@/lib/seo';
 
 const queryClient = new QueryClient();
 const company = 'DERMI NATURAL HEALTHCARE PVT LTD';
+const officialLogo = `${import.meta.env.BASE_URL}dermi-natural-logo.webp`;
 const publishedProducts = [...products].filter((product) => product.status === 'published').sort((a, b) => a.displayOrder - b.displayOrder);
 
 function ensureTrailingRouteSlash(path: string) {
