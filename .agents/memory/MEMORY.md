@@ -1,2 +1,3 @@
 - [Product image uploads](product-image-uploads.md) — follow user-confirmed product grouping, preserve existing listings, and group each new product's photos in its gallery.
 - [GitHub proxy pushes](git-proxy-push.md) — verify branch history and tree after pushing; the secure GitHub proxy may rewrite merge commits.
+- [Local GlowAI behavior](glowai-local.md) — no external AI, API keys, paid services, or chat storage; use verified site data and WhatsApp fallbacks.

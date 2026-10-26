@@ -11,21 +11,7 @@ function normalize(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
-const catalog = (() => {
-  const seen = new Set<string>();
-  return products.filter((product) => {
-    if (product.status !== 'published') return false;
-    const identity = [
-      product.brand,
-      normalize(product.name),
-      normalize(product.sizePack),
-      normalize(product.category),
-    ].join('|');
-    if (seen.has(identity)) return false;
-    seen.add(identity);
-    return true;
-  });
-})();
+const catalog = products.filter((product) => product.status === 'published');
 
 function contactHint() {
   return 'Tap the green WhatsApp button on this page, email derminatural@gmail.com, or call 91372 77233.';
@@ -89,6 +75,10 @@ function listProducts(items: Product[], includeIngredients = false) {
   return items.map((product) => formatProduct(product, includeIngredients)).join(' • ');
 }
 
+function listProductNames(items: Product[]) {
+  return items.map((product) => `${product.name} (${product.brand}, ${product.sizePack})`).join(' • ');
+}
+
 function isIngredientQuestion(query: string) {
   const normalizedQuery = normalize(query);
   const asksAboutIngredients = /\b(ingredient|ingredients|formula|contain|contains|what is in|what s in|made of)\b/.test(normalizedQuery);
@@ -113,7 +103,8 @@ export function getGlowAIResponse(message: string) {
     return 'I can share product information listed on this site, but I can’t diagnose conditions or advise on treatment, safety, or dosage. Please check the product label and consult a qualified healthcare professional.';
   }
 
-  if (/\b(shipping|delivery|return|refund|order status|track order|purchase|checkout|price|prices|cost|buy|where to buy)\b/.test(query)) {
+  const asksRoutineOrder = /\b(in what order|what order.*(apply|use|layer)|routine.*order)\b/.test(query);
+  if (!asksRoutineOrder && /\b(shipping|delivery|return|refund|order|orders|track|tracking|purchase|checkout|price|prices|cost|buy|where to buy)\b/.test(query)) {
     return `The website doesn’t provide shipping, returns, order tracking, or price details, so I don’t want to guess. ${contactHint()}`;
   }
 
@@ -121,7 +112,7 @@ export function getGlowAIResponse(message: string) {
     return `You can reach Dermi Natural Healthcare by WhatsApp, email, or phone. ${contactHint()}`;
   }
 
-  if (/\b(how to use|how do i use|usage|how should i apply|apply this|morning routine|night routine|skincare routine|skin care routine|routine|in what order)\b/.test(query)) {
+  if (/\b(how to use|how do i use|usage|how should i apply|apply this|morning routine|night routine|skincare routine|skin care routine|routine|in what order|what order.*(apply|use|layer))\b/.test(query)) {
     return 'This website doesn’t list product-use instructions or a personalized skincare routine. Please follow the directions on the product packaging; for routine or skin-specific advice, consult a qualified professional. I can still help you find products by category or ingredient.';
   }
 
@@ -136,23 +127,23 @@ export function getGlowAIResponse(message: string) {
       return `Here are the ingredient details listed on the website: ${listProducts(matches.slice(0, 4), true)} The site lists ingredients but doesn’t describe their effects or suitability.`;
     }
     const withIngredients = catalog.filter((product) => product.ingredients.length > 0);
-    return `I can share ingredient lists shown on the website, but not medical effects or suitability. Listed ingredients by product: ${listProducts(withIngredients.slice(0, 7), true)}`;
+    return `I can share ingredient lists shown on the website, but not medical effects or suitability. Listed ingredients by product: ${withIngredients.map((product) => `${product.name} (${product.brand}): ${product.ingredients.join(', ')}`).join(' • ')}`;
   }
 
   if (/\b(what is dermi|about dermi|about the company|who are you|what is gletsy|what is neutoglow)\b/.test(query)) {
     if (query.includes('gletsy')) {
       const items = catalog.filter((product) => product.brand === 'GLETSY');
-      return `GLETSY is the skincare brand listed by Dermi Natural Healthcare. The catalog includes: ${listProducts(items.slice(0, 6))}`;
+      return `GLETSY is the skincare brand listed by Dermi Natural Healthcare. The catalog includes: ${listProductNames(items)}`;
     }
     if (query.includes('neutoglow')) {
       const items = catalog.filter((product) => product.brand === 'NEUTOGLOW');
-      return `NEUTOGLOW is the nutritional supplement brand listed by Dermi Natural Healthcare. The catalog includes: ${listProducts(items)}`;
+      return `NEUTOGLOW is the nutritional supplement brand listed by Dermi Natural Healthcare. The catalog includes: ${listProductNames(items)}`;
     }
     return 'Dermi Natural Healthcare Pvt Ltd is a healthcare and wellness company with two product brands: GLETSY skincare and NEUTOGLOW nutritional supplements.';
   }
 
   if (/\b(all products|product catalog|browse products|show products|list products|what products)\b/.test(query)) {
-    return `The catalog currently lists: ${listProducts(catalog.slice(0, 8))}`;
+    return `The catalog currently lists: ${listProductNames(catalog)}`;
   }
 
   const matches = rankProducts(message);

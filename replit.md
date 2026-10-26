@@ -41,7 +41,7 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-- The imported GlowAI widget sends requests to `/api/glowai/chat`, but the current shared API only has a health route; chat responses need a backend implementation.
+- GlowAI uses local keyword matching against the published product catalog. Do not add external AI APIs, paid AI services, or API-key requirements; when site details are unavailable, say so and direct visitors to WhatsApp.
 
 ## Pointers
 
