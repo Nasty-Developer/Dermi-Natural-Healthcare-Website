@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
 import { ArrowUp, Bot, ChevronDown, RotateCcw, Sparkles, Trash2, X } from 'lucide-react';
+import { getGlowAIResponse } from '@/lib/glowai-local';
 import './glow-ai-chat.css';
 
 type ChatRole = 'user' | 'assistant';
 type ChatMessage = { id: string; role: ChatRole; content: string };
-type StreamRecord = { content?: string; done?: boolean; error?: string };
 
-const welcomeMessage = "Hello, I'm GlowAI, your skincare assistant. I can help you explore our products, understand ingredients, and build a simple skincare routine.";
+const welcomeMessage = "Hello, I'm GlowAI. I can help you find products and share the names, sizes, and ingredients listed on this site. I don't provide medical advice or personalized treatment plans.";
 const quickActions = ['Build My Routine', 'Find a Product', 'Explain Ingredients', 'Acne Care', 'Brightening', 'Sunscreen'];
 const makeId = () => `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
@@ -20,7 +20,7 @@ export function GlowAIChat() {
   const [retryText, setRetryText] = useState('');
   const [hasStarted, setHasStarted] = useState(false);
   const busyRef = useRef(false);
-  const abortRef = useRef<AbortController | null>(null);
+  const replySequenceRef = useRef(0);
   const messagesRef = useRef(messages);
   const scrollRef = useRef<HTMLDivElement>(null);
   const composerRef = useRef<HTMLTextAreaElement>(null);
@@ -37,61 +37,14 @@ export function GlowAIChat() {
     if (isOpen && !isMinimized) composerRef.current?.focus();
   }, [isOpen, isMinimized]);
 
-  useEffect(() => () => {
-    abortRef.current?.abort();
-  }, []);
-
-  const processStream = useCallback(async (response: Response, assistantId: string) => {
-    if (!response.body) throw new Error('GlowAI could not start a reply. Please try again.');
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = '';
-    let finished = false;
-
-    const applyRecord = (block: string) => {
-      const lines = block.split(/\r?\n/);
-      const eventName = lines.find((line) => line.startsWith('event:'))?.slice(6).trim();
-      const data = lines.filter((line) => line.startsWith('data:')).map((line) => line.slice(5).trim()).join('\n');
-      if (!data) return;
-      let record: StreamRecord;
-      try {
-        record = JSON.parse(data) as StreamRecord;
-      } catch {
-        return;
-      }
-      if (eventName === 'error' || record.error) throw new Error(record.error || 'GlowAI ran into a problem. Please try again.');
-      if (record.content) {
-        setMessages((current) => current.map((message) => message.id === assistantId
-          ? { ...message, content: message.content + record.content }
-          : message));
-      }
-      if (record.done) finished = true;
-    };
-
-    try {
-      while (!finished) {
-        const { value, done } = await reader.read();
-        buffer += decoder.decode(value, { stream: !done });
-        const blocks = buffer.split(/\r?\n\r?\n/);
-        buffer = blocks.pop() ?? '';
-        for (const block of blocks) applyRecord(block);
-        if (done) {
-          if (buffer.trim()) applyRecord(buffer);
-          break;
-        }
-      }
-    } finally {
-      reader.releaseLock();
-    }
-  }, []);
-
-  const requestReply = useCallback(async (conversation: ChatMessage[], userText: string, existingAssistantId?: string) => {
+  const requestReply = useCallback(async (userText: string, existingAssistantId?: string) => {
     if (busyRef.current) return;
     busyRef.current = true;
     setIsGenerating(true);
     setError('');
     setRetryText(userText);
     setHasStarted(true);
+    const replySequence = ++replySequenceRef.current;
     const assistantId = existingAssistantId ?? makeId();
     if (!existingAssistantId) {
       setMessages((current) => [...current, { id: assistantId, role: 'assistant', content: '' }]);
@@ -99,38 +52,22 @@ export function GlowAIChat() {
       setMessages((current) => current.map((message) => message.id === assistantId ? { ...message, content: '' } : message));
     }
 
-    const controller = new AbortController();
-    abortRef.current = controller;
     try {
-      const history = conversation
-        .filter((message) => message.id !== 'welcome' && message.id !== assistantId)
-        .map(({ role, content }) => ({ role, content }));
-      const response = await fetch('/api/glowai/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream' },
-        body: JSON.stringify({ messages: history }),
-        signal: controller.signal,
-      });
-      if (!response.ok) {
-        let message = 'GlowAI could not reply just now. Please try again.';
-        try {
-          const body = await response.json() as { error?: string };
-          if (body.error) message = body.error;
-        } catch { /* Keep the helpful fallback for non-JSON responses. */ }
-        throw new Error(message);
-      }
-      await processStream(response, assistantId);
+      await new Promise<void>((resolve) => window.setTimeout(resolve, 180));
+      if (replySequence !== replySequenceRef.current) return;
+      const response = getGlowAIResponse(userText);
+      setMessages((current) => current.map((message) => message.id === assistantId
+        ? { ...message, content: response }
+        : message));
     } catch (caught) {
-      if (controller.signal.aborted) return;
       setError(caught instanceof Error ? caught.message : 'GlowAI could not reply just now. Please try again.');
     } finally {
-      if (abortRef.current === controller) {
-        abortRef.current = null;
+      if (replySequence === replySequenceRef.current) {
         busyRef.current = false;
         setIsGenerating(false);
       }
     }
-  }, [processStream]);
+  }, []);
 
   const sendMessage = useCallback((text: string) => {
     const trimmed = text.trim();
@@ -142,7 +79,7 @@ export function GlowAIChat() {
     const conversation = [...messagesRef.current, userMessage];
     messagesRef.current = conversation;
     setMessages(conversation);
-    void requestReply(conversation, trimmed);
+    void requestReply(trimmed);
   }, [requestReply]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -154,13 +91,11 @@ export function GlowAIChat() {
     if (!retryText || busyRef.current) return;
     const current = messagesRef.current;
     const lastAssistant = [...current].reverse().find((message) => message.role === 'assistant' && message.id !== 'welcome');
-    const conversation = current.filter((message) => message.id !== lastAssistant?.id);
-    void requestReply(conversation, retryText, lastAssistant?.id);
+    void requestReply(retryText, lastAssistant?.id);
   };
 
   const clearChat = () => {
-    abortRef.current?.abort();
-    abortRef.current = null;
+    replySequenceRef.current += 1;
     busyRef.current = false;
     setIsGenerating(false);
     setError('');
