@@ -82,12 +82,9 @@ button,input,textarea { font:inherit; } button,a { -webkit-tap-highlight-color:t
 .button-primary,.button-outline { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:18px; padding:0 19px; border:1px solid var(--navy); background:var(--navy); color:var(--paper); font-size:11px; font-weight:600; text-decoration:none; transition:background .2s,color .2s,transform .2s; cursor:pointer; }
 .button-primary:hover { color:white; transform:translateY(-1px); }
 .button-outline { color:var(--navy); background:transparent; }.button-outline:hover { background:var(--navy); color:var(--paper); }
-.install-app-action { position:relative; }
+.install-app-action { position:relative; display:inline-flex; flex-wrap:wrap; align-items:center; gap:10px; }
 .install-app-button svg { width:15px; height:15px; flex:none; }
-.install-help { position:absolute; z-index:20; top:calc(100% + 9px); left:0; width:min(310px,calc(100vw - 40px)); padding:15px 38px 15px 16px; color:var(--navy); background:var(--paper); border:1px solid var(--line); box-shadow:0 12px 28px rgba(23,39,70,.13); font-size:12px; line-height:1.6; }
-.install-help p { margin:0; }
-.install-help-close { position:absolute; top:7px; right:7px; width:28px; height:28px; display:grid; place-items:center; padding:0; color:var(--navy); border:0; background:transparent; cursor:pointer; }
-.install-help-close svg { width:15px; height:15px; }
+.install-app-status { flex-basis:100%; color:#687285; font-size:10px; line-height:1.45; }
 .text-link { display:inline-flex; align-items:center; gap:10px; color:var(--navy); font-size:11px; font-weight:600; text-decoration:none; border:0; background:none; padding:0; cursor:pointer; }
 .text-link:hover { color:#977a2f; }
 .hero-note { display:flex; align-items:center; gap:14px; margin-top:53px; color:#767d89; font-size:10px; line-height:1.6; }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Check, Download, X } from 'lucide-react';
+import { Check, Download } from 'lucide-react';
 
 interface InstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -8,8 +8,7 @@ interface InstallPromptEvent extends Event {
 
 export function InstallAppButton() {
   const [installPrompt, setInstallPrompt] = useState<InstallPromptEvent | null>(null);
-  const [helpOpen, setHelpOpen] = useState(false);
-  const [instructions, setInstructions] = useState('');
+  const [installMessage, setInstallMessage] = useState('');
   const [installed, setInstalled] = useState(false);
 
   useEffect(() => {
@@ -21,11 +20,12 @@ export function InstallAppButton() {
     const handleBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
       setInstallPrompt(event as InstallPromptEvent);
+      setInstallMessage('');
     };
     const handleAppInstalled = () => {
       setInstalled(true);
       setInstallPrompt(null);
-      setHelpOpen(false);
+      setInstallMessage('');
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -39,19 +39,25 @@ export function InstallAppButton() {
   async function handleInstallClick() {
     if (installed) return;
     if (!installPrompt) {
-      setInstructions(
-        /iphone|ipad|ipod/i.test(navigator.userAgent)
-          ? 'Tap the Share button in Safari, then choose “Add to Home Screen.”'
-          : 'Open your browser menu and choose “Install app” or “Add to Home Screen.”',
-      );
-      setHelpOpen((open) => !open);
+      setInstallMessage('One-tap installation is not available in this browser.');
       return;
     }
 
-    await installPrompt.prompt();
-    const choice = await installPrompt.userChoice;
-    if (choice.outcome === 'accepted') setInstalled(true);
-    setInstallPrompt(null);
+    try {
+      await installPrompt.prompt();
+      const choice = await installPrompt.userChoice;
+      if (choice.outcome === 'accepted') {
+        setInstalled(true);
+        setInstallMessage('');
+      } else {
+        setInstallMessage('The install prompt was dismissed.');
+      }
+    } catch (error) {
+      console.error('Could not open the browser install prompt:', error);
+      setInstallMessage('The browser could not open its install prompt.');
+    } finally {
+      setInstallPrompt(null);
+    }
   }
 
   return (
@@ -60,26 +66,17 @@ export function InstallAppButton() {
         className="button-outline install-app-button"
         type="button"
         onClick={handleInstallClick}
-        aria-expanded={helpOpen}
-        aria-controls="install-app-help"
+        aria-describedby={installMessage ? 'install-app-status' : undefined}
         data-testid="button-install-app"
         disabled={installed}
       >
         {installed ? <Check aria-hidden="true" /> : <Download aria-hidden="true" />}
         {installed ? 'App installed' : 'Install our app'}
       </button>
-      {helpOpen && !installed && (
-        <div className="install-help" id="install-app-help" role="status">
-          <button
-            className="install-help-close"
-            type="button"
-            aria-label="Close install instructions"
-            onClick={() => setHelpOpen(false)}
-          >
-            <X aria-hidden="true" />
-          </button>
-          <p>{instructions}</p>
-        </div>
+      {installMessage && !installed && (
+        <span className="install-app-status" id="install-app-status" role="status">
+          {installMessage}
+        </span>
       )}
     </div>
   );

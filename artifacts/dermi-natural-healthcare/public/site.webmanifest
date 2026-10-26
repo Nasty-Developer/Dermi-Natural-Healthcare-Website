@@ -1,6 +1,9 @@
 {
   "name": "Dermi Natural Healthcare",
   "short_name": "Dermi Natural",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png?v=20261026-1",
