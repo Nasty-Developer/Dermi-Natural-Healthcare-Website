@@ -972,8 +972,10 @@ p { text-wrap: pretty; }
 /* --- product detail ---------------------------------------------------- */
 .detail-visual { min-width: 0; position: sticky; top: 96px; }
 .detail-art-wrap { min-width: 0; }
-.detail-art { position: relative; }
+.detail-art { position: relative; top: auto; }
 .detail-art .product-art { position: static; }
+.detail-art-wrap { position: relative; }
+.gallery-thumbs { position: relative; z-index: 1; }
 .zoom-button {
   position: absolute;
   right: 14px;
