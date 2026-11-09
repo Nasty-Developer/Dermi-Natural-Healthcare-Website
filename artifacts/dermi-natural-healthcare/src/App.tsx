@@ -69,7 +69,21 @@ function Header() {
   }, []);
   const nav = [['/about/', 'Our Story'], ['/products/', 'Products'], ['/contact/', 'Contact']];
   const isActive = (href: string) => path === href || (href === '/products/' && path.startsWith('/products'));
-  return <header className={`site-header ${compact ? 'is-compact' : ''}`}>
+  return <>
+  <div className="topbar">
+    <div className="topbar-inner">
+      <span className="topbar-note">
+        <b>DERMI NATURAL HEALTHCARE</b>
+        <i aria-hidden="true" />
+        <span>Skincare &amp; nutritional supplements</span>
+      </span>
+      <div className="topbar-links">
+        <a href="tel:9137277233" data-testid="link-topbar-phone"><Phone size={13} aria-hidden="true" />91372 77233</a>
+        <a href="mailto:derminatural@gmail.com" data-testid="link-topbar-email"><Mail size={13} aria-hidden="true" />derminatural@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <header className={`site-header ${compact ? 'is-compact' : ''}`}>
     <ScrollProgress />
     <div className="header-inner">
       <Brand />
@@ -81,8 +95,13 @@ function Header() {
     </div>
     {open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
       {[['/', 'Home'], ...nav, ...families.map((family) => [`/${family.slug}/`, family.title])].map(([href, text]) => <Link key={href} href={href} data-testid={`mobile-nav-${text.toLowerCase().replaceAll(' ', '-')}`}>{text}<ArrowUpRight size={15} /></Link>)}
+      <div className="mobile-nav-contact">
+        <a href="tel:9137277233" data-testid="mobile-nav-phone"><Phone size={14} aria-hidden="true" />91372 77233</a>
+        <a href="mailto:derminatural@gmail.com" data-testid="mobile-nav-email"><Mail size={14} aria-hidden="true" />derminatural@gmail.com</a>
+      </div>
     </nav>}
-  </header>;
+  </header>
+  </>;
 }
 
 function Footer() {
