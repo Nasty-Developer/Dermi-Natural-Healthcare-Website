@@ -60,6 +60,10 @@ export function InstallAppButton() {
     }
   }
 
+  // Without an install prompt the control can only apologise, so keep it out of
+  // the way (iOS Safari and most in-app browsers land here).
+  if (!installed && !installPrompt) return null;
+
   return (
     <div className="install-app-action">
       <button

@@ -1589,3 +1589,30 @@ html { -webkit-font-smoothing: antialiased; }
   .product-art::before,
   .detail-art::before { animation: none !important; --gold-border-angle: 300deg; }
 }
+
+/* --- V3d: anchor offset + contact feedback ------------------------------- */
+main [id] { scroll-margin-top: 104px; }
+@media (max-width: 900px) { main [id] { scroll-margin-top: 92px; } }
+
+.contact-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(26px + env(safe-area-inset-bottom, 0px));
+  z-index: 70;
+  transform: translate(-50%, 12px);
+  max-width: min(440px, calc(100vw - 40px));
+  padding: 13px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(184, 156, 84, .5);
+  background: rgba(17, 30, 55, .97);
+  color: #f3efe2;
+  font-size: 12.5px;
+  letter-spacing: .01em;
+  text-align: center;
+  box-shadow: 0 14px 32px rgba(17, 30, 55, .28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease;
+}
+.contact-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+@media (pointer: coarse) { .contact-toast { display: none; } }

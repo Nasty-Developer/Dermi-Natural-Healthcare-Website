@@ -24,7 +24,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { GlowAIChat } from '@/components/glow-ai-chat';
 import { InstallAppButton } from '@/components/install-app-button';
-import { BackToTop, ScrollProgress, SkipLink } from '@/components/site-chrome';
+import { BackToTop, ContactLinkFallback, InPageAnchors, ScrollProgress, SkipLink } from '@/components/site-chrome';
 import { CategoryGrid, FaqSection, IngredientIndex, TrustBar } from '@/components/home-sections';
 import { families, type Product, type ProductBrand, type ProductImage } from '@/data/products';
 import { leadershipProfiles } from '@/data/leadership';
@@ -153,6 +153,8 @@ function Shell({ children }: { children: ReactNode }) {
     <main id="main-content">{children}</main>
     <Footer />
     <BackToTop />
+    <ContactLinkFallback />
+    <InPageAnchors />
   </>;
 }
 function Eyebrow({ children }: { children: ReactNode }) { return <span className="eyebrow">{children}</span>; }
