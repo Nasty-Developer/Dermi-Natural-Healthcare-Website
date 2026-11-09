@@ -1537,3 +1537,55 @@ html { -webkit-font-smoothing: antialiased; }
   .mobile-nav { padding-inline: 18px; }
   .mobile-nav a { font-size: 15.5px; }
 }
+
+/* --- V3c: travelling gold border on product imagery ---------------------
+   Same conic sweep as the director portraits, applied to every pack frame
+   (grid, featured, brand pages) and to the product-page hero photo.
+   Rings are staggered so a grid never pulses in unison.
+   ---------------------------------------------------------------------- */
+.product-art::before,
+.detail-art::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--gold-border-angle),
+    rgba(184, 156, 84, .18) 0deg 245deg,
+    #c9aa57 264deg,
+    #fff4c7 278deg,
+    #f7e5ad 291deg,
+    #a7802c 306deg,
+    rgba(184, 156, 84, .18) 325deg 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 4px rgba(184, 156, 84, .2));
+  animation: gold-border-travel 5.6s linear infinite;
+  transition: filter .3s ease;
+}
+
+.product-card:nth-child(6n + 2) .product-art::before { animation-delay: -.9s; }
+.product-card:nth-child(6n + 3) .product-art::before { animation-delay: -1.9s; }
+.product-card:nth-child(6n + 4) .product-art::before { animation-delay: -2.8s; }
+.product-card:nth-child(6n + 5) .product-art::before { animation-delay: -3.7s; }
+.product-card:nth-child(6n + 6) .product-art::before { animation-delay: -4.6s; }
+
+.product-card:hover .product-art::before,
+.detail-art:hover::before {
+  filter: drop-shadow(0 0 9px rgba(195, 158, 61, .45));
+  animation-duration: 3.4s;
+}
+.product-card:hover .product-art {
+  box-shadow: inset 0 0 0 1px rgba(184, 156, 84, .2), 0 16px 34px rgba(20, 36, 72, .07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-art::before,
+  .detail-art::before { animation: none !important; --gold-border-angle: 300deg; }
+}
