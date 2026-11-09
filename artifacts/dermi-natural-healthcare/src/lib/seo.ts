@@ -1,4 +1,5 @@
 import { families, products, type Product } from '@/data/products';
+import { faqItems } from '@/data/faq';
 
 export const SITE_ORIGIN = 'https://www.derminatural.com';
 export const SOCIAL_IMAGE_PATH = '/og-dermi-natural-healthcare.png';
@@ -196,7 +197,19 @@ export function getStructuredData(path: string) {
         { '@type': 'ListItem', position: 4, name: product.name, item: page.canonicalUrl },
       ],
     });
-  } else if (normalizedPath === '/products') {
+  } else if (normalizedPath === '/' || normalizedPath === '/about' || normalizedPath === '/contact') {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${page.canonicalUrl}#faq`,
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    });
+  }
+
+  if (normalizedPath === '/products') {
     graph.push(getItemListSchema(publishedProducts, page.canonicalUrl));
   } else if (family) {
     graph.push(getItemListSchema(

@@ -1,5 +1,9 @@
-import directorPortrait from '@/assets/leadership/israr-siddique.jpg';
-import secondDirectorPortrait from '@/assets/leadership/g-moinuddin.jpg';
+// Served from /public so the static HTML and the hydrated app point at the
+// same file. Bundler imports resolve to /src/... during the prerender pass,
+// which 404s on the deployed static site.
+const assetBase = import.meta.env.BASE_URL || '/';
+const directorPortrait = `${assetBase}leadership/israr-siddique.jpg`;
+const secondDirectorPortrait = `${assetBase}leadership/g-moinuddin.jpg`;
 
 export interface LeadershipProfile {
   id: string;
